@@ -8,7 +8,9 @@ namespace DAL
 {
     class DAL
     {
-
+        /// <summary>
+        /// Do not add anything to this class, it's only here as a bugfix
+        /// </summary>
         public static void Main()
         { }
 
