@@ -27,7 +27,7 @@ namespace vITs
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            CreateReport cr = new CreateReport();
+            RapportHantering cr = new RapportHantering();
             cr.Show();
             this.Close();
         }

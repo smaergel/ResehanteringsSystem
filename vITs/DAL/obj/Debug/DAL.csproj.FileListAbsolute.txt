@@ -21,3 +21,9 @@ C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFra
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.xml
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\Database.mdf
+C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\Database_log.ldf
+C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServer.xml
