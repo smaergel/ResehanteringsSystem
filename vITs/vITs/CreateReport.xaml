@@ -8,7 +8,7 @@
         <Label x:Name="lblDate" Content="Datum:" HorizontalAlignment="Left" Margin="42,105,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="cbNational" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="119,36,0,0"/>
         <CheckBox x:Name="cbInterNational" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="119,67,0,0"/>
-        <DatePicker x:Name="dpDateDeparture" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="147,106,0,0" Text="S"/>
+        <DatePicker x:Name="dpDateDeparture" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="147,106,0,0" Text="Avresa"/>
         <DatePicker x:Name="dpDateReturn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="271,106,0,0"/>
         <Label x:Name="lblLunches" Content="Antal Luncher:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="42,185,0,0"/>
         <ComboBox x:Name="cbLunches" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Margin="147,185,0,0"/>
