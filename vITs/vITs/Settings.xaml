@@ -1,0 +1,41 @@
+﻿<Window x:Class="vITs.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Settings" Height="522.388" Width="659.701">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="98*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl HorizontalAlignment="Left" Height="365" VerticalAlignment="Bottom" Width="562" Margin="10,0,0,116" Grid.ColumnSpan="2" >
+            <TabItem Header="Ändra Lösenord" Margin="0,0,-4,-2">
+                <Grid Background="#FFE5E5E5" Margin="0,1,0,-1">
+                    <Label Content="Nytt Lösenord" HorizontalAlignment="Left" Margin="102,48,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Verifiera Nytt Lösenord" HorizontalAlignment="Left" Margin="54,93,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Gammalt Lösenord" HorizontalAlignment="Left" Margin="77,139,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="194,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="194,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="194,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Button Content="Avbryt" HorizontalAlignment="Left" Margin="166,191,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button Content="OK" HorizontalAlignment="Left" Margin="264,191,0,0" VerticalAlignment="Top" Width="75"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Personuppgifter" Margin="-2,0,-2,-2">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Telefon.Nr" HorizontalAlignment="Left" Margin="88,43,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Adress" HorizontalAlignment="Left" Margin="109,84,0,0" VerticalAlignment="Top"/>
+                    <Label Content="E-post" HorizontalAlignment="Left" Margin="109,129,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="176,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="176,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="176,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Button Content="Avbryt" HorizontalAlignment="Left" Margin="254,170,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button Content="Spara" HorizontalAlignment="Left" Margin="125,170,0,0" VerticalAlignment="Top" Width="75"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem" Height="20" VerticalAlignment="Top" Margin="-2,-2,-52,0">
+                <Image Margin="67,10,480,321"/>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
