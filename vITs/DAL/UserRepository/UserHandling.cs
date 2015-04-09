@@ -76,9 +76,9 @@ namespace DAL.UserRepository
 
         public bool IsUserBoss(int id)
         {
-            context.Table1.Where(t1 => t1.Property1 == "Value1")
-          .SelectMany(t1 => t1.Table2.Where(t2 => t2.Property2 == "Value2"))
-          .FirstOrDefault();
+          //  context.Table1.Where(t1 => t1.Property1 == "Value1")
+          //.SelectMany(t1 => t1.Table2.Where(t2 => t2.Property2 == "Value2"))
+          //.FirstOrDefault();
         }
     }
 }
