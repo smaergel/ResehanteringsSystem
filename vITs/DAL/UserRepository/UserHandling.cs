@@ -66,13 +66,12 @@ namespace DAL.UserRepository
         /// <summary>
         /// Edit details of a specific user
         /// </summary>
-        /// <param name="id"></param>
-        public void EditUser(User user)
+        /// <param name="user">Object: User</param>
+        public void UpdateUser(User user)
         {
-           
-
-
-            
+            _dbConnect.Users.Attach(user);
+            _dbConnect.Entry(user).State = System.Data.Entity.EntityState.Modified;
+            _dbConnect.SaveChanges();
         }
     }
 }
