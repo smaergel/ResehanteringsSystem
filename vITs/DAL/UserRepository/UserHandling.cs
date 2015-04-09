@@ -21,6 +21,7 @@ namespace DAL.UserRepository
         public void AddUser(User user)
         {
             _dbConnect.Users.Add(user);
+            _dbConnect.SaveChanges();
         }
 
         /// <summary>
@@ -31,6 +32,20 @@ namespace DAL.UserRepository
         {
             var newBoss = new Boss {userID = user.userID};
             _dbConnect.Bosses.Add(newBoss);
+            _dbConnect.SaveChanges();
+        }
+
+        /// <summary>
+        /// Delete a user
+        /// </summary>
+        /// <param name="id">UserID</param>
+        public void DeleteUser(int id)
+        {
+            var userToDelete = new User {userID = id};
+            _dbConnect.Users.Attach(userToDelete);
+            _dbConnect.Users.Remove(userToDelete);
+            _dbConnect.SaveChanges();
+
         }
     }
 }
