@@ -15,3 +15,9 @@ C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\DAL.pdb
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.exe
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.pdb
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\Database.mdf
+C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\Database_log.ldf
+C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServer.xml

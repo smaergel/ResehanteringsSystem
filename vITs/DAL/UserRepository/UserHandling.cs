@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace DAL.UserRepository
 {
     /// <summary>
+    /// Contains methods for managing the Users table
+    /// 
     /// Author: Linus
     /// </summary>
     class UserHandling
@@ -36,7 +38,7 @@ namespace DAL.UserRepository
         }
 
         /// <summary>
-        /// Delete a user
+        /// Delete a user using userID
         /// </summary>
         /// <param name="id">UserID</param>
         public void DeleteUser(int id)
@@ -45,7 +47,32 @@ namespace DAL.UserRepository
             _dbConnect.Users.Attach(userToDelete);
             _dbConnect.Users.Remove(userToDelete);
             _dbConnect.SaveChanges();
+        }
 
+        /// <summary>
+        /// Get all info of a specific user
+        /// (Good for editing details)
+        /// </summary>
+        /// <param name="id">UserID</param>
+        /// <returns>Object: User (specified by ID)</returns>
+        public User GetUser(int id)
+        {
+            var thisUser = new User() {userID = id};
+            _dbConnect.Users.Attach(thisUser);
+
+            return thisUser;
+        }
+
+        /// <summary>
+        /// Edit details of a specific user
+        /// </summary>
+        /// <param name="id"></param>
+        public void EditUser(User user)
+        {
+           
+
+
+            
         }
     }
 }
