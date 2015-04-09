@@ -24,5 +24,12 @@ namespace vITs
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CreateReport cr = new CreateReport();
+            cr.Show();
+            this.Close();
+        }
     }
 }
