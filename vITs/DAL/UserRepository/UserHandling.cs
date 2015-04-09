@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL.UserRepository
 {
@@ -11,42 +8,48 @@ namespace DAL.UserRepository
     /// 
     /// Author: Linus
     /// </summary>
-    class UserHandling
+    public static class UserHandling
     {
-        // ReSharper disable once FieldCanBeMadeReadOnly.Local
-        DatabaseEntities _dbConnect = new DatabaseEntities();
-
         /// <summary>
         /// Add a new user to Users table
         /// </summary>
         /// <param name="user">Object: User</param>
-        public void AddUser(User user)
+        public static void AddUser(User user)
         {
-            _dbConnect.Users.Add(user);
-            _dbConnect.SaveChanges();
+            using (var dbConnect = new DatabaseEntities())
+            {
+                dbConnect.Users.Add(user);
+                dbConnect.SaveChanges();
+            }
         }
 
         /// <summary>
         /// Assign user to Boss tables (add as Boss)
         /// </summary>
         /// <param name="id">UserID</param>
-        public void AddUserAsBoss(int id)
+        public static void AddUserAsBoss(int id)
         {
-            var newBoss = new Boss {userID = id};
-            _dbConnect.Bosses.Add(newBoss);
-            _dbConnect.SaveChanges();
+            using (var dbConnect = new DatabaseEntities())
+            {
+                var newBoss = new Boss {userID = id};
+                dbConnect.Bosses.Add(newBoss);
+                dbConnect.SaveChanges();
+            }
         }
 
         /// <summary>
         /// Delete a user using userID
         /// </summary>
         /// <param name="id">UserID</param>
-        public void DeleteUser(int id)
+        public static void DeleteUser(int id)
         {
-            var userToDelete = new User {userID = id};
-            _dbConnect.Users.Attach(userToDelete);
-            _dbConnect.Users.Remove(userToDelete);
-            _dbConnect.SaveChanges();
+            using (var dbConnect = new DatabaseEntities())
+            {
+                var userToDelete = new User {userID = id};
+                dbConnect.Users.Attach(userToDelete);
+                dbConnect.Users.Remove(userToDelete);
+                dbConnect.SaveChanges();
+            }
         }
 
         /// <summary>
@@ -55,10 +58,13 @@ namespace DAL.UserRepository
         /// </summary>
         /// <param name="id">UserID</param>
         /// <returns>Object: User (specified by ID)</returns>
-        public User GetUser(int id)
+        public static User GetUser(int id)
         {
-            var thisUser = new User() {userID = id};
-            _dbConnect.Users.Attach(thisUser);
+            using (var dbConnect = new DatabaseEntities())
+            {
+                var thisUser = new User() {userID = id};
+                dbConnect.Users.Attach(thisUser);
+            }
 
             return thisUser;
         }
@@ -67,18 +73,33 @@ namespace DAL.UserRepository
         /// Edit details of a specific user
         /// </summary>
         /// <param name="user">Object: User</param>
-        public void UpdateUser(User user)
+        public static void UpdateUser(User user)
         {
-            _dbConnect.Users.Attach(user);
-            _dbConnect.Entry(user).State = System.Data.Entity.EntityState.Modified;
-            _dbConnect.SaveChanges();
+            using (var dbConnect = new DatabaseEntities())
+            {
+                dbConnect.Users.Attach(user);
+                dbConnect.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                dbConnect.SaveChanges();
+            }
         }
 
-        public bool IsUserBoss(int id)
+        /// <summary>
+        /// Checks wheter a user is a Boss or not
+        /// </summary>
+        /// <param name="id">UserIDs</param>
+        /// <returns>The specific Boss userID</returns>
+        public static int IsUserBoss(int id)
         {
-          //  context.Table1.Where(t1 => t1.Property1 == "Value1")
-          //.SelectMany(t1 => t1.Table2.Where(t2 => t2.Property2 == "Value2"))
-          //.FirstOrDefault();
+            using (var dbConnect = new DatabaseEntities())
+            {
+                var isBoss = dbConnect.Bosses.Where(a => a.userID == id)
+                    .Select(x => x.userID)
+                    .FirstOrDefault();
+                
+                return isBoss;
+            }
+
+
         }
     }
 }
