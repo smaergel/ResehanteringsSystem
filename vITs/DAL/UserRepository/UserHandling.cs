@@ -29,10 +29,10 @@ namespace DAL.UserRepository
         /// <summary>
         /// Assign user to Boss tables (add as Boss)
         /// </summary>
-        /// <param name="user">Object: User</param>
-        public void AddUserAsBoss(User user)
+        /// <param name="id">UserID</param>
+        public void AddUserAsBoss(int id)
         {
-            var newBoss = new Boss {userID = user.userID};
+            var newBoss = new Boss {userID = id};
             _dbConnect.Bosses.Add(newBoss);
             _dbConnect.SaveChanges();
         }
@@ -72,6 +72,13 @@ namespace DAL.UserRepository
             _dbConnect.Users.Attach(user);
             _dbConnect.Entry(user).State = System.Data.Entity.EntityState.Modified;
             _dbConnect.SaveChanges();
+        }
+
+        public bool IsUserBoss(int id)
+        {
+            context.Table1.Where(t1 => t1.Property1 == "Value1")
+          .SelectMany(t1 => t1.Table2.Where(t2 => t2.Property2 == "Value2"))
+          .FirstOrDefault();
         }
     }
 }

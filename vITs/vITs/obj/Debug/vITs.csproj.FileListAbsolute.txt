@@ -22,8 +22,6 @@ C:\Users\Peter\Documents\GitHub\scrumprojekt\vITs\vITs\obj\Debug\vITs_Content.g.
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.exe.config
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.exe
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.pdb
-C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\Database.mdf
-C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\Database_log.ldf
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.exe
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.pdb
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.csprojResolveAssemblyReference.cache
@@ -36,7 +34,6 @@ C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\MainWind
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\RapportHantering.g.cs
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\Settings.g.cs
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\App.g.cs
-C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs_Content.g.cs
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs_MarkupCompile.cache
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.g.resources
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.Properties.Resources.resources
