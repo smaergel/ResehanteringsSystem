@@ -14,3 +14,4 @@ C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\DAL.exe
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\DAL.pdb
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.exe
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.pdb
+C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

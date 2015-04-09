@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7a3c0cf0c19b460dac3fef85b386e048" Name="Diagram1">
+        <EntityTypeShape EntityType="DatabaseModel.Boss" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Country" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Expence" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Setting" Width="1.5" PointX="6" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Trip" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.User" Width="1.5" PointX="0.875" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Vacation" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Verification" Width="1.5" PointX="8.25" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="DatabaseModel.FK_Bosses_ToUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_Trips_ToCountry" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_Trips_ToCountry2" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_Verifications_Expences" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_Trips_ToUser" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_Vacations_ToTrip" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_Verifications_Trips" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
