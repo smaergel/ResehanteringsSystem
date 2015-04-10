@@ -14,7 +14,7 @@ namespace DAL.UserRepository
         /// Add a new user to Users table
         /// </summary>
         /// <param name="user">Object: User</param>
-        public void AddUser(User user)
+        public static void AddUser(User user)
         {
             using (var dbConnect = new DatabaseEntities())
             {
@@ -27,7 +27,7 @@ namespace DAL.UserRepository
         /// Assign user to Boss tables (add as Boss)
         /// </summary>
         /// <param name="user">Object: User</param>
-        public void AddUserAsBoss(User user)
+        public static void AddUserAsBoss(User user)
         {
             using (var dbConnect = new DatabaseEntities())
             {
@@ -38,10 +38,26 @@ namespace DAL.UserRepository
         }
 
         /// <summary>
+        /// Remove a Users Boss privileges
+        /// </summary>
+        /// <param name="id">UserID</param>
+        public static void RemoveBoss(int id)
+        {
+            using (var dbConnect = new DatabaseEntities())
+            {
+                var revokedBoss = new Boss { userID = id };
+                dbConnect.Bosses.Attach(revokedBoss);
+                dbConnect.Bosses.Remove(revokedBoss);
+                dbConnect.SaveChanges();
+            }
+            
+        }
+
+        /// <summary>
         /// Delete a user using userID
         /// </summary>
         /// <param name="id">UserID</param>
-        public void DeleteUser(int id)
+        public static void DeleteUser(int id)
         {
             using (var dbConnect = new DatabaseEntities())
             {
@@ -58,7 +74,7 @@ namespace DAL.UserRepository
         /// </summary>
         /// <param name="id">UserID</param>
         /// <returns>Object: User (specified by ID)</returns>
-        public User GetUser(int id)
+        public static User GetUser(int id)
         {
             using (var dbConnect = new DatabaseEntities())
             {
@@ -75,7 +91,7 @@ namespace DAL.UserRepository
         /// Use GetUser() to retrieve user for update
         /// </summary>
         /// <param name="user">The updated User object</param>
-        public void UpdateUser(User user)
+        public static void UpdateUser(User user)
         {
             using (var dbConnect = new DatabaseEntities())
             {
