@@ -49,10 +49,9 @@ namespace DAL.Repositories.TripRepository
         {
             using (var dbConnect = new DatabaseEntities())
             {
-                var thisTrip = new Trip {tripID = id};
-                dbConnect.Trips.Attach(thisTrip);
+                Trip trip = dbConnect.Trips.Find(id);
 
-                return thisTrip;
+                return trip;
             }
         }
 

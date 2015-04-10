@@ -77,10 +77,9 @@ namespace DAL.Repositories.UserRepository
         {
             using (var dbConnect = new DatabaseEntities())
             {
-                var thisUser = new User { userID = id };
-                dbConnect.Users.Attach(thisUser);
+                User user = dbConnect.Users.Find(id);
 
-                return thisUser;
+                return user;
             }
         }
 
