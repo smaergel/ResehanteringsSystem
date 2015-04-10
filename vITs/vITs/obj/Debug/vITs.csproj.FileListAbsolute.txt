@@ -70,7 +70,6 @@ C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\Databas
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\Database_log.ldf
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.exe
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.pdb
-C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.csprojResolveAssemblyReference.cache
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\CreateReport.baml
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\MainWindow.baml
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\RapportHantering.baml
@@ -85,3 +84,4 @@ C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs_Ma
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.g.resources
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.Properties.Resources.resources
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.csproj.GenerateResource.Cache
+C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.csprojResolveAssemblyReference.cache

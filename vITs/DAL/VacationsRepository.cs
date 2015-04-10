@@ -8,28 +8,31 @@ namespace DAL
 {
     public class VacationsRepository
     {
-        DatabaseEntities _dbConnect = new DatabaseEntities();
-
         /// <summary>
         /// Add a new vacation to Vacations table
         /// </summary>
         /// <param name="vacation"></param>
-        public void AddVacation(Vacation vacation)
+        public static void AddVacation(Vacation vacation)
         {
-            _dbConnect.Vacations.Add(vacation);
-            _dbConnect.SaveChanges();
+            using (var context = new DatabaseEntities())
+            {
+                context.Vacations.Add(vacation);
+                context.SaveChanges();
+            }
         }
-
 
         /// <summary>
         /// Delete a verification in Verifications table
         /// </summary>
         /// <param name="vID"></param>
-        public void DeleteVacation(int vID)
+        public static void DeleteVacation(int vID)
         {
-            Vacation v = _dbConnect.Vacations.FirstOrDefault(x => x.VacationID == vID);
-            _dbConnect.Vacations.Remove(v);
-            _dbConnect.SaveChanges();
+            using (var context = new DatabaseEntities())
+            {
+                Vacation v = context.Vacations.FirstOrDefault(x => x.VacationID == vID);
+                context.Vacations.Remove(v);
+                context.SaveChanges();
+            }
         }
 
 
@@ -37,24 +40,30 @@ namespace DAL
         /// Delete a verification in Verifications table
         /// </summary>
         /// <param name="vacation"></param>
-        public void DeleteVacation(Vacation vacation)
+        public static void DeleteVacation(Vacation vacation)
         {
-            Vacation v = _dbConnect.Vacations.FirstOrDefault(x => x.VacationID == vacation.VacationID);
-            _dbConnect.Vacations.Remove(v);
-            _dbConnect.SaveChanges();
+            using (var context = new DatabaseEntities())
+            {
+                Vacation v = context.Vacations.FirstOrDefault(x => x.VacationID == vacation.VacationID);
+                context.Vacations.Remove(v);
+                context.SaveChanges();
+            }
         }
 
         /// <summary>
         /// Update a verification in Verifications table
         /// </summary>
         /// <param name="vacation"></param>
-        public void UpdateVacation(Vacation vacation)
+        public static void UpdateVacation(Vacation vacation)
         {
-            Vacation v = _dbConnect.Vacations.FirstOrDefault(x => x.VacationID == vacation.VacationID);
-            v.start = vacation.start;
-            v.end = vacation.end;          
-            v.tripID = vacation.tripID;
-            _dbConnect.SaveChanges();
+            using (var context = new DatabaseEntities())
+            {
+                Vacation v = context.Vacations.FirstOrDefault(x => x.VacationID == vacation.VacationID);
+                v.start = vacation.start;
+                v.end = vacation.end;
+                v.tripID = vacation.tripID;
+                context.SaveChanges();
+            }
         }
     }
 }

@@ -8,17 +8,17 @@ namespace DAL
 {
     public class VerificationRepository
     {
-        DatabaseEntities _dbConnect = new DatabaseEntities();
-
-
         /// <summary>
         /// Add a new verification to Verifications table
         /// </summary>
         /// <param name="verification">Object: Verification</param>
-        public void AddVerification(Verification verification)
+        public static void AddVerification(Verification verification)
         {
-            _dbConnect.Verifications.Add(verification);
-            _dbConnect.SaveChanges();
+            using (var context = new DatabaseEntities())
+            {
+                context.Verifications.Add(verification);
+                context.SaveChanges();
+            }
         }
 
 
@@ -32,17 +32,20 @@ namespace DAL
         /// <param name="date"></param>
         /// <param name="note"></param>
         /// <param name="id"></param>
-        public void UpdateVerification(int vID, int expenceID, int cost, string path, DateTime date, string note, int id)
+        public static void UpdateVerification(int vID, int expenceID, int cost, string path, DateTime date, string note, int id)
         {
-            Verification v = _dbConnect.Verifications.FirstOrDefault(x => x.verificationID == vID);
+            using (var context = new DatabaseEntities())
+            {
+                Verification v = context.Verifications.FirstOrDefault(x => x.verificationID == vID);
 
-            v.expenceID = expenceID;
-            v.cost = cost;
-            v.path = path;
-            v.date = date;
-            v.note = note;
-            v.tripID = id;
-            _dbConnect.SaveChanges();
+                v.expenceID = expenceID;
+                v.cost = cost;
+                v.path = path;
+                v.date = date;
+                v.note = note;
+                v.tripID = id;
+                context.SaveChanges();
+            }
         }
 
 
@@ -50,39 +53,50 @@ namespace DAL
         /// Update verification in Verifications table
         /// </summary>
         /// <param name="verification"></param>
-        public void UpdateVerification2(Verification verification)
+        public static void UpdateVerification2(Verification verification)
         {
-            Verification v = _dbConnect.Verifications.FirstOrDefault(x => x.verificationID == verification.verificationID);
-            v.expenceID = verification.expenceID;
-            v.cost = verification.cost;
-            v.path = verification.path;
-            v.date = verification.date;
-            v.note = verification.note;
-            v.tripID = verification.tripID;
-            _dbConnect.SaveChanges();
+            using (var context = new DatabaseEntities())
+            {
+                Verification v =
+                context.Verifications.FirstOrDefault(x => x.verificationID == verification.verificationID);
+                v.expenceID = verification.expenceID;
+                v.cost = verification.cost;
+                v.path = verification.path;
+                v.date = verification.date;
+                v.note = verification.note;
+                v.tripID = verification.tripID;
+                context.SaveChanges();
+            }
         }
 
         /// <summary>
         /// Delete a verification in Verifications table
         /// </summary>
         /// <param name="vID"></param>
-        public void DeleteVerification(int vID)
+        public static void DeleteVerification(int vID)
         {
-            Verification v = _dbConnect.Verifications.FirstOrDefault(x => x.verificationID == vID);
-            _dbConnect.Verifications.Remove(v);
-            _dbConnect.SaveChanges();
+            using (var context = new DatabaseEntities())
+            {
+                Verification v = context.Verifications.FirstOrDefault(x => x.verificationID == vID);
+                context.Verifications.Remove(v);
+                context.SaveChanges();
+            }
         }
 
 
         /// <summary>
         /// Delete a verification in Verifications table
         /// </summary>
-        /// <param name="vID"></param>
-        public void DeleteVerification(Verification verification)
+        /// <param name="verification"></param>
+        public static void DeleteVerification(Verification verification)
         {
-            Verification v = _dbConnect.Verifications.FirstOrDefault(x => x.verificationID == verification.verificationID);
-            _dbConnect.Verifications.Remove(v);
-            _dbConnect.SaveChanges();
+            using (var context = new DatabaseEntities())
+            {
+                Verification v =
+                context.Verifications.FirstOrDefault(x => x.verificationID == verification.verificationID);
+                context.Verifications.Remove(v);
+                context.SaveChanges();
+            }
         }
     }
 }
