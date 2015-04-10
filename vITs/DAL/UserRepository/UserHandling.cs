@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace DAL.UserRepository
 {
     /// <summary>
     /// Contains methods for managing the Users table
     /// 
-    /// Author: Linus
+    /// Author: Yvell/Waerner
     /// </summary>
     class UserHandling
     {
-        // ReSharper disable once FieldCanBeMadeReadOnly.Local
-        DatabaseEntities _dbConnect = new DatabaseEntities();
 
         /// <summary>
         /// Add a new user to Users table
@@ -22,8 +16,11 @@ namespace DAL.UserRepository
         /// <param name="user">Object: User</param>
         public void AddUser(User user)
         {
-            _dbConnect.Users.Add(user);
-            _dbConnect.SaveChanges();
+            using (var dbConnect = new DatabaseEntities())
+            {
+                dbConnect.Users.Add(user);
+                dbConnect.SaveChanges();
+            }
         }
 
         /// <summary>
@@ -32,9 +29,12 @@ namespace DAL.UserRepository
         /// <param name="user">Object: User</param>
         public void AddUserAsBoss(User user)
         {
-            var newBoss = new Boss {userID = user.userID};
-            _dbConnect.Bosses.Add(newBoss);
-            _dbConnect.SaveChanges();
+            using (var dbConnect = new DatabaseEntities())
+            {
+                var newBoss = new Boss { userID = user.userID };
+                dbConnect.Bosses.Add(newBoss);
+                dbConnect.SaveChanges();
+            }
         }
 
         /// <summary>
@@ -43,10 +43,13 @@ namespace DAL.UserRepository
         /// <param name="id">UserID</param>
         public void DeleteUser(int id)
         {
-            var userToDelete = new User {userID = id};
-            _dbConnect.Users.Attach(userToDelete);
-            _dbConnect.Users.Remove(userToDelete);
-            _dbConnect.SaveChanges();
+            using (var dbConnect = new DatabaseEntities())
+            {
+                var userToDelete = new User { userID = id };
+                dbConnect.Users.Attach(userToDelete);
+                dbConnect.Users.Remove(userToDelete);
+                dbConnect.SaveChanges();
+            }
         }
 
         /// <summary>
@@ -57,22 +60,40 @@ namespace DAL.UserRepository
         /// <returns>Object: User (specified by ID)</returns>
         public User GetUser(int id)
         {
-            var thisUser = new User() {userID = id};
-            _dbConnect.Users.Attach(thisUser);
+            using (var dbConnect = new DatabaseEntities())
+            {
+                var thisUser = new User { userID = id };
+                dbConnect.Users.Attach(thisUser);
 
-            return thisUser;
+                return thisUser;
+            }
         }
 
         /// <summary>
         /// Edit details of a specific user
+        /// 
+        /// Use GetUser() to retrieve user for update
         /// </summary>
-        /// <param name="id"></param>
-        public void EditUser(User user)
+        /// <param name="user">The updated User object</param>
+        public void UpdateUser(User user)
         {
-           
+            using (var dbConnect = new DatabaseEntities())
+            {
+                var storedUser = (from s in dbConnect.Users
+                                  where s.userID == user.userID
+                                  select s).FirstOrDefault();
 
+                if (storedUser == null) return;
 
-            
+                storedUser.firstname = user.firstname;
+                storedUser.lastname = user.lastname;
+                storedUser.phone = user.phone;
+                storedUser.email = user.email;
+                storedUser.boss = user.boss;
+                storedUser.password = user.password;
+
+                dbConnect.SaveChanges();
+            }
         }
     }
 }
