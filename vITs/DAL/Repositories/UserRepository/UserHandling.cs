@@ -7,7 +7,7 @@ namespace DAL.Repositories.UserRepository
     /// 
     /// Author: Yvell/Waerner
     /// </summary>
-    class UserHandling
+    public static class UserHandling
     {
         /// <summary>
         /// Add a new user to Users table
