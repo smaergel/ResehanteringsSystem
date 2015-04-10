@@ -44,10 +44,8 @@ C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.csp
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.exe.config
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.exe
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.pdb
-C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\CreateReport.baml
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\MainWindow.baml
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\Settings.baml
-C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\CreateReport.g.cs
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\MainWindow.g.cs
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\Settings.g.cs
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\App.g.cs

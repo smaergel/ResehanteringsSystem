@@ -2,22 +2,22 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="vITs.RapportHantering"
-        Title="RapportHantering" Height="344.179" Width="702.985">
+        Title="TravelManager" Height="344.179" Width="702.985">
     <Grid>
         <TabControl HorizontalAlignment="Left" Height="333" VerticalAlignment="Top" Width="695">
 
             <TabItem Header="Skapa Resa" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="78" Margin="0,0,-29,0">
                 <Grid Background="#FFE5E5E5">
-                    <DatePicker x:Name="dpStartDate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="104,74,0,0" Width="117"/>
-                    <DatePicker x:Name="dpEndDate" HorizontalAlignment="Left" Margin="252,74,0,0" VerticalAlignment="Top" Width="117"/>
+                    <DatePicker x:Name="dpStartDate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="121,74,0,0" Width="111"/>
+                    <DatePicker x:Name="dpEndDate" HorizontalAlignment="Left" Margin="252,75,0,0" VerticalAlignment="Top" Width="113"/>
                     <ComboBox x:Name="cbCountryDeparture" HorizontalAlignment="Left" Margin="100,32,0,0" VerticalAlignment="Top" Width="120"/>
                     <ComboBox x:Name="cbCountryArrival" HorizontalAlignment="Left" Margin="339,32,0,0" VerticalAlignment="Top" Width="120"/>
                     <Label x:Name="lblDeparture" Content="Avreseland:" HorizontalAlignment="Left" Margin="24,28,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="lblArrival" Content="Ankomstland:" HorizontalAlignment="Left" Margin="252,28,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="lblDateTrip" Content="Datum:" HorizontalAlignment="Left" Margin="24,74,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="lblVacation" Content="Semesterdagar:" HorizontalAlignment="Left" Margin="24,113,0,0" VerticalAlignment="Top"/>
-                    <DatePicker x:Name="dpVacationEnd" HorizontalAlignment="Left" Margin="252,115,0,0" VerticalAlignment="Top"/>
-                    <DatePicker x:Name="dpVacationStart" HorizontalAlignment="Left" Margin="121,115,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lblVacation" Content="Reseavbrott:" HorizontalAlignment="Left" Margin="24,113,0,0" VerticalAlignment="Top"/>
+                    <DatePicker x:Name="dpVacationEnd" HorizontalAlignment="Left" Margin="252,115,0,0" VerticalAlignment="Top" Width="113"/>
+                    <DatePicker x:Name="dpVacationStart" HorizontalAlignment="Left" Margin="121,115,0,0" VerticalAlignment="Top" Width="111"/>
                     <Label x:Name="lblPrepay" Content="Förskottsbetalning:" HorizontalAlignment="Left" Margin="24,154,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="tbPrepaySum" HorizontalAlignment="Left" Height="23" Margin="140,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                     <Label x:Name="lblMotivation" Content="Motivering:" HorizontalAlignment="Left" Margin="284,157,0,0" VerticalAlignment="Top"/>
@@ -26,14 +26,35 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Egna Rapporter">
+            <TabItem Header="Reseutlägg" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="79" Margin="0">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Kostnadssumma (kr):" HorizontalAlignment="Left" Margin="24,87,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Margin="84,114,0,0"/>
+                    <Label Content="Välj kvitto:" HorizontalAlignment="Left" Margin="173,83,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="173,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+                    <Button Content="Välj fil" HorizontalAlignment="Left" Margin="229,142,0,0" VerticalAlignment="Top" Width="64" Height="16" FontSize="10"/>
+                    <Button Content="Lägg till utlägg" HorizontalAlignment="Left" Margin="206,242,0,0" VerticalAlignment="Top" Width="87"/>
+                    <ListBox HorizontalAlignment="Left" Height="179" Margin="310,29,0,0" VerticalAlignment="Top" Width="348" Grid.ColumnSpan="4"/>
+                    <ComboBox x:Name="cbKostnTyp" HorizontalAlignment="Left" Margin="104,61,0,0" VerticalAlignment="Top" Width="189"/>
+                    <Label x:Name="lblKostnadTyp" Content="Kostnadstyp:" HorizontalAlignment="Left" Margin="24,57,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbCostNotes" HorizontalAlignment="Left" Height="57" Margin="93,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" AcceptsReturn="True"/>
+                    <Label x:Name="lblCostNotes" Content="Notering:" HorizontalAlignment="Left" Margin="24,171,0,0" VerticalAlignment="Top"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="104,19,0,0" VerticalAlignment="Top" Width="189"/>
+                    <Label Content="Välj resa:" HorizontalAlignment="Left" Margin="27,15,0,0" VerticalAlignment="Top"/>
+                    <Button Content="Ta bort valt utlägg" HorizontalAlignment="Left" Margin="548,223,0,0" VerticalAlignment="Top" Width="110"/>
+                </Grid>
+            </TabItem>
+
+
+            <TabItem Header="Egna Rapporter"  HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="96" Margin="0,0,-18,0">
                 <Grid Background="#FFE5E5E5">
                     <ListBox x:Name="lbOwnReports" HorizontalAlignment="Left" Height="179" Margin="10,52,0,0" VerticalAlignment="Top" Width="669"/>
                     <Button x:Name="btnGetOwnReports" Content="Hämta Rapporter" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="101"/>
-                    <Button x:Name="btnShowOwnReports" Content="Visa Rapporter" HorizontalAlignment="Left" Margin="574,250,0,0" VerticalAlignment="Top" Width="92"/>
+                    <Button x:Name="btnShowOwnReports" Content="Visa Rapport" HorizontalAlignment="Left" Margin="574,250,0,0" VerticalAlignment="Top" Width="92"/>
+                    <Button Content="Skicka rapport" HorizontalAlignment="Left" Margin="450,250,0,0" VerticalAlignment="Top" Width="104"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Icke Godkända Rapporter">
+            <TabItem Header="Icke Godkända Rapporter" Margin="0,0,0,0">
                 <Grid Background="#FFE5E5E5" Margin="0,-1,0,1">
                     <TextBox x:Name="tbSearchAnstIdDenied" HorizontalAlignment="Left" Height="24" Margin="123,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.498,0.49"/>
                     <Label x:Name="lblSearchAnstIdDenied" Content="Sök Anst. Id:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,22,0,0" Width="83"/>
@@ -42,7 +63,7 @@
                     <Button x:Name="btnGetReportsDenied" Content="Hämta Rapporter" HorizontalAlignment="Left" Margin="272,25,0,0" VerticalAlignment="Top" Width="100"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Godkända Rapporter" Height="20" VerticalAlignment="Top" Margin="0,0,2,0" HorizontalAlignment="Right" Width="122">
+            <TabItem Header="Godkända Rapporter" Height="20" VerticalAlignment="Top" Margin="0" HorizontalAlignment="Right" Width="122">
                 <Grid Background="#FFE5E5E5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="89*"/>
@@ -60,7 +81,8 @@
                     <Button x:Name="btnShowReportsApproved" Content="Visa Rapport" Grid.Column="2" HorizontalAlignment="Left" Margin="364,167,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
                 </Grid>
             </TabItem>
-            
+
+
         </TabControl>
 
     </Grid>
