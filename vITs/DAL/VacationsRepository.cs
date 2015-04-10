@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class VacationsRepository
+    public class VacationsRepository
     {
         DatabaseEntities _dbConnect = new DatabaseEntities();
 

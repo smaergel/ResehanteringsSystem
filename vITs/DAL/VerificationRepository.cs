@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class VerificationRepository
+    public class VerificationRepository
     {
         DatabaseEntities _dbConnect = new DatabaseEntities();
 
