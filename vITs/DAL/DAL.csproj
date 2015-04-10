@@ -93,7 +93,7 @@
     <Compile Include="Expence.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ExpencesRepository.cs" />
+    <Compile Include="Repositories\ExpenceRepository\ExpencesRepository.cs" />
     <Compile Include="Setting.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -103,15 +103,15 @@
     <Compile Include="User.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserRepository\UserHandling.cs" />
+    <Compile Include="Repositories\UserRepository\UserHandling.cs" />
     <Compile Include="Vacation.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="VacationsRepository.cs" />
+    <Compile Include="Repositories\VacationRepository\VacationsRepository.cs" />
     <Compile Include="Verification.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="VerificationRepository.cs" />
+    <Compile Include="Repositories\VerificationRepository\VerificationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
@@ -156,6 +156,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
