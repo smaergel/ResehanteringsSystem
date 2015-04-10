@@ -27,11 +27,9 @@ C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\Database
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.exe
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.pdb
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.csprojResolveAssemblyReference.cache
-C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\CreateReport.baml
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\MainWindow.baml
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\RapportHantering.baml
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\Settings.baml
-C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\CreateReport.g.cs
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\MainWindow.g.cs
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\RapportHantering.g.cs
 C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\Settings.g.cs

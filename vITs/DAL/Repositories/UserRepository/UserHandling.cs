@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace DAL.UserRepository
+namespace DAL.Repositories.UserRepository
 {
     /// <summary>
     /// Contains methods for managing the Users table
@@ -9,7 +9,6 @@ namespace DAL.UserRepository
     /// </summary>
     class UserHandling
     {
-
         /// <summary>
         /// Add a new user to Users table
         /// </summary>
