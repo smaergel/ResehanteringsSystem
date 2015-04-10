@@ -93,6 +93,7 @@
     <Compile Include="Expence.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ExpencesRepository.cs" />
     <Compile Include="Setting.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
