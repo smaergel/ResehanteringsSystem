@@ -106,6 +106,7 @@
     <Compile Include="Vacation.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="VacationsRepository.cs" />
     <Compile Include="Verification.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>

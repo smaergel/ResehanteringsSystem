@@ -49,16 +49,10 @@ namespace DAL
         /// <summary>
         /// Update verification in Verifications table
         /// </summary>
-        /// <param name="vID"></param>
-        /// <param name="expenceID"></param>
-        /// <param name="cost"></param>
-        /// <param name="path"></param>
-        /// <param name="date"></param>
-        /// <param name="note"></param>
-        /// <param name="id"></param>
-        public void UpdateVerification2(int vID, Verification verification)
+        /// <param name="verification"></param>
+        public void UpdateVerification2(Verification verification)
         {
-            Verification v = _dbConnect.Verifications.FirstOrDefault(x => x.verificationID == vID);
+            Verification v = _dbConnect.Verifications.FirstOrDefault(x => x.verificationID == verification.verificationID);
             v.expenceID = verification.expenceID;
             v.cost = verification.cost;
             v.path = verification.path;
