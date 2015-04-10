@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace DAL.UserRepository
 {
@@ -66,7 +62,7 @@ namespace DAL.UserRepository
         {
             using (var dbConnect = new DatabaseEntities())
             {
-                var thisUser = new User() { userID = id };
+                var thisUser = new User { userID = id };
                 dbConnect.Users.Attach(thisUser);
 
                 return thisUser;
