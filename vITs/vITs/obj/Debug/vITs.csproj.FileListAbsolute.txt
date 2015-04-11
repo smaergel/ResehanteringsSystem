@@ -105,3 +105,6 @@ C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework
 C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.pdb
 C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.xml
 C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\paulm_000\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.exe.config
+C:\Users\paulm_000\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.exe
+C:\Users\paulm_000\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.pdb
