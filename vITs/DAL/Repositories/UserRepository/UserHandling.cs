@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
 namespace DAL.Repositories.UserRepository
@@ -60,6 +61,22 @@ namespace DAL.Repositories.UserRepository
                 dbConnect.Bosses.Attach(revokedBoss);
                 dbConnect.Bosses.Remove(revokedBoss);
                 dbConnect.SaveChanges();
+            }
+            
+        }
+
+        /// <summary>
+        /// Returns a list of all bosses registered
+        /// </summary>
+        /// <returns>List of Object:Boss</returns>
+        public static List<Boss> ListBosses()
+        {
+            using (var dbConnect = new DatabaseEntities())
+            {
+                var bosses = dbConnect.Bosses.ToList();
+
+                return bosses;
+
             }
             
         }

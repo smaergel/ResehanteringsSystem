@@ -120,3 +120,9 @@ C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityF
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.pdb
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.xml
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.exe
+C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.dll
+C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.pdb
+C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.xml
+C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.xml
