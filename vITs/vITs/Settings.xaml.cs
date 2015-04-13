@@ -12,7 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DAL;
+<<<<<<< HEAD
 using DAL.Repositories.UserRepository;
+=======
+>>>>>>> origin/master
 
 namespace vITs
 {
@@ -24,6 +27,20 @@ namespace vITs
         public Settings()
         {
             InitializeComponent();
+        }
+
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            User newUser = new User
+            {
+                firstname = tbxFirstname.Text,
+                lastname = tbxLastname.Text,
+                phone = tbxTele.Text,
+                email = tbxEmail.Text,
+                password = tbxPasswordFirst.Text,
+                boss = cbChef1.SelectedIndex
+            };
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
