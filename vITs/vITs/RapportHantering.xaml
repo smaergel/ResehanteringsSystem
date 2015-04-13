@@ -39,7 +39,7 @@
                     <Label x:Name="lblKostnadTyp" Content="Kostnadstyp:" HorizontalAlignment="Left" Margin="24,57,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="tbCostNotes" HorizontalAlignment="Left" Height="57" Margin="93,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" AcceptsReturn="True"/>
                     <Label x:Name="lblCostNotes" Content="Notering:" HorizontalAlignment="Left" Margin="24,171,0,0" VerticalAlignment="Top"/>
-                    <ComboBox HorizontalAlignment="Left" Margin="104,19,0,0" VerticalAlignment="Top" Width="189"/>
+                    <ComboBox x:Name="cbPickTripExpensesTab" HorizontalAlignment="Left" Margin="104,19,0,0" VerticalAlignment="Top" Width="189"/>
                     <Label Content="Välj resa:" HorizontalAlignment="Left" Margin="27,15,0,0" VerticalAlignment="Top"/>
                     <Button Content="Ta bort valt utlägg" HorizontalAlignment="Left" Margin="548,223,0,0" VerticalAlignment="Top" Width="110"/>
                 </Grid>

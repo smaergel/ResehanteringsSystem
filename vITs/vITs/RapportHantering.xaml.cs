@@ -26,19 +26,31 @@ namespace vITs
         {
             InitializeComponent();
             fillCbsWithCountries();
+            filTripCbWithAllTrips();
         }
 
         //Fyller cbs i skapa rapport fliken med länderna som finns i databasen (landnamn + id)
         private void fillCbsWithCountries()
         {
-            //var CountryCollection = ;
-            /* foreach (var countryObject in CountryCollection)
+            var hh = new HandleItems();
+            var CountryCollection = hh.SendCountryList();
+            foreach (var countryObject in CountryCollection)
             {
-                cbCountryArrival.Items.Add(countryObject);
-                cbCountryDeparture.Items.Add(countryObject);
+                cbCountryArrival.Items.Add(countryObject.countryID + ". " + countryObject.country1);
+                cbCountryDeparture.Items.Add(countryObject.countryID + ". " + countryObject.country1);
     
-            }*/
+            }
             
+        }
+
+        private void filTripCbWithAllTrips()
+        {
+            var hh = new HandleItems();
+            var TripCollection = hh.SendTripList();
+            foreach (var TripObject in TripCollection)
+            {
+                cbPickTripExpensesTab.Items.Add(TripObject.note);
+            }
         }
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
@@ -46,8 +58,8 @@ namespace vITs
             //skapar en modell av typen resa
             var trip = new TripModel();
             //fyller modellen med information
-            trip.Origin = cbCountryDeparture.SelectedIndex;
-            trip.Destination = cbCountryArrival.SelectedIndex;
+            trip.Origin = cbCountryDeparture.SelectedIndex + 1;
+            trip.Destination = cbCountryArrival.SelectedIndex + 1;
             trip.Start = (DateTime) dpStartDate.SelectedDate;
             trip.End = (DateTime) dpEndDate.SelectedDate;
             var prepay = tbPrepaySum.Text;
@@ -55,6 +67,7 @@ namespace vITs
             int.TryParse(prepay, out prepaySum);
             trip.Prepayment = prepaySum;
             trip.Note = tbMotivation.Text;
+            trip.User = 1;
 
             //skapar objekt av klassen AddItems och skickar vidare modellen
             AddItems newItem = new AddItems();

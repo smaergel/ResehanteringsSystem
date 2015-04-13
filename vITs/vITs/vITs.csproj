@@ -76,6 +76,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Logic\AddItems.cs" />
+    <Compile Include="Logic\HandleItems.cs" />
     <Compile Include="Models\TripModel.cs" />
     <Compile Include="RapportHantering.xaml.cs">
       <DependentUpon>RapportHantering.xaml</DependentUpon>

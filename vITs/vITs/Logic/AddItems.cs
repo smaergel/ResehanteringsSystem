@@ -14,7 +14,7 @@ namespace vITs.Logic
         public void AddTrip(TripModel trip)
         {
             //överför modellen TripModell till ett objekt av databastypen Trip
-            Trip newTrip = new Trip();
+            var newTrip = new Trip();
             newTrip.origin = trip.Origin;
             newTrip.destination = trip.Destination;
             newTrip.start = trip.Start;
