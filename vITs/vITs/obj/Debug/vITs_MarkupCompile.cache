@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\
+=======
+D:\VSProjekt\ResehanteringsSystem\vITs\vITs\obj\Debug\
+>>>>>>> origin/master
 vITs
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\App.xaml
 31810450579
 2-980765204
 91821265362
 16-1651363052
+=======
+D:\VSProjekt\ResehanteringsSystem\vITs\vITs\App.xaml
+31810450579
+2-980765204
+7-2131744442
+161845923502
+>>>>>>> origin/master
 MainWindow.xaml;RapportHantering.xaml;Settings.xaml;
 
 False
