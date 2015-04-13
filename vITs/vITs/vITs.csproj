@@ -75,9 +75,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+<<<<<<< HEAD
     <Compile Include="Logic\AddItems.cs" />
     <Compile Include="Logic\HandleItems.cs" />
     <Compile Include="Models\TripModel.cs" />
+=======
+>>>>>>> c1701da36c95cdd7ee9b41c0bd7517bcec2b0539
     <Compile Include="RapportHantering.xaml.cs">
       <DependentUpon>RapportHantering.xaml</DependentUpon>
     </Compile>
@@ -141,6 +144,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <Resource Include="Graphic\logbg.png" />
+    <Resource Include="Graphic\bg.png" />
+    <Resource Include="Graphic\btn.png" />
+    <Resource Include="Graphic\concrete_seamless.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -165,7 +172,6 @@
       <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
