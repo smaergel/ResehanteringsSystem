@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DAL;
 
 namespace vITs
 {
@@ -23,5 +24,19 @@ namespace vITs
         {
             InitializeComponent();
         }
+
+        private void btnSend_Click(object sender, RoutedEventArgs e)
+        {
+            if ((User)Application.Current.Properties["currentUser"] != null)
+            {
+                User id = (User)Application.Current.Properties["currentUser"];
+                lblloggedin.Content = id.lastname.ToString();
+            }
+            else
+            {
+                lblloggedin.Content = "Ej inloggad";
+            }
+        }
+        
     }
 }

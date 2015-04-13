@@ -112,7 +112,7 @@
     <Compile Include="Verification.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\VerificationRepository\VerificationRepository.cs" />
+    <Compile Include="VerificationRepository\VerificationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
