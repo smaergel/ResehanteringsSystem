@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DAL;
+using vITs.Logic;
+using vITs.Models;
 
 namespace vITs
 {
@@ -22,6 +25,40 @@ namespace vITs
         public RapportHantering()
         {
             InitializeComponent();
+            fillCbsWithCountries();
+        }
+
+        //Fyller cbs i skapa rapport fliken med länderna som finns i databasen (landnamn + id)
+        private void fillCbsWithCountries()
+        {
+            //var CountryCollection = ;
+            /* foreach (var countryObject in CountryCollection)
+            {
+                cbCountryArrival.Items.Add(countryObject);
+                cbCountryDeparture.Items.Add(countryObject);
+    
+            }*/
+            
+        }
+
+        private void btnSend_Click(object sender, RoutedEventArgs e)
+        {
+            //skapar en modell av typen resa
+            var trip = new TripModel();
+            //fyller modellen med information
+            trip.Origin = cbCountryDeparture.SelectedIndex;
+            trip.Destination = cbCountryArrival.SelectedIndex;
+            trip.Start = (DateTime) dpStartDate.SelectedDate;
+            trip.End = (DateTime) dpEndDate.SelectedDate;
+            var prepay = tbPrepaySum.Text;
+            int prepaySum;
+            int.TryParse(prepay, out prepaySum);
+            trip.Prepayment = prepaySum;
+            trip.Note = tbMotivation.Text;
+
+            //skapar objekt av klassen AddItems och skickar vidare modellen
+            AddItems newItem = new AddItems();
+            newItem.AddTrip(trip);
         }
     }
 }
