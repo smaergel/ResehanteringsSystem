@@ -37,27 +37,6 @@ namespace DAL.Repositories.UserRepository
         }
 
         /// <summary>
-        /// Checks wheter a UserID is a boss or not
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns>Bool: True if the user is a Boss, else false</returns>
-        public static bool IsBoss(int id)
-        {
-            using (var dbConnect = new DatabaseEntities())
-            {
-                Boss boss = dbConnect.Bosses.Find(id);
-
-                if (boss == null)
-                {
-                    return true;
-                }
-
-                return false;
-            }
-            
-        }
-
-        /// <summary>
         /// Remove a Users Boss privileges
         /// </summary>
         /// <param name="id">UserID</param>

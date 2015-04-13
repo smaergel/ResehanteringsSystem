@@ -108,18 +108,9 @@ C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework
 C:\Users\paulm_000\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.exe.config
 C:\Users\paulm_000\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.exe
 C:\Users\paulm_000\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.pdb
-<<<<<<< HEAD
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.exe
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.dll
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.pdb
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.xml
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.xml
-=======
-C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.exe
-C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.dll
-C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.pdb
-C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.xml
-C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.xml
->>>>>>> c6257dc292fc7beabde9aad1b7b01a6708414196
