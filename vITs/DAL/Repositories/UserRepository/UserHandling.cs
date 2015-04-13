@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
+﻿using System.Linq;
 
 namespace DAL.Repositories.UserRepository
 {
@@ -21,17 +19,6 @@ namespace DAL.Repositories.UserRepository
             {
                 dbConnect.Users.Add(user);
                 dbConnect.SaveChanges();
-            }
-        }
-
-        //Den kollar ifall emailen finns i databasen
-        // ifall metoden returnerar null så finns inte användarnamnet i databasen.
-        public static User ValidateIfEmailExists(string email)
-        {
-            using (var context = new DatabaseEntities())
-            {
-                return context.Users.FirstOrDefault(x =>
-                    x.email.Equals(email));
             }
         }
 
@@ -61,22 +48,6 @@ namespace DAL.Repositories.UserRepository
                 dbConnect.Bosses.Attach(revokedBoss);
                 dbConnect.Bosses.Remove(revokedBoss);
                 dbConnect.SaveChanges();
-            }
-            
-        }
-
-        /// <summary>
-        /// Returns a list of all bosses registered
-        /// </summary>
-        /// <returns>List of Object:Boss</returns>
-        public static List<Boss> ListBosses()
-        {
-            using (var dbConnect = new DatabaseEntities())
-            {
-                var bosses = dbConnect.Bosses.ToList();
-
-                return bosses;
-
             }
             
         }
@@ -137,7 +108,6 @@ namespace DAL.Repositories.UserRepository
 
                 dbConnect.SaveChanges();
             }
-            
         }
     }
 }

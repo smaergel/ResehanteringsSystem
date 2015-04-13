@@ -108,7 +108,6 @@ C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework
 C:\Users\paulm_000\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.exe.config
 C:\Users\paulm_000\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.exe
 C:\Users\paulm_000\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.pdb
-<<<<<<< HEAD
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.exe.config
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.exe
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.pdb
@@ -135,23 +134,3 @@ C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs_MarkupCompi
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.g.resources
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.Properties.Resources.resources
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.csproj.GenerateResource.Cache
-=======
-C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.exe
-C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.dll
-C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.pdb
-C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.xml
-C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.exe
-C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.dll
-C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.pdb
-C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.xml
-C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.exe
-C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.dll
-C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.pdb
-C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.xml
-C:\Users\Linus Waerner\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.xml
->>>>>>> origin/master

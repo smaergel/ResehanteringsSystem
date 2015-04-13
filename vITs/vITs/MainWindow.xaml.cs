@@ -53,7 +53,6 @@ namespace vITs
                 {
                     if (UserHandling.GetUser(value) != null)
                     {
-<<<<<<< HEAD
                         if (UserHandling.GetUser(value).userID.Equals(value) && UserHandling.GetUser(value).password.Equals(passwordinput))
                         {
                             loggedInUser = UserHandling.GetUser(value);
@@ -68,11 +67,6 @@ namespace vITs
                         {
                             System.Windows.MessageBox.Show("Inlogg eller lösenord fel");
                         }
-=======
-                        var rapport = new RapportHantering();
-                        rapport.Show();
-                        Close();
->>>>>>> origin/master
                     }
                     else
                     {
