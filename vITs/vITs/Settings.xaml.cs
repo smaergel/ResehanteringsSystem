@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DAL;
+using DAL.Repositories.UserRepository;
 
 namespace vITs
 {
@@ -26,14 +28,20 @@ namespace vITs
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //var oPass = oldPassword;
-           // var nPass = newPassword;
-           // var vNewPass = verifyNewPass;
-
-           // if (newPassword.Equals(verifyNewPass) && oldPassword != newPassword) ;
-            //{
-                
-            //}
+            //ID:t ska bytas ut mot inloggad användare.
+            int id = 0;
+            var changePass = UserHandling.GetUser(id);
+            if (newPassword.Text.Equals(verifyNewPass) && oldPassword != newPassword)
+            {
+                changePass.password = newPassword.Text;
+                UserHandling.UpdateUser(changePass);
+            }
+            else
+            {
+                {
+                    Console.WriteLine("Lösenordet är redan i användning");
+                }
+            }
         }
     }
 }

@@ -17,9 +17,9 @@
                     <Label Content="Nytt lösenord:" HorizontalAlignment="Left" Margin="102,65,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
                     <Label Content="Verifiera nytt lösenord:" HorizontalAlignment="Left" Margin="54,106,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
                     <Label Content="Gammalt lösenord:" HorizontalAlignment="Left" Margin="77,151,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="79.284,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="79.284,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="79.284,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <TextBox x:Name="newPassword" HorizontalAlignment="Left" Height="23" Margin="79.284,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <TextBox x:Name="verifyNewPass" HorizontalAlignment="Left" Height="23" Margin="79.284,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <TextBox x:Name="oldPassword" HorizontalAlignment="Left" Height="23" Margin="79.284,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
                     <Button Content="Avbryt" HorizontalAlignment="Left" Margin="152,196,0,0" VerticalAlignment="Top" Width="76" Grid.Column="1"/>
                     <Button Content="OK" HorizontalAlignment="Left" Margin="50,196,0,0" VerticalAlignment="Top" Width="76" Grid.Column="1"/>
                 </Grid>
