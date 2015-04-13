@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace DAL.Repositories.UserRepository
 {
@@ -19,6 +20,17 @@ namespace DAL.Repositories.UserRepository
             {
                 dbConnect.Users.Add(user);
                 dbConnect.SaveChanges();
+            }
+        }
+
+        //Den kollar ifall emailen finns i databasen
+        // ifall metoden returnerar null så finns inte användarnamnet i databasen.
+        public static User ValidateIfEmailExists(string email)
+        {
+            using (var context = new DatabaseEntities())
+            {
+                return context.Users.FirstOrDefault(x =>
+                    x.email.Equals(email));
             }
         }
 
@@ -108,6 +120,7 @@ namespace DAL.Repositories.UserRepository
 
                 dbConnect.SaveChanges();
             }
+            
         }
     }
 }
