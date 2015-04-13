@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DAL;
+using vITs.Logic;
+using vITs.Models;
 
 namespace vITs
 {
@@ -23,7 +25,6 @@ namespace vITs
         public RapportHantering()
         {
             InitializeComponent();
-<<<<<<< HEAD
             fillCbsWithCountries();
             filTripCbWithAllTrips();
         }
@@ -40,8 +41,6 @@ namespace vITs
     
             }
             
-=======
->>>>>>> c1701da36c95cdd7ee9b41c0bd7517bcec2b0539
         }
 
         private void filTripCbWithAllTrips()
@@ -56,7 +55,6 @@ namespace vITs
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
-<<<<<<< HEAD
             //skapar en modell av typen resa
             var trip = new TripModel();
             //fyller modellen med information
@@ -74,18 +72,6 @@ namespace vITs
             //skapar objekt av klassen AddItems och skickar vidare modellen
             AddItems newItem = new AddItems();
             newItem.AddTrip(trip);
-=======
-            if ((User)Application.Current.Properties["currentUser"] != null)
-            {
-                User id = (User)Application.Current.Properties["currentUser"];
-                lblloggedin.Content = id.lastname.ToString();
-            }
-            else
-            {
-                lblloggedin.Content = "Ej inloggad";
-            }
->>>>>>> c1701da36c95cdd7ee9b41c0bd7517bcec2b0539
         }
-        
     }
 }
