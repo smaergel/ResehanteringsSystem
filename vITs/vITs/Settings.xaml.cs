@@ -25,11 +25,30 @@ namespace vITs
             InitializeComponent();
         }
 
+
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            User newUser = new User {firstname = tbxFirstname.Text, lastname = tbxLastname.Text,
-            phone = tbxTele.Text, email = tbxEmail.Text, password = tbxPasswordFirst.Text,
-            boss = cbChef1.SelectedIndex};
+            User newUser = new User
+            {
+                firstname = tbxFirstname.Text,
+                lastname = tbxLastname.Text,
+                phone = tbxTele.Text,
+                email = tbxEmail.Text,
+                password = tbxPasswordFirst.Text,
+                boss = cbChef1.SelectedIndex
+            };
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //var oPass = oldPassword;
+           // var nPass = newPassword;
+           // var vNewPass = verifyNewPass;
+
+           // if (newPassword.Equals(verifyNewPass) && oldPassword != newPassword) ;
+            //{
+                
+            //}
         }
     }
 }
