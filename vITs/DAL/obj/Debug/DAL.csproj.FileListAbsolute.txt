@@ -53,27 +53,6 @@ C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.
 C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.exe
 C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.pdb
-<<<<<<< HEAD
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServerCompact.dll
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\System.Data.SqlServerCe.dll
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServerCompact.xml
-=======
-C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServerCompact.dll
-C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\System.Data.SqlServerCe.dll
-C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServerCompact.xml
-D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\Database.mdf
-D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\Database_log.ldf
-D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\DAL.exe.config
-D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\DAL.exe
-D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\DAL.pdb
-D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.dll
-D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServer.dll
-D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServerCompact.dll
-D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\System.Data.SqlServerCe.dll
-D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.xml
-D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServer.xml
-D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServerCompact.xml
-D:\VSProjekt\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-D:\VSProjekt\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.exe
-D:\VSProjekt\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.pdb
->>>>>>> origin/master
