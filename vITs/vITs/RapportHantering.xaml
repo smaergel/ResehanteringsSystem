@@ -19,9 +19,9 @@
                     <DatePicker x:Name="dpVacationEnd" HorizontalAlignment="Left" Margin="252,115,0,0" VerticalAlignment="Top" Width="113" FirstDayOfWeek="Monday"/>
                     <DatePicker x:Name="dpVacationStart" HorizontalAlignment="Left" Margin="121,115,0,0" VerticalAlignment="Top" Width="111" FirstDayOfWeek="Monday"/>
                     <Label x:Name="lblPrepay" Content="Förskottsbetalning:" HorizontalAlignment="Left" Margin="24,154,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbPrepaySum" HorizontalAlignment="Left" Height="23" Margin="140,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" ClipToBounds="True"/>
+                    <TextBox x:Name="tbPrepaySum" HorizontalAlignment="Left" Height="23" Margin="140,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                     <Label x:Name="lblMotivation" Content="Motivering:" HorizontalAlignment="Left" Margin="284,157,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbMotivation" HorizontalAlignment="Left" Height="82" Margin="359,157,0,0" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Top" Width="198"/>
+                    <TextBox x:Name="tbMotivation" HorizontalAlignment="Left" Height="43" Margin="359,157,0,0" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Top" Width="257"/>
                     <Button x:Name="btnSend" Content="Spara resa" HorizontalAlignment="Left" Margin="540,244,0,0" VerticalAlignment="Top" Width="76" Click="btnSend_Click"/>
                 </Grid>
             </TabItem>
@@ -39,7 +39,7 @@
                     <Label x:Name="lblKostnadTyp" Content="Kostnadstyp:" HorizontalAlignment="Left" Margin="24,57,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="tbCostNotes" HorizontalAlignment="Left" Height="57" Margin="93,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" AcceptsReturn="True"/>
                     <Label x:Name="lblCostNotes" Content="Notering:" HorizontalAlignment="Left" Margin="24,171,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="cbPickTripExpensesTab" HorizontalAlignment="Left" Margin="104,19,0,0" VerticalAlignment="Top" Width="189"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="104,19,0,0" VerticalAlignment="Top" Width="189"/>
                     <Label Content="Välj resa:" HorizontalAlignment="Left" Margin="27,15,0,0" VerticalAlignment="Top"/>
                     <Button Content="Ta bort valt utlägg" HorizontalAlignment="Left" Margin="548,223,0,0" VerticalAlignment="Top" Width="110"/>
                 </Grid>

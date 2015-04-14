@@ -13,13 +13,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DAL.Repositories.UserRepository;
+using DAL;
+
 namespace vITs
 {
+        
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        public User loggedInUser;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -47,15 +52,26 @@ namespace vITs
                 int value;
                 if (int.TryParse(userinput, out value))
                 {
-                    if (UserHandling.GetUser(value).userID.Equals(value) && UserHandling.GetUser(value).password.Equals(passwordinput))
+                    if (UserHandling.GetUser(value) != null)
                     {
-                        var rapport = new RapportHantering();
-                        rapport.Show();
-                        Close();
+                        if (UserHandling.GetUser(value).userID.Equals(value) && UserHandling.GetUser(value).password.Equals(passwordinput))
+                        {
+                            loggedInUser = UserHandling.GetUser(value);
+                            
+                            RapportHantering cr = new RapportHantering();
+                            cr.Show();
+                            this.Close();
+                            Application.Current.Properties["currentUser"] = UserHandling.GetUser(value);
+                            
+                        }
+                        else
+                        {
+                            System.Windows.MessageBox.Show("Inlogg eller lösenord fel");
+                        }
                     }
                     else
                     {
-                        System.Windows.MessageBox.Show("Inlogg eller lösenord fel");
+                        MessageBox.Show("Finns ingen anställd med det anställningsnumret.");
                     }
                 }
                 else 
