@@ -88,7 +88,6 @@ namespace vITs
             AddItems newItem = new AddItems();
             newItem.AddTrip(trip);
             ClearFieldsAndReloadBoxes();
-            MessageBox.Show(HandleItems.SendTripList().Count.ToString());
             }
         }
     }
