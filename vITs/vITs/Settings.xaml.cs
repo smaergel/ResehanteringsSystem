@@ -24,18 +24,7 @@ namespace vITs
         public Settings()
         {
             InitializeComponent();
-            FillBossList();
-        }
-
-        private void FillBossList()
-        {
-            var handle = new HandleItems();
-            var bossList = handle.SendBossList();
-            foreach (var boss in bossList)
-            {
-                cbChef.Items.Add(boss.userID);
-            }
-        }
+         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -64,11 +53,6 @@ namespace vITs
         private void cbxBoss_Checked(object sender, RoutedEventArgs e)
         {
             cbChef.IsEnabled = false;
-        }
-
-        private void cbxBoss_Unchecked(object sender, RoutedEventArgs e)
-        {
-            cbChef.IsEnabled = true;
         }
     }
 }

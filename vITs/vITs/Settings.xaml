@@ -63,7 +63,7 @@
                     <TextBox x:Name="tbxFirstName" HorizontalAlignment="Left" Height="23" Margin="192,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
                     <TextBox x:Name="tbxTele" HorizontalAlignment="Left" Height="23" Margin="192,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
                     <TextBox x:Name="tbxEmail" HorizontalAlignment="Left" Height="23" Margin="192,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-                    <CheckBox x:Name="cbxBoss" Content="Chef" HorizontalAlignment="Left" Margin="446,61,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.661,0.863" Checked="cbxBoss_Checked" Unchecked="cbxBoss_Unchecked"/>
+                    <CheckBox x:Name="cbxBoss" Content="Chef" HorizontalAlignment="Left" Margin="446,61,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.661,0.863" Checked="cbxBoss_Checked"/>
                     <Button x:Name="btnCancel" Content="Avbryt" HorizontalAlignment="Left" Margin="563,337,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1" RenderTransformOrigin="0.453,1.7"/>
                     <Button x:Name="btnSave" Content="Spara" HorizontalAlignment="Left" Margin="468,337,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1" Click="btnSave_Click"/>
                     <Label Content="Lösenord:" HorizontalAlignment="Left" Margin="68,183,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.848,0.654"/>

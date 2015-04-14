@@ -37,7 +37,5 @@ namespace vITs.Logic
             UserHandling.AddUser(user);
             UserHandling.AddUserAsBoss(user);
         }
-
-       
     }
 }
