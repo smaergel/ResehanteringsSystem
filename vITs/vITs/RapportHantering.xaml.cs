@@ -26,28 +26,15 @@ namespace vITs
         {
             InitializeComponent();
             fillCbsWithCountries();
-            FillTripCbWithAllTrips();
-        }
-
-        private void ClearFieldsAndReloadBoxes()
-        {
-            
-            tbPrepaySum.Clear();
-            tbMotivation.Clear();
-            cbCountryDeparture.Items.Clear();
-            cbCountryArrival.Items.Clear();
-            fillCbsWithCountries();
-            FillTripCbWithAllTrips();
-
-
+            filTripCbWithAllTrips();
         }
 
         //Fyller cbs i skapa rapport fliken med länderna som finns i databasen (landnamn + id)
         private void fillCbsWithCountries()
         {
-            var handle = new HandleItems();
-            var countryCollection = handle.SendCountryList();
-            foreach (var countryObject in countryCollection)
+            var hh = new HandleItems();
+            var CountryCollection = hh.SendCountryList();
+            foreach (var countryObject in CountryCollection)
             {
                 cbCountryArrival.Items.Add(countryObject.countryID + ". " + countryObject.country1);
                 cbCountryDeparture.Items.Add(countryObject.countryID + ". " + countryObject.country1);
@@ -56,19 +43,18 @@ namespace vITs
             
         }
 
-        private void FillTripCbWithAllTrips()
+        private void filTripCbWithAllTrips()
         {
-            var handle = new HandleItems();
-            var tripCollection = handle.SendTripList();
-            foreach (var tripObject in tripCollection)
+            var hh = new HandleItems();
+            var TripCollection = hh.SendTripList();
+            foreach (var TripObject in TripCollection)
             {
-                cbPickTripExpensesTab.Items.Add(tripObject.note);
+                cbPickTripExpensesTab.Items.Add(TripObject.note);
             }
         }
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
-            
             //skapar en modell av typen resa
             var trip = new TripModel();
             //fyller modellen med information
@@ -82,14 +68,10 @@ namespace vITs
             trip.Prepayment = prepaySum;
             trip.Note = tbMotivation.Text;
             trip.User = 1;
-            //validerar informationen som hämtats ut or boxarna
-            if (Validering.CheckPrepaySum(trip.Prepayment))
-            {
+
             //skapar objekt av klassen AddItems och skickar vidare modellen
             AddItems newItem = new AddItems();
             newItem.AddTrip(trip);
-            ClearFieldsAndReloadBoxes();
-            }
         }
     }
 }

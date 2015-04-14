@@ -48,7 +48,7 @@ namespace vITs
                 {
                     if (UserHandling.GetUser(value).userID.Equals(value) && UserHandling.GetUser(value).password.Equals(passwordinput))
                     {
-                        var rapport = new Settings();
+                        var rapport = new RapportHantering();
                         rapport.Show();
                         Close();
                     }
