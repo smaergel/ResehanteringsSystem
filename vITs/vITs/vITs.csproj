@@ -76,9 +76,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Logic\AddItems.cs" />
+    <Compile Include="Logic\AddUser.cs" />
     <Compile Include="Logic\HandleItems.cs" />
     <Compile Include="Logic\Validering.cs" />
     <Compile Include="Models\TripModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="RapportHantering.xaml.cs">
       <DependentUpon>RapportHantering.xaml</DependentUpon>
     </Compile>

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using vITs.Logic;
+using vITs.Models;
 
 namespace vITs
 {
@@ -22,6 +24,17 @@ namespace vITs
         public Settings()
         {
             InitializeComponent();
+            FillBossList();
+        }
+
+        private void FillBossList()
+        {
+            var handle = new HandleItems();
+            var bossList = handle.SendBossList();
+            foreach (var boss in bossList)
+            {
+                cbChef.Items.Add(boss.userID);
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -34,6 +47,28 @@ namespace vITs
             //{
                 
             //}
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            UserModel userModel = new UserModel(tbxFirstName.Text, tbxLastName.Text,
+            tbxPasswordFirst.Text, tbxEmail.Text, tbxTele.Text, cbChef.SelectedIndex);
+
+            if (cbxBoss.IsChecked == true)
+            {
+                AddUser.AddBoss(userModel);
+            }
+            AddUser.AddNewUser(userModel);
+        }
+
+        private void cbxBoss_Checked(object sender, RoutedEventArgs e)
+        {
+            cbChef.IsEnabled = false;
+        }
+
+        private void cbxBoss_Unchecked(object sender, RoutedEventArgs e)
+        {
+            cbChef.IsEnabled = true;
         }
     }
 }
