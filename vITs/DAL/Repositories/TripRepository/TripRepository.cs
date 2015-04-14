@@ -26,6 +26,17 @@ namespace DAL.Repositories.TripRepository
             }
         }
 
+        public static List<Trip> GetAllTrips()
+        {
+            using (var dbConnect = new DatabaseEntities())
+            {
+                var trips = dbConnect.Trips.ToList();
+
+                return trips;
+            }
+
+        }
+
         /// <summary>
         /// Remove a specific trip
         /// </summary>

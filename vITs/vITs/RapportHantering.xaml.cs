@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DAL;
+using vITs.Logic;
+using vITs.Models;
 
 namespace vITs
 {
@@ -23,7 +25,6 @@ namespace vITs
         public RapportHantering()
         {
             InitializeComponent();
-<<<<<<< HEAD
             fillCbsWithCountries();
             FillTripCbWithAllTrips();
         }
@@ -63,13 +64,10 @@ namespace vITs
             {
                 cbPickTripExpensesTab.Items.Add(tripObject.note);
             }
-=======
->>>>>>> origin/master
         }
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
-<<<<<<< HEAD
             
             //skapar en modell av typen resa
             var trip = new TripModel();
@@ -92,10 +90,6 @@ namespace vITs
             newItem.AddTrip(trip);
             ClearFieldsAndReloadBoxes();
             }
-=======
-
->>>>>>> origin/master
         }
-        
     }
 }
