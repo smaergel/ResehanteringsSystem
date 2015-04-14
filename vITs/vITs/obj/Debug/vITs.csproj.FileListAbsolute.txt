@@ -114,3 +114,9 @@ C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityF
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.pdb
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.xml
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.exe
+C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.dll
+C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.pdb
+C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.xml
+C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.xml
