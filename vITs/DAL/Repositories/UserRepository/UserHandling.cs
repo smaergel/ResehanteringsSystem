@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 
 namespace DAL.Repositories.UserRepository
 {
@@ -110,23 +109,5 @@ namespace DAL.Repositories.UserRepository
                 dbConnect.SaveChanges();
             }
         }
-
-        public static List<User> getBosses()
-        {
-            using (var dbConnect = new DatabaseEntities())
-            {
-                List<User> bossList = new List<User>();
-                var query = from u in dbConnect.Users
-                            join b in dbConnect.Bosses on u.userID equals b.userID
-                            select u;
-                foreach (User u in query)
-                {
-                    bossList.Add(u);
-                }
-                return bossList;
-
-            }
-        }
-
     }
 }
