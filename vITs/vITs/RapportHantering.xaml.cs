@@ -27,15 +27,7 @@ namespace vITs
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
-            if ((User)Application.Current.Properties["currentUser"] != null)
-            {
-                User id = (User)Application.Current.Properties["currentUser"];
-                lblloggedin.Content = id.lastname.ToString();
-            }
-            else
-            {
-                lblloggedin.Content = "Ej inloggad";
-            }
+
         }
         
     }

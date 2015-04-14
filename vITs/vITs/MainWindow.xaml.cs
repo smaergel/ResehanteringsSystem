@@ -32,6 +32,7 @@ namespace vITs
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
             RapportHantering cr = new RapportHantering();
             cr.Show();
             this.Close();

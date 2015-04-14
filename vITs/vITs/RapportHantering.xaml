@@ -23,7 +23,6 @@
                     <Label x:Name="lblMotivation" Content="Motivering:" HorizontalAlignment="Left" Margin="284,157,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="tbMotivation" HorizontalAlignment="Left" Height="43" Margin="359,157,0,0" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Top" Width="257"/>
                     <Button x:Name="btnSend" Content="Spara resa" HorizontalAlignment="Left" Margin="540,244,0,0" VerticalAlignment="Top" Width="76" Click="btnSend_Click"/>
-                    <Label x:Name="lblloggedin" Content="Label" HorizontalAlignment="Left" Margin="99,229,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
 
