@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using DAL;
 using DAL.Repositories.CountryRepository;
 using DAL.Repositories.TripRepository;
-using DAL.Repositories.UserRepository;
 
 namespace vITs.Logic
 {
@@ -23,9 +22,5 @@ namespace vITs.Logic
             return TripRepository.GetAllTrips();
         }
 
-        public List<User> SendBossList()
-        {
-            return UserHandling.getBosses();
-        }
     }
 }
