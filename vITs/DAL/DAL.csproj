@@ -96,6 +96,9 @@
     <Compile Include="Repositories\CountryRepository\CountryRepository.cs" />
     <Compile Include="Repositories\ExpenceRepository\ExpencesRepository.cs" />
     <Compile Include="Repositories\TripRepository\TripRepository.cs" />
+    <Compile Include="Repositories\UserRepository\UserHandling.cs" />
+    <Compile Include="Repositories\VacationRepository\VacationsRepository.cs" />
+    <Compile Include="Repositories\VerificationRepository\VerificationRepository.cs" />
     <Compile Include="Setting.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -105,15 +108,12 @@
     <Compile Include="User.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\UserRepository\UserHandling.cs" />
     <Compile Include="Vacation.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\VacationRepository\VacationsRepository.cs" />
     <Compile Include="Verification.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\VerificationRepository\VerificationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
@@ -135,15 +135,6 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Database.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

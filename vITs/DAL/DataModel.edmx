@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bosses">
           <Key>
             <PropertyRef Name="userID" />
@@ -16,7 +16,7 @@
             <PropertyRef Name="countryID" />
           </Key>
           <Property Name="countryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="country" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="country1" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="allowance" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Expences">
@@ -42,8 +42,8 @@
           <Property Name="tripID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="origin" Type="int" Nullable="false" />
           <Property Name="destination" Type="int" Nullable="false" />
-          <Property Name="start" Type="date" Nullable="false" />
-          <Property Name="end" Type="date" Nullable="false" />
+          <Property Name="start" Type="datetime" Nullable="false" />
+          <Property Name="end" Type="datetime" Nullable="false" />
           <Property Name="prepayment" Type="int" />
           <Property Name="note" Type="varchar(max)" />
           <Property Name="user" Type="int" Nullable="false" />
@@ -65,8 +65,8 @@
             <PropertyRef Name="VacationID" />
           </Key>
           <Property Name="VacationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="start" Type="date" Nullable="false" />
-          <Property Name="end" Type="date" Nullable="false" />
+          <Property Name="start" Type="datetime" Nullable="false" />
+          <Property Name="end" Type="datetime" Nullable="false" />
           <Property Name="tripID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Verifications">
@@ -77,7 +77,7 @@
           <Property Name="expenceID" Type="int" Nullable="false" />
           <Property Name="cost" Type="float" Nullable="false" />
           <Property Name="path" Type="varchar(max)" />
-          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
           <Property Name="note" Type="varchar(max)" />
           <Property Name="tripID" Type="int" Nullable="false" />
         </EntityType>
@@ -207,7 +207,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Boss">
           <Key>
             <PropertyRef Name="userID" />
@@ -249,8 +249,8 @@
           <Property Name="tripID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="origin" Type="Int32" Nullable="false" />
           <Property Name="destination" Type="Int32" Nullable="false" />
-          <Property Name="start" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="end" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="start" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="end" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="prepayment" Type="Int32" />
           <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="user" Type="Int32" Nullable="false" />
@@ -279,8 +279,8 @@
             <PropertyRef Name="VacationID" />
           </Key>
           <Property Name="VacationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="start" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="end" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="start" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="end" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="tripID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Trip" Relationship="Self.FK_Vacations_ToTrip" FromRole="Vacations" ToRole="Trips" />
         </EntityType>
@@ -292,7 +292,7 @@
           <Property Name="expenceID" Type="Int32" Nullable="false" />
           <Property Name="cost" Type="Double" Nullable="false" />
           <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="tripID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Expence" Relationship="Self.FK_Verifications_Expences" FromRole="Verifications" ToRole="Expences" />
@@ -437,7 +437,7 @@
             <EntityTypeMapping TypeName="DatabaseModel.Country">
               <MappingFragment StoreEntitySet="Countries">
                 <ScalarProperty Name="countryID" ColumnName="countryID" />
-                <ScalarProperty Name="country1" ColumnName="country" />
+                <ScalarProperty Name="country1" ColumnName="country1" />
                 <ScalarProperty Name="allowance" ColumnName="allowance" />
               </MappingFragment>
             </EntityTypeMapping>
