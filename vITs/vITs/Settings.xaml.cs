@@ -23,5 +23,17 @@ namespace vITs
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //var oPass = oldPassword;
+           // var nPass = newPassword;
+           // var vNewPass = verifyNewPass;
+
+           // if (newPassword.Equals(verifyNewPass) && oldPassword != newPassword) ;
+            //{
+                
+            //}
+        }
     }
 }
