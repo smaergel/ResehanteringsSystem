@@ -18,7 +18,7 @@ namespace vITs.Logic
             
         }
 
-        public List<Trip> SendTripList()
+        public static List<Trip> SendTripList()
         {
             return TripRepository.GetAllTrips();
         }

@@ -56,7 +56,6 @@ C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.pdb
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServerCompact.dll
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\System.Data.SqlServerCe.dll
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServerCompact.xml
-C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServerCompact.dll
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\System.Data.SqlServerCe.dll
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServerCompact.xml

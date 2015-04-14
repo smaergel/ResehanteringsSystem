@@ -58,8 +58,7 @@ namespace vITs
 
         private void FillTripCbWithAllTrips()
         {
-            var handle = new HandleItems();
-            var tripCollection = handle.SendTripList();
+            var tripCollection = HandleItems.SendTripList();
             foreach (var tripObject in tripCollection)
             {
                 cbPickTripExpensesTab.Items.Add(tripObject.note);
@@ -89,6 +88,7 @@ namespace vITs
             AddItems newItem = new AddItems();
             newItem.AddTrip(trip);
             ClearFieldsAndReloadBoxes();
+            MessageBox.Show(HandleItems.SendTripList().Count.ToString());
             }
         }
     }
