@@ -33,7 +33,7 @@ namespace vITs
             var bossList = handle.SendBossList();
             foreach (var boss in bossList)
             {
-                cbChef.Items.Add(boss.userID);
+                cbChef.Items.Add(boss.userID + ". " + boss.firstname + " " + boss.lastname);
             }
         }
 
@@ -51,19 +51,36 @@ namespace vITs
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            UserModel userModel = new UserModel(tbxFirstName.Text, tbxLastName.Text,
-            tbxPasswordFirst.Text, tbxEmail.Text, tbxTele.Text, cbChef.SelectedIndex);
-
-            if (cbxBoss.IsChecked == true)
+            if (AddUser.validateAddUser(tbxFirstName, tbxLastName,
+                tbxPasswordFirst, tbxPasswordSecond, tbxEmail, tbxTele, cbChef, cbxBoss))
             {
-                AddUser.AddBoss(userModel);
-            }
-            AddUser.AddNewUser(userModel);
+
+
+                if (cbxBoss.IsChecked == true)
+                {
+
+                    UserModel bossModel = new UserModel(tbxFirstName.Text, tbxLastName.Text,
+                        tbxPasswordFirst.Text, tbxEmail.Text, tbxTele.Text);
+
+                    AddUser.AddBoss(bossModel);
+                }
+                else
+                {
+                    var BossID = cbChef.SelectedItem.ToString().Split('.')[0];
+                    UserModel userModel = new UserModel(tbxFirstName.Text, tbxLastName.Text,
+                        tbxPasswordFirst.Text, tbxEmail.Text, tbxTele.Text, Convert.ToInt16(BossID));
+                    AddUser.AddNewUser(userModel);   
+                }
+           }
+
         }
 
         private void cbxBoss_Checked(object sender, RoutedEventArgs e)
         {
             cbChef.IsEnabled = false;
+            cbChef.SelectedItem = null;
+            
+            
         }
 
         private void cbxBoss_Unchecked(object sender, RoutedEventArgs e)
