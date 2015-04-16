@@ -24,7 +24,7 @@ namespace vITs
         public Settings()
         {
             InitializeComponent();
-            FillBossList();
+            //FillBossList();
         }
 
         private void FillBossList()
@@ -66,11 +66,13 @@ namespace vITs
                 }
                 else
                 {
-                    var BossID = cbChef.SelectedItem.ToString().Split('.')[0];
+                    // var BossID = cbChef.SelectedItem.ToString().Split('.')[0];
+                    // UserModel userModel = new UserModel(tbxFirstName.Text, tbxLastName.Text,
+                    //   tbxPasswordFirst.Text, tbxEmail.Text, tbxTele.Text, Convert.ToInt16(BossID));
                     UserModel userModel = new UserModel(tbxFirstName.Text, tbxLastName.Text,
-                        tbxPasswordFirst.Text, tbxEmail.Text, tbxTele.Text, Convert.ToInt16(BossID));
+                    tbxPasswordFirst.Text, tbxEmail.Text, tbxTele.Text);
                     AddUser.AddNewUser(userModel);   
-                }
+                   }
            }
 
         }

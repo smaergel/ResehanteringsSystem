@@ -44,7 +44,7 @@ namespace vITs.Logic
         TextBox pw, TextBox pw2, ComboBox cb, CheckBox cbx)
         {
             if (fn.Text == "" || ln.Text == "" || e.Text == "" || phon.Text == ""
-            || pw.Text == "" || pw2.Text == "" || cb.SelectedItem == null && cbx.IsChecked == false)
+            || pw.Text == "" || pw2.Text == "") //|| cb.SelectedItem == null && cbx.IsChecked == false
             {
                 System.Windows.MessageBox.Show("Fyll i alla fält");
                 return false;
