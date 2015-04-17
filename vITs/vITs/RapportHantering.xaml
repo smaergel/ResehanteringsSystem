@@ -15,13 +15,10 @@
                     <Label x:Name="lblDeparture" Content="Avreseland:" HorizontalAlignment="Left" Margin="24,28,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="lblArrival" Content="Ankomstland:" HorizontalAlignment="Left" Margin="252,28,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="lblDateTrip" Content="Datum:" HorizontalAlignment="Left" Margin="24,74,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="lblVacation" Content="Reseavbrott:" HorizontalAlignment="Left" Margin="24,113,0,0" VerticalAlignment="Top"/>
-                    <DatePicker x:Name="dpVacationEnd" HorizontalAlignment="Left" Margin="252,115,0,0" VerticalAlignment="Top" Width="113" FirstDayOfWeek="Monday"/>
-                    <DatePicker x:Name="dpVacationStart" HorizontalAlignment="Left" Margin="121,115,0,0" VerticalAlignment="Top" Width="111" FirstDayOfWeek="Monday"/>
-                    <Label x:Name="lblPrepay" Content="Förskottsbetalning:" HorizontalAlignment="Left" Margin="24,154,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbPrepaySum" HorizontalAlignment="Left" Height="23" Margin="140,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" ClipToBounds="True"/>
-                    <Label x:Name="lblMotivation" Content="Motivering:" HorizontalAlignment="Left" Margin="284,157,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbMotivation" HorizontalAlignment="Left" Height="82" Margin="359,157,0,0" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Top" Width="198"/>
+                    <Label x:Name="lblPrepay" Content="Förskottsbetalning:" HorizontalAlignment="Left" Margin="24,113,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbPrepaySum" HorizontalAlignment="Left" Height="23" Margin="140,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" ClipToBounds="True"/>
+                    <Label x:Name="lblMotivation" Content="Motivering:" HorizontalAlignment="Left" Margin="284,142,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbMotivation" HorizontalAlignment="Left" Height="82" Margin="359,113,0,0" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Top" Width="198"/>
                     <Button x:Name="btnSend" Content="Spara resa" HorizontalAlignment="Left" Margin="540,244,0,0" VerticalAlignment="Top" Width="76" Click="btnSend_Click"/>
                 </Grid>
             </TabItem>
