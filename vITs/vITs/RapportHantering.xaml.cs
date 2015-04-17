@@ -25,8 +25,9 @@ namespace vITs
         public RapportHantering()
         {
             InitializeComponent();
-            fillCbsWithCountries();
-            FillTripCbWithAllTrips();
+            HandleItems.FillCbsWithCountries(cbCountryArrival, cbCountryDeparture);
+            HandleItems.FillTripCbWithAllTrips(cbPickTripExpensesTab);
+            HandleItems.FillBossList(cbChef);
         }
 
         private void ClearFieldsAndReloadBoxes()
@@ -36,34 +37,13 @@ namespace vITs
             tbMotivation.Clear();
             cbCountryDeparture.Items.Clear();
             cbCountryArrival.Items.Clear();
-            fillCbsWithCountries();
-            FillTripCbWithAllTrips();
+            HandleItems.FillCbsWithCountries(cbCountryArrival, cbCountryDeparture);
+            HandleItems.FillTripCbWithAllTrips(cbPickTripExpensesTab);
 
 
         }
 
-        //Fyller cbs i skapa rapport fliken med länderna som finns i databasen (landnamn + id)
-        private void fillCbsWithCountries()
-        {
-            var handle = new HandleItems();
-            var countryCollection = handle.SendCountryList();
-            foreach (var countryObject in countryCollection)
-            {
-                cbCountryArrival.Items.Add(countryObject.countryID + ". " + countryObject.country1);
-                cbCountryDeparture.Items.Add(countryObject.countryID + ". " + countryObject.country1);
-    
-            }
-            
-        }
 
-        private void FillTripCbWithAllTrips()
-        {
-            var tripCollection = HandleItems.SendTripList();
-            foreach (var tripObject in tripCollection)
-            {
-                cbPickTripExpensesTab.Items.Add(tripObject.note);
-            }
-        }
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
