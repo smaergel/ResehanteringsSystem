@@ -13,16 +13,15 @@ namespace vITs.Models
         public string password { get; set; }
         public string email { get; set; }
         public string phone { get; set; }
-        public int boss { get; set; }
+       // public int boss { get; set; }
 
-        public UserModel(string fn,string ln, string pw, string e, string phon, int bs)
+        public UserModel(string fn,string ln, string pw, string e, string phon)
         {
             firstname = fn;
             lastname = ln;
             password = pw;
             email = e;
             phone = phon;
-            boss = bs;
-        }
+         }
     }
 }

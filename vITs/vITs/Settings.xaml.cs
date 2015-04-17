@@ -52,13 +52,17 @@ namespace vITs
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             UserModel userModel = new UserModel(tbxFirstName.Text, tbxLastName.Text,
-            tbxPasswordFirst.Text, tbxEmail.Text, tbxTele.Text, cbChef.SelectedIndex);
+            tbxPasswordFirst.Text, tbxEmail.Text, tbxTele.Text);
 
             if (cbxBoss.IsChecked == true)
             {
                 AddUser.AddBoss(userModel);
             }
-            AddUser.AddNewUser(userModel);
+            else
+            {
+                AddUser.AddNewUser(userModel);
+            }
+           
         }
 
         private void cbxBoss_Checked(object sender, RoutedEventArgs e)
