@@ -65,11 +65,23 @@ namespace vITs.Logic
             }
         }
 
-        //returnerar den inloggade användarens id.
-        public static int GetCurrentUser()
+        public static User GetUser(int id)
         {
 
-            return (int)Application.Current.Properties["currentUser"];
+            return UserHandling.GetUser(id);
+
+        }
+
+
+        ////returnerar den inloggade användarens id.
+        public static int GetCurrentUserId()
+        {
+
+
+            var currentUser = (User) Application.Current.Properties["currentUser"];
+
+
+            return currentUser.userID;
 
         }
 
