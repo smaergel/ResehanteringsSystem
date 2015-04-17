@@ -23,6 +23,8 @@ namespace vITs
         public MainWindow()
         {
             InitializeComponent();
+            CenterWindowOnScreen();
+            tbxUser.Focus();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -48,9 +50,11 @@ namespace vITs
                 {
                     if (UserHandling.GetUser(value).userID.Equals(value) && UserHandling.GetUser(value).password.Equals(passwordinput))
                     {
+                        Application.Current.Properties["currentUser"] = UserHandling.GetUser(value);
                         var rapport = new Settings();
                         rapport.Show();
                         Close();
+
                     }
                     else
                     {
@@ -64,5 +68,18 @@ namespace vITs
             }
             
         }
+
+        private void CenterWindowOnScreen()
+        {
+            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            double windowWidth = this.Width;
+            double windowHeight = this.Height;
+            this.Left = (screenWidth / 2) - (windowWidth / 2);
+            this.Top = (screenHeight / 2) - (windowHeight / 2);
+        }
+
+
+
     }
 }
