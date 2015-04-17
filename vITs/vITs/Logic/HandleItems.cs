@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using DAL;
 using DAL.Repositories.CountryRepository;
@@ -53,6 +54,8 @@ namespace vITs.Logic
 
         }
 
+        //fyller komboboxarna med existerande resor vid införandet av en combobox i parameterfältet.
+
         public static void FillTripCbWithAllTrips(ComboBox cb)
         {
             var tripCollection = SendTripList();
@@ -61,6 +64,15 @@ namespace vITs.Logic
                 cb.Items.Add(tripObject.note);
             }
         }
+
+        //returnerar den inloggade användarens id.
+        public static int GetCurrentUser()
+        {
+
+            return (int)Application.Current.Properties["currentUser"];
+
+        }
+
 
     }
 }

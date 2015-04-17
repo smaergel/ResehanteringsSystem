@@ -28,6 +28,7 @@ namespace DAL
         public Nullable<int> prepayment { get; set; }
         public string note { get; set; }
         public int user { get; set; }
+        public int boss { get; set; }
     
         public virtual Country Country { get; set; }
         public virtual Country Country1 { get; set; }

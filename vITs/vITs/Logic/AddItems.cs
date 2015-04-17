@@ -22,6 +22,7 @@ namespace vITs.Logic
             newTrip.prepayment = trip.Prepayment;
             newTrip.note = trip.Note;
             newTrip.user = trip.User;
+            newTrip.boss = trip.Boss;
 
             //för in datan i databasen
             TripRepository.AddTrip(newTrip);

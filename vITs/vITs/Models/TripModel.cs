@@ -15,5 +15,6 @@ namespace vITs.Models
         public int Prepayment { get; set; }
         public string Note { get; set; }
         public int User { get; set; }
+        public int Boss { get; set; }
     }
 }

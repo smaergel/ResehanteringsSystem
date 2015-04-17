@@ -60,7 +60,8 @@ namespace vITs
             int.TryParse(prepay, out prepaySum);
             trip.Prepayment = prepaySum;
             trip.Note = tbMotivation.Text;
-            trip.User = 1;
+            trip.User = 1;  //HandleItems.GetCurrentUser();
+            trip.Boss = (int) cbChef.SelectedValue;
             //validerar informationen som hämtats ut or boxarna
             if (Validering.CheckPrepaySum(trip.Prepayment))
             {
