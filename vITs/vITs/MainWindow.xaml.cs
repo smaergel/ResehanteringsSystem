@@ -13,8 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DAL.Repositories.UserRepository;
-using vITs.Logic;
-
 namespace vITs
 {
     /// <summary>
@@ -41,36 +39,27 @@ namespace vITs
             
             if(userinput.Trim() == "" || passwordinput.Trim() == "")
             {
-                MessageBox.Show("Fyll i alla fälten");
+                System.Windows.MessageBox.Show("Fyll i alla fälten");
             }
             else
             {
                 int value;
                 if (int.TryParse(userinput, out value))
                 {
-                    var user = HandleItems.GetUser(value);
-                    if (user.userID.Equals(value) && user.password.Equals(passwordinput))
+                    if (UserHandling.GetUser(value).userID.Equals(value) && UserHandling.GetUser(value).password.Equals(passwordinput))
                     {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-                        Application.Current.Properties["currentUser"] = UserHandling.GetUser(value);
-=======
-                        Application.Current.Properties["currentUser"] = user;
->>>>>>> origin/master
->>>>>>> parent of 5d45d47... Revert "Merge remote-tracking branch 'origin/master'"
                         var rapport = new Settings();
                         rapport.Show();
                         Close();
                     }
                     else
                     {
-                        MessageBox.Show("Inlogg eller lösenord fel");
+                        System.Windows.MessageBox.Show("Inlogg eller lösenord fel");
                     }
                 }
                 else 
                 {
-                    MessageBox.Show("Fyll i alla fälten");
+                    System.Windows.MessageBox.Show("Fyll i alla fälten");
                 }
             }
             
