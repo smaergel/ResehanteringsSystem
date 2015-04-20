@@ -24,10 +24,18 @@ namespace vITs
         public Settings()
         {
             InitializeComponent();
-            HandleItems.FillBossList(cbChef);
+            FillBossList();
         }
 
-       
+        private void FillBossList()
+        {
+            var handle = new HandleItems();
+            var bossList = handle.SendBossList();
+            foreach (var boss in bossList)
+            {
+                cbChef.Items.Add(boss.userID);
+            }
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -44,17 +52,13 @@ namespace vITs
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             UserModel userModel = new UserModel(tbxFirstName.Text, tbxLastName.Text,
-            tbxPasswordFirst.Text, tbxEmail.Text, tbxTele.Text);
+            tbxPasswordFirst.Text, tbxEmail.Text, tbxTele.Text, cbChef.SelectedIndex);
 
             if (cbxBoss.IsChecked == true)
             {
                 AddUser.AddBoss(userModel);
             }
-            else
-            {
-                AddUser.AddNewUser(userModel);
-            }
-           
+            AddUser.AddNewUser(userModel);
         }
 
         private void cbxBoss_Checked(object sender, RoutedEventArgs e)

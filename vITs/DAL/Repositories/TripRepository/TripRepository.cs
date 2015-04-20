@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
 namespace DAL.Repositories.TripRepository
 {
@@ -94,30 +91,5 @@ namespace DAL.Repositories.TripRepository
                 dbConnect.SaveChanges();
             }
         }
-
-        public static void ApproveDenyTrip(int id, bool status)
-        {
-
-            using (var context = new DatabaseEntities())
-            {
-
-               var trip = context.Trips.FirstOrDefault(x => x.tripID == id);
-
-                    if(trip != null)
-                    {
-
-                    trip.approved = status;
-                    context.SaveChanges();
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Hittade inte rapporten!");
-                    }
-
-            }
-
-        }
-
     }
 }

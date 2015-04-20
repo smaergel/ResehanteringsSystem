@@ -60,6 +60,8 @@ C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\Rapport
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.exe.config
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.exe
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.pdb
+C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\Database.mdf
+C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\Database_log.ldf
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.exe
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.pdb
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\MainWindow.baml
@@ -140,5 +142,3 @@ C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs_MarkupCompi
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.g.resources
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.Properties.Resources.resources
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.csproj.GenerateResource.Cache
-C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\Database.mdf
-C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\Database_log.ldf

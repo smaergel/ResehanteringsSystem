@@ -160,12 +160,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Database.mdf" />
     <Content Include="Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="Graphics\bg.png" />
     <Resource Include="Graphics\btn.png" />
