@@ -26,6 +26,6 @@ namespace vITs.Logic
         public List<User> SendBossList()
         {
             return UserHandling.getBosses();
-        }
+        }  
     }
 }
