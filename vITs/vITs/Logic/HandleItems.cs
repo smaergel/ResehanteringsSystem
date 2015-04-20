@@ -28,6 +28,7 @@ namespace vITs.Logic
         public List<User> SendBossList()
         {
             return UserHandling.getBosses();
+<<<<<<< HEAD
         }
 
         //fyller en kombobox med listan av chefer, tar emot cbn som ska fyllas
@@ -86,5 +87,8 @@ namespace vITs.Logic
         }
 
 
+=======
+        }  
+>>>>>>> origin/LoginGui
     }
 }

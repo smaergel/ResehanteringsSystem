@@ -57,8 +57,6 @@ C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFr
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServerCompact.dll
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\System.Data.SqlServerCe.dll
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServerCompact.xml
-C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\Database.mdf
-C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\Database_log.ldf
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\DAL.exe.config
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\DAL.exe
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\DAL.pdb
@@ -71,3 +69,8 @@ C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.S
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServerCompact.xml
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.exe
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.pdb
+<<<<<<< HEAD
+=======
+C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\kevin\Desktop\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+>>>>>>> origin/LoginGui

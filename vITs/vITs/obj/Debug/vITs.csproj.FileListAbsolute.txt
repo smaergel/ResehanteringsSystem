@@ -119,8 +119,6 @@ C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityF
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.exe.config
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.exe
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.pdb
-C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\Database.mdf
-C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\Database_log.ldf
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.exe
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.pdb
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.exe
