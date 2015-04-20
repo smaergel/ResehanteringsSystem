@@ -36,5 +36,6 @@ namespace DAL
         public virtual User User1 { get; set; }
         public virtual ICollection<Vacation> Vacations { get; set; }
         public virtual ICollection<Verification> Verifications { get; set; }
+        public virtual Boss Boss1 { get; set; }
     }
 }
