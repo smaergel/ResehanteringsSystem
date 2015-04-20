@@ -56,24 +56,24 @@
                     <ComboBox HorizontalAlignment="Left" Margin="192,35,0,0" VerticalAlignment="Top" Width="120"/>
                     <Button Content="Ta bort" HorizontalAlignment="Left" Margin="338,35,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.522,0.619"/>
                     <Label Content="Lägg till ny användare" HorizontalAlignment="Left" Margin="22,12,0,0" VerticalAlignment="Top" FontSize="16" Grid.Row="1"/>
-                    <Label Content="Namn:" HorizontalAlignment="Left" Margin="85,52,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <Label Content="Telefon:" HorizontalAlignment="Left" Margin="76,98,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <Label Content="Roll:" HorizontalAlignment="Left" Margin="396,55,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <Label Content="E-post:" HorizontalAlignment="Left" Margin="83,140,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <TextBox x:Name="tbxFirstName" HorizontalAlignment="Left" Height="23" Margin="192,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-                    <TextBox x:Name="tbxTele" HorizontalAlignment="Left" Height="23" Margin="192,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-                    <TextBox x:Name="tbxEmail" HorizontalAlignment="Left" Height="23" Margin="192,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-                    <CheckBox x:Name="cbxBoss" Content="Chef" HorizontalAlignment="Left" Margin="446,61,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.661,0.863" Checked="cbxBoss_Checked" Unchecked="cbxBoss_Unchecked"/>
+                    <Label Content="Förnamn:&#xD;&#xA;" HorizontalAlignment="Left" Margin="114,75,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+                    <Label Content="Telefon:" HorizontalAlignment="Left" Margin="122,137,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+                    <Label Content="Roll:" HorizontalAlignment="Left" Margin="396,75,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+                    <Label Content="E-post:" HorizontalAlignment="Left" Margin="122,168,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+                    <TextBox x:Name="tbxFirstName" HorizontalAlignment="Left" Height="23" Margin="192,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+                    <TextBox x:Name="tbxTele" HorizontalAlignment="Left" Height="23" Margin="192,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+                    <TextBox x:Name="tbxEmail" HorizontalAlignment="Left" Height="23" Margin="192,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+                    <CheckBox x:Name="cbxBoss" Content="Chef" HorizontalAlignment="Left" Margin="434,81,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.661,0.863" Checked="cbxBoss_Checked" Unchecked="cbxBoss_Unchecked"/>
                     <Button x:Name="btnCancel" Content="Avbryt" HorizontalAlignment="Left" Margin="563,337,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1" RenderTransformOrigin="0.453,1.7"/>
                     <Button x:Name="btnSave" Content="Spara" HorizontalAlignment="Left" Margin="468,337,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1" Click="btnSave_Click"/>
-                    <Label Content="Lösenord:" HorizontalAlignment="Left" Margin="68,183,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.848,0.654"/>
-                    <Label Content="Bekräfta lösenord:" HorizontalAlignment="Left" Margin="24,228,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.839,2.308"/>
-                    <TextBox x:Name="tbxPasswordFirst" HorizontalAlignment="Left" Height="23" Margin="192,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-                    <TextBox x:Name="tbxPasswordSecond" HorizontalAlignment="Left" Height="23" Margin="192,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+                    <Label Content="Lösenord:" HorizontalAlignment="Left" Margin="112,199,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.848,0.654"/>
+                    <Label Content="Bekräfta lösenord:" HorizontalAlignment="Left" Margin="68,231,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.839,2.308"/>
+                    <TextBox x:Name="tbxPasswordFirst" HorizontalAlignment="Left" Height="23" Margin="192,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+                    <TextBox x:Name="tbxPasswordSecond" HorizontalAlignment="Left" Height="23" Margin="192,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
                     <Label Content="Chef:" HorizontalAlignment="Left" Margin="392,106,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.848,0.654"/>
-                    <ComboBox x:Name="cbChef" HorizontalAlignment="Left" Margin="446,110,0,0" Grid.Row="1" VerticalAlignment="Top" Width="139"/>
-                    <TextBox x:Name="tbxLastName" HorizontalAlignment="Left" Height="23" Margin="192,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-                    <Label Content="Efternamn&#xD;&#xA;" HorizontalAlignment="Left" Margin="68,78,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.245"/>
+                    <ComboBox x:Name="cbChef" HorizontalAlignment="Left" Margin="434,110,0,0" Grid.Row="1" VerticalAlignment="Top" Width="139"/>
+                    <TextBox x:Name="tbxLastName" HorizontalAlignment="Left" Height="23" Margin="192,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+                    <Label Content="Efternamn&#xD;&#xA;" HorizontalAlignment="Left" Margin="110,106,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.245" Height="26"/>
                 </Grid>
             </TabItem>
         </TabControl>
