@@ -4,28 +4,16 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\obj\Debug\
-=======
-C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\
->>>>>>> origin/master
 vITs
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\App.xaml
 31810450579
 2-980765204
 171257286239
 161845923502
-=======
-C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\App.xaml
-31810450579
-2-980765204
-13-1378240715
-16-1651363052
->>>>>>> origin/master
 MainWindow.xaml;RapportHantering.xaml;Settings.xaml;
 
 False

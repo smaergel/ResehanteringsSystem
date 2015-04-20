@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bosses">
           <Key>
             <PropertyRef Name="userID" />
@@ -47,8 +47,6 @@
           <Property Name="prepayment" Type="int" />
           <Property Name="note" Type="varchar(max)" />
           <Property Name="user" Type="int" Nullable="false" />
-          <Property Name="boss" Type="int" Nullable="false" />
-          <Property Name="approved" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -92,18 +90,6 @@
             </Principal>
             <Dependent Role="Bosses">
               <PropertyRef Name="userID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Trips_ToBoss">
-          <End Role="Bosses" Type="Self.Bosses" Multiplicity="1" />
-          <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Bosses">
-              <PropertyRef Name="userID" />
-            </Principal>
-            <Dependent Role="Trips">
-              <PropertyRef Name="boss" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -192,10 +178,6 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="Bosses" EntitySet="Bosses" />
           </AssociationSet>
-          <AssociationSet Name="FK_Trips_ToBoss" Association="Self.FK_Trips_ToBoss">
-            <End Role="Bosses" EntitySet="Bosses" />
-            <End Role="Trips" EntitySet="Trips" />
-          </AssociationSet>
           <AssociationSet Name="FK_Trips_ToCountry" Association="Self.FK_Trips_ToCountry">
             <End Role="Countries" EntitySet="Countries" />
             <End Role="Trips" EntitySet="Trips" />
@@ -221,7 +203,8 @@
             <End Role="Verifications" EntitySet="Verifications" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -231,7 +214,6 @@
           </Key>
           <Property Name="userID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Self.FK_Bosses_ToUsers" FromRole="Bosses" ToRole="Users" />
-          <NavigationProperty Name="Trips" Relationship="DatabaseModel.FK_Trips_ToBoss" FromRole="Boss" ToRole="Trip" />
         </EntityType>
         <EntityType Name="Country">
           <Key>
@@ -277,9 +259,6 @@
           <NavigationProperty Name="User1" Relationship="Self.FK_Trips_ToUser" FromRole="Trips" ToRole="Users" />
           <NavigationProperty Name="Vacations" Relationship="Self.FK_Vacations_ToTrip" FromRole="Trips" ToRole="Vacations" />
           <NavigationProperty Name="Verifications" Relationship="Self.FK_Verifications_Trips" FromRole="Trips" ToRole="Verifications" />
-          <Property Name="boss" Type="Int32" Nullable="false" />
-          <Property Name="approved" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Boss1" Relationship="DatabaseModel.FK_Trips_ToBoss" FromRole="Trip" ToRole="Boss" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -440,23 +419,7 @@
             <End Role="Trips" EntitySet="Trips" />
             <End Role="Verifications" EntitySet="Verifications" />
           </AssociationSet>
-          <AssociationSet Name="FK_Trips_ToBoss" Association="DatabaseModel.FK_Trips_ToBoss">
-            <End Role="Boss" EntitySet="Bosses" />
-            <End Role="Trip" EntitySet="Trips" />
-          </AssociationSet>
         </EntityContainer>
-        <Association Name="FK_Trips_ToBoss">
-          <End Type="DatabaseModel.Boss" Role="Boss" Multiplicity="1" />
-          <End Type="DatabaseModel.Trip" Role="Trip" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Boss">
-              <PropertyRef Name="userID" />
-            </Principal>
-            <Dependent Role="Trip">
-              <PropertyRef Name="boss" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -500,8 +463,6 @@
           <EntitySetMapping Name="Trips">
             <EntityTypeMapping TypeName="DatabaseModel.Trip">
               <MappingFragment StoreEntitySet="Trips">
-                <ScalarProperty Name="approved" ColumnName="approved" />
-                <ScalarProperty Name="boss" ColumnName="boss" />
                 <ScalarProperty Name="tripID" ColumnName="tripID" />
                 <ScalarProperty Name="origin" ColumnName="origin" />
                 <ScalarProperty Name="destination" ColumnName="destination" />
