@@ -1,18 +1,14 @@
 ﻿<Window x:Class="vITs.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="372" Width="416.119">
-    <Grid Margin="0,0,0,-3" HorizontalAlignment="Right" Width="593">
-        <Image x:Name="logobg" HorizontalAlignment="Left" Height="401" Margin="177,-6,-9,-51" VerticalAlignment="Top" Width="425" Source="Graphics/logobg.png"/>
-
-        <Image x:Name="loginbg" HorizontalAlignment="Left" Height="174" Margin="216,122,0,0" VerticalAlignment="Top" Width="348" Source="Graphics/bg.png" Stretch="Fill" RenderTransformOrigin="0.865,0.568"/>
-
-        <Button Content="Logga in" HorizontalAlignment="Left" Margin="380,261,0,0" VerticalAlignment="Top" Width="71" Click="Button_Click_1" FontFamily="TechnicBold"/>
-        <Label Content="Användarnamn&#xD;&#xA;" HorizontalAlignment="Left" Margin="333,147,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.596,2.023" Height="32" Width="126" FontSize="16" FontFamily="TechnicBold"/>
-        <Label Content="Lösenord" HorizontalAlignment="Left" Margin="354,202,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.012,-0.926" FontSize="16" FontFamily="TechnicBold"/>
-        <TextBox x:Name="tbxUser" HorizontalAlignment="Left" Height="23" Margin="331,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="pbxPassword" HorizontalAlignment="Left" Margin="331,229,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.495,-1.092" Height="22"/>
-        <Button Content="Offlineläge" HorizontalAlignment="Left" Margin="462,261,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" FontFamily="TechnicBold"/>
+        Title="MainWindow" Height="350" Width="601.119">
+    <Grid>
+        <Button Content="Logga in (Onlineläge)" HorizontalAlignment="Left" Margin="268,213,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click_1"/>
+        <Label Content="Användarnamn:" HorizontalAlignment="Left" Margin="118,94,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.596,2.023" Height="32" Width="126" FontSize="16"/>
+        <Label Content="Lösenord:" HorizontalAlignment="Left" Margin="156,159,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.012,-0.926" FontSize="16"/>
+        <TextBox x:Name="tbxUser" HorizontalAlignment="Left" Height="23" Margin="268,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="pbxPassword" HorizontalAlignment="Left" Margin="268,168,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.495,-1.092" Height="22"/>
+        <Button Content="Offlineläge" HorizontalAlignment="Left" Margin="489,275,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
     </Grid>
 </Window>
