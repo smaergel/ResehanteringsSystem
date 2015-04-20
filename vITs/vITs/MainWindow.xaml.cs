@@ -53,11 +53,8 @@ namespace vITs
                     var user = HandleItems.GetUser(value);
                     if (user.userID.Equals(value) && user.password.Equals(passwordinput))
                     {
-<<<<<<< HEAD
                         Application.Current.Properties["currentUser"] = user;
-=======
                         Application.Current.Properties["currentUser"] = UserHandling.GetUser(value);
->>>>>>> origin/LoginGui
                         var rapport = new Settings();
                         rapport.Show();
                         Close();

@@ -74,7 +74,7 @@ namespace vITs
 
         private void btnApproveReport_Click(object sender, RoutedEventArgs e)
         {
-            var reportId = 2; //lbReportsDenied.SelectedItem;
+            var reportId = 3; //lbReportsDenied.SelectedItem;
             AddItems.ApproveDenyReport(reportId, true);
         }
     }
