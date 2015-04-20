@@ -25,8 +25,9 @@ namespace vITs
         public RapportHantering()
         {
             InitializeComponent();
-            fillCbsWithCountries();
-            FillTripCbWithAllTrips();
+            HandleItems.FillCbsWithCountries(cbCountryArrival, cbCountryDeparture);
+            HandleItems.FillTripCbWithAllTrips(cbPickTripExpensesTab);
+            HandleItems.FillBossList(cbChef);
         }
 
         private void ClearFieldsAndReloadBoxes()
@@ -36,34 +37,13 @@ namespace vITs
             tbMotivation.Clear();
             cbCountryDeparture.Items.Clear();
             cbCountryArrival.Items.Clear();
-            fillCbsWithCountries();
-            FillTripCbWithAllTrips();
+            HandleItems.FillCbsWithCountries(cbCountryArrival, cbCountryDeparture);
+            HandleItems.FillTripCbWithAllTrips(cbPickTripExpensesTab);
 
 
         }
 
-        //Fyller cbs i skapa rapport fliken med länderna som finns i databasen (landnamn + id)
-        private void fillCbsWithCountries()
-        {
-            var handle = new HandleItems();
-            var countryCollection = handle.SendCountryList();
-            foreach (var countryObject in countryCollection)
-            {
-                cbCountryArrival.Items.Add(countryObject.countryID + ". " + countryObject.country1);
-                cbCountryDeparture.Items.Add(countryObject.countryID + ". " + countryObject.country1);
-    
-            }
-            
-        }
 
-        private void FillTripCbWithAllTrips()
-        {
-            var tripCollection = HandleItems.SendTripList();
-            foreach (var tripObject in tripCollection)
-            {
-                cbPickTripExpensesTab.Items.Add(tripObject.note);
-            }
-        }
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
@@ -80,15 +60,27 @@ namespace vITs
             int.TryParse(prepay, out prepaySum);
             trip.Prepayment = prepaySum;
             trip.Note = tbMotivation.Text;
-            trip.User = 1;
+            trip.User = 1;  //HandleItems.GetCurrentUser();
+            trip.Boss = (int) cbChef.SelectedValue;
+            trip.Status = false;
             //validerar informationen som hämtats ut or boxarna
             if (Validering.CheckPrepaySum(trip.Prepayment))
             {
             //skapar objekt av klassen AddItems och skickar vidare modellen
-            AddItems newItem = new AddItems();
-            newItem.AddTrip(trip);
+            AddItems.AddTrip(trip);
             ClearFieldsAndReloadBoxes();
             }
+        }
+
+        private void btnApproveReport_Click(object sender, RoutedEventArgs e)
+        {
+            var reportId = 3; //lbReportsDenied.SelectedItem;
+            AddItems.ApproveDenyReport(reportId, true);
+        }
+
+        private void btnShowOwnReports_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

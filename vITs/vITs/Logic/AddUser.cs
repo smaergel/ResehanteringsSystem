@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using DAL;
 using DAL.Repositories.UserRepository;
 using vITs.Models;
@@ -13,20 +14,20 @@ namespace vITs.Logic
     {
         public static void AddNewUser(UserModel userModel)
         {
-            User user = new User();
+            var user = new User();
             user.firstname = userModel.firstname;
             user.lastname = userModel.lastname;
             user.password = userModel.password;
             user.email = userModel.email;
             user.phone = userModel.phone;
-            user.boss = userModel.boss;
+            user.boss = null;
 
             UserHandling.AddUser(user);
         }
 
         public static void AddBoss(UserModel userModel)
         {
-            User user = new User();
+            var user = new User();
             user.firstname = userModel.firstname;
             user.lastname = userModel.lastname;
             user.password = userModel.password;
@@ -38,6 +39,5 @@ namespace vITs.Logic
             UserHandling.AddUserAsBoss(user);
         }
 
-       
     }
 }
