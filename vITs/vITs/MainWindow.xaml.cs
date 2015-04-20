@@ -13,8 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DAL.Repositories.UserRepository;
-using vITs.Logic;
-
 namespace vITs
 {
     /// <summary>
@@ -25,8 +23,6 @@ namespace vITs
         public MainWindow()
         {
             InitializeComponent();
-            CenterWindowOnScreen();
-            tbxUser.Focus();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -43,45 +39,30 @@ namespace vITs
             
             if(userinput.Trim() == "" || passwordinput.Trim() == "")
             {
-                MessageBox.Show("Fyll i alla fälten");
+                System.Windows.MessageBox.Show("Fyll i alla fälten");
             }
             else
             {
                 int value;
                 if (int.TryParse(userinput, out value))
                 {
-                    var user = HandleItems.GetUser(value);
-                    if (user.userID.Equals(value) && user.password.Equals(passwordinput))
+                    if (UserHandling.GetUser(value).userID.Equals(value) && UserHandling.GetUser(value).password.Equals(passwordinput))
                     {
-                        Application.Current.Properties["currentUser"] = user;
-                        Application.Current.Properties["currentUser"] = UserHandling.GetUser(value);
                         var rapport = new Settings();
                         rapport.Show();
                         Close();
-
                     }
                     else
                     {
-                        MessageBox.Show("Inlogg eller lösenord fel");
+                        System.Windows.MessageBox.Show("Inlogg eller lösenord fel");
                     }
                 }
                 else 
                 {
-                    MessageBox.Show("Fyll i alla fälten");
+                    System.Windows.MessageBox.Show("Fyll i alla fälten");
                 }
             }
             
         }
-
-        private void CenterWindowOnScreen()
-        {
-            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
-            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
-            double windowWidth = this.Width;
-            double windowHeight = this.Height;
-            this.Left = (screenWidth / 2) - (windowWidth / 2);
-            this.Top = (screenHeight / 2) - (windowHeight / 2);
-        }
-
     }
 }

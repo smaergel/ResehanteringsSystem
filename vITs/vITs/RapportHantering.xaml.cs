@@ -27,18 +27,12 @@ namespace vITs
         public RapportHantering()
         {
             InitializeComponent();
-<<<<<<< HEAD
             fillCbsWithCountries();
             FillTripCbWithAllTrips();
             //dic = new Dictionary<string,Vacation>();
    
             
             
-=======
-            HandleItems.FillCbsWithCountries(cbCountryArrival, cbCountryDeparture);
-            HandleItems.FillTripCbWithAllTrips(cbPickTripExpensesTab);
-            HandleItems.FillBossList(cbChef);
->>>>>>> origin/master
         }
 
         private void ClearFieldsAndReloadBoxes()
@@ -48,13 +42,34 @@ namespace vITs
             tbMotivation.Clear();
             cbCountryDeparture.Items.Clear();
             cbCountryArrival.Items.Clear();
-            HandleItems.FillCbsWithCountries(cbCountryArrival, cbCountryDeparture);
-            HandleItems.FillTripCbWithAllTrips(cbPickTripExpensesTab);
+            fillCbsWithCountries();
+            FillTripCbWithAllTrips();
 
 
         }
 
+        //Fyller cbs i skapa rapport fliken med länderna som finns i databasen (landnamn + id)
+        private void fillCbsWithCountries()
+        {
+            var handle = new HandleItems();
+            var countryCollection = handle.SendCountryList();
+            foreach (var countryObject in countryCollection)
+            {
+                cbCountryArrival.Items.Add(countryObject.countryID + ". " + countryObject.country1);
+                cbCountryDeparture.Items.Add(countryObject.countryID + ". " + countryObject.country1);
+    
+            }
+            
+        }
 
+        private void FillTripCbWithAllTrips()
+        {
+            var tripCollection = HandleItems.SendTripList();
+            foreach (var tripObject in tripCollection)
+            {
+                cbPickTripExpensesTab.Items.Add(tripObject.note);
+            }
+        }
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
@@ -70,17 +85,9 @@ namespace vITs
             var prepay = tbPrepaySum.Text;
             int prepaySum;
             int.TryParse(prepay, out prepaySum);
-<<<<<<< HEAD
             realtrip.prepayment = prepaySum;
             realtrip.note = tbMotivation.Text;
             realtrip.user = 1;
-=======
-            trip.Prepayment = prepaySum;
-            trip.Note = tbMotivation.Text;
-            trip.User = 1;  //HandleItems.GetCurrentUser();
-            trip.Boss = (int) cbChef.SelectedValue;
-            trip.Status = false;
->>>>>>> origin/master
             //validerar informationen som hämtats ut or boxarna
             if (Validering.CheckPrepaySum((int)realtrip.prepayment))
             {
@@ -129,15 +136,9 @@ namespace vITs
                
             if(Go)
             {
-<<<<<<< HEAD
 
                 lbVacations.Items.Add(vacDate);
                 
-=======
-            //skapar objekt av klassen AddItems och skickar vidare modellen
-            AddItems.AddTrip(trip);
-            ClearFieldsAndReloadBoxes();
->>>>>>> origin/master
             }
                 
     
@@ -154,7 +155,6 @@ namespace vITs
             lbVacations.Items.Clear();
         }
 
-<<<<<<< HEAD
         private void dpEndDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             resetVacations();
@@ -166,17 +166,5 @@ namespace vITs
         }
 
 
-=======
-        private void btnApproveReport_Click(object sender, RoutedEventArgs e)
-        {
-            var reportId = 3; //lbReportsDenied.SelectedItem;
-            AddItems.ApproveDenyReport(reportId, true);
-        }
-
-        private void btnShowOwnReports_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
->>>>>>> origin/master
     }
 }
