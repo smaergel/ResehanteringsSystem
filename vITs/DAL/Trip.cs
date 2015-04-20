@@ -28,11 +28,14 @@ namespace DAL
         public Nullable<int> prepayment { get; set; }
         public string note { get; set; }
         public int user { get; set; }
+        public int boss { get; set; }
+        public bool approved { get; set; }
     
         public virtual Country Country { get; set; }
         public virtual Country Country1 { get; set; }
         public virtual User User1 { get; set; }
         public virtual ICollection<Vacation> Vacations { get; set; }
         public virtual ICollection<Verification> Verifications { get; set; }
+        public virtual Boss Boss1 { get; set; }
     }
 }
