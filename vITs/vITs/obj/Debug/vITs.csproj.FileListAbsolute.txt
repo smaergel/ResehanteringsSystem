@@ -119,8 +119,6 @@ C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityF
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.exe.config
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.exe
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.pdb
-C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\Database.mdf
-C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\Database_log.ldf
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.exe
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.pdb
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.exe
@@ -142,6 +140,7 @@ C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs_MarkupCompi
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.g.resources
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.Properties.Resources.resources
 C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.csprojResolveAssemblyReference.cache
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\obj\Debug\MainWindow.baml
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\obj\Debug\RapportHantering.baml
@@ -166,3 +165,7 @@ D:\VSProjekt\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.pdb
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.xml
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\bin\Debug\EntityFramework.SqlServer.xml
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.pdb
+=======
+C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\Database.mdf
+C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\Database_log.ldf
+>>>>>>> origin/master

@@ -12,6 +12,7 @@
 
             <TabItem Header="Skapa resa" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="78" Margin="0,0,-29,0">
                 <Grid Background="#FFE5E5E5">
+<<<<<<< HEAD
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="99*"/>
                         <ColumnDefinition Width="24*"/>
@@ -41,6 +42,22 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
+=======
+                    <DatePicker x:Name="dpStartDate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="121,97,0,0" Width="111" FirstDayOfWeek="Monday"/>
+                    <DatePicker x:Name="dpEndDate" HorizontalAlignment="Left" Margin="252,97,0,0" VerticalAlignment="Top" Width="113" FirstDayOfWeek="Monday"/>
+                    <ComboBox x:Name="cbCountryDeparture" HorizontalAlignment="Left" Margin="100,66,0,0" VerticalAlignment="Top" Width="120"/>
+                    <ComboBox x:Name="cbCountryArrival" HorizontalAlignment="Left" Margin="339,66,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="lblDeparture" Content="Avreseland:" HorizontalAlignment="Left" Margin="24,66,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lblArrival" Content="Ankomstland:" HorizontalAlignment="Left" Margin="252,62,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lblDateTrip" Content="Datum:" HorizontalAlignment="Left" Margin="24,97,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lblPrepay" Content="Förskottsbetalning:" HorizontalAlignment="Left" Margin="24,139,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbPrepaySum" HorizontalAlignment="Left" Height="23" Margin="140,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" ClipToBounds="True"/>
+                    <Label x:Name="lblMotivation" Content="Motivering:" HorizontalAlignment="Left" Margin="284,172,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbMotivation" HorizontalAlignment="Left" Height="82" Margin="359,142,0,0" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Top" Width="198"/>
+                    <Button x:Name="btnSend" Content="Spara resa" HorizontalAlignment="Left" Margin="540,244,0,0" VerticalAlignment="Top" Width="76" Click="btnSend_Click"/>
+                    <Label x:Name="lblReportBoss" Content="Chef att rapportera till:" HorizontalAlignment="Left" Margin="24,22,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="cbChef" HorizontalAlignment="Left" Margin="159,26,0,0" VerticalAlignment="Top" Width="120"/>
+>>>>>>> origin/master
                 </Grid>
             </TabItem>
 
@@ -68,7 +85,7 @@
                 <Grid Background="#FFE5E5E5">
                     <ListBox x:Name="lbOwnReports" HorizontalAlignment="Left" Height="179" Margin="10,52,0,0" VerticalAlignment="Top" Width="669"/>
                     <Button x:Name="btnGetOwnReports" Content="Hämta rapporter" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="101"/>
-                    <Button x:Name="btnShowOwnReports" Content="Visa rapport" HorizontalAlignment="Left" Margin="574,250,0,0" VerticalAlignment="Top" Width="92"/>
+                    <Button x:Name="btnShowOwnReports" Content="Visa rapport" HorizontalAlignment="Left" Margin="574,250,0,0" VerticalAlignment="Top" Width="92" Click="btnShowOwnReports_Click"/>
                     <Button Content="Skicka rapport" HorizontalAlignment="Left" Margin="450,250,0,0" VerticalAlignment="Top" Width="104"/>
                 </Grid>
             </TabItem>
@@ -79,6 +96,7 @@
                     <ListBox x:Name="lbReportsDenied" HorizontalAlignment="Left" Height="147" Margin="21,87,0,0" VerticalAlignment="Top" Width="658"/>
                     <Button x:Name="btnShowReportsDenied" Content="Visa rapport" HorizontalAlignment="Left" Margin="586,251,0,0" VerticalAlignment="Top" Width="76"/>
                     <Button x:Name="btnGetReportsDenied" Content="Hämta rapporter" HorizontalAlignment="Left" Margin="272,25,0,0" VerticalAlignment="Top" Width="100"/>
+                    <Button x:Name="btnApproveReport" Content="Godkänn Rapport" HorizontalAlignment="Left" Margin="456,251,0,0" VerticalAlignment="Top" Width="105" Click="btnApproveReport_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Godkända rapporter" Height="20" VerticalAlignment="Top" Margin="0" HorizontalAlignment="Right" Width="122">
