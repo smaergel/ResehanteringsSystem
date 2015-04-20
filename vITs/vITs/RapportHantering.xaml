@@ -60,6 +60,7 @@
                     <ListBox x:Name="lbReportsDenied" HorizontalAlignment="Left" Height="147" Margin="21,87,0,0" VerticalAlignment="Top" Width="658"/>
                     <Button x:Name="btnShowReportsDenied" Content="Visa rapport" HorizontalAlignment="Left" Margin="586,251,0,0" VerticalAlignment="Top" Width="76"/>
                     <Button x:Name="btnGetReportsDenied" Content="Hämta rapporter" HorizontalAlignment="Left" Margin="272,25,0,0" VerticalAlignment="Top" Width="100"/>
+                    <Button x:Name="btnApproveReport" Content="Godkänn Rapport" HorizontalAlignment="Left" Margin="456,251,0,0" VerticalAlignment="Top" Width="105" Click="btnApproveReport_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Godkända rapporter" Height="20" VerticalAlignment="Top" Margin="0" HorizontalAlignment="Right" Width="122">

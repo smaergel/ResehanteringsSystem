@@ -62,14 +62,20 @@ namespace vITs
             trip.Note = tbMotivation.Text;
             trip.User = 1;  //HandleItems.GetCurrentUser();
             trip.Boss = (int) cbChef.SelectedValue;
+            trip.Status = false;
             //validerar informationen som hämtats ut or boxarna
             if (Validering.CheckPrepaySum(trip.Prepayment))
             {
             //skapar objekt av klassen AddItems och skickar vidare modellen
-            AddItems newItem = new AddItems();
-            newItem.AddTrip(trip);
+            AddItems.AddTrip(trip);
             ClearFieldsAndReloadBoxes();
             }
+        }
+
+        private void btnApproveReport_Click(object sender, RoutedEventArgs e)
+        {
+            var reportId = 1; //lbReportsDenied.SelectedItem;
+            AddItems.ApproveDenyReport(reportId, true);
         }
     }
 }

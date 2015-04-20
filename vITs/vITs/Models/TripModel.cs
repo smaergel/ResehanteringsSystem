@@ -16,5 +16,6 @@ namespace vITs.Models
         public string Note { get; set; }
         public int User { get; set; }
         public int Boss { get; set; }
+        public bool Status { get; set; }
     }
 }

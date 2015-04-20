@@ -29,6 +29,7 @@ namespace DAL
         public string note { get; set; }
         public int user { get; set; }
         public int boss { get; set; }
+        public bool approved { get; set; }
     
         public virtual Country Country { get; set; }
         public virtual Country Country1 { get; set; }
