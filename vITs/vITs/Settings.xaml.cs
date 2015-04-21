@@ -25,6 +25,7 @@ namespace vITs
         {
             InitializeComponent();
             HandleItems.FillBossList(cbChef);
+            FillUserInformation();
         }
 
        
@@ -39,6 +40,11 @@ namespace vITs
             //{
                 
             //}
+        }
+
+        public void FillUserInformation()
+        {
+            AddUser.FillUserInformation(HandleItems.GetCurrentUserId(), tbxUpdatePhone, tbxUpdateAddress, tbxUpdateEmail);
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -65,6 +71,18 @@ namespace vITs
         private void cbxBoss_Unchecked(object sender, RoutedEventArgs e)
         {
             cbChef.IsEnabled = true;
+        }
+
+       
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            AddUser.UpdateUser(HandleItems.GetCurrentUserId(), tbxUpdatePhone, tbxUpdateAddress, tbxUpdateEmail);
+            FillUserInformation();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AddUser.ChangePassword(HandleItems.GetCurrentUserId(),tbxNewPassword1, tbxNewPassword2, tbxOldPassword);
         }
     }
 }

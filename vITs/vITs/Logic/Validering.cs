@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace vITs.Logic
 {
@@ -19,6 +20,23 @@ namespace vITs.Logic
 
             }
             return true;
+        }
+
+        public static bool CheckIf3Empty(TextBox box1, TextBox box2, TextBox box3)
+        {
+            var text1 = box1.Text;
+            var text2 = box2.Text;
+            var text3 = box3.Text;
+
+            if (text1 == "" || text2 == "" || text3 == "")
+            {
+                MessageBox.Show("Ett eller flera textfält är tomma");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
         
     }
