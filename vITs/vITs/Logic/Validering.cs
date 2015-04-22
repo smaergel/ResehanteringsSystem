@@ -38,6 +38,22 @@ namespace vITs.Logic
                 return true;
             }
         }
+
+        public static bool CheckIf2Empty(TextBox box1, TextBox box2)
+        {
+            var text1 = box1.Text;
+            var text2 = box2.Text;
+        
+            if (text1 == "" || text2 == "")
+            {
+                MessageBox.Show("Ett eller flera textfält är tomma");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         
     }
 }

@@ -38,12 +38,10 @@
                         <ColumnDefinition Width="68*"/>
                         <ColumnDefinition Width="487*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Content="Tfn:" HorizontalAlignment="Left" Margin="26.944,58,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="1.414,0.615"/>
-                    <Label Content="Adress:" HorizontalAlignment="Left" Margin="11.944,106,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label Content="Tfn:" HorizontalAlignment="Left" Margin="30,108,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="1.414,0.615"/>
                     <Label Content="E-post:" HorizontalAlignment="Left" Margin="11.944,148,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <TextBox x:Name="tbxUpdatePhone" HorizontalAlignment="Left" Height="23" Margin="79.944,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <TextBox x:Name="tbxUpdatePhone" HorizontalAlignment="Left" Height="23" Margin="80,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2" RenderTransformOrigin="0.517,2.87"/>
                     <TextBox x:Name="tbxUpdateEmail" HorizontalAlignment="Left" Height="23" Margin="79.944,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
-                    <TextBox x:Name="tbxUpdateAddress" HorizontalAlignment="Left" Height="23" Margin="79.944,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
                     <Button Content="Avbryt" HorizontalAlignment="Left" Margin="150.944,193,0,0" VerticalAlignment="Top" Width="74" Grid.Column="2"/>
                     <Button Content="Spara" HorizontalAlignment="Left" Margin="55.944,193,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2" Click="Button_Click_2"/>
                 </Grid>
@@ -55,8 +53,8 @@
                         <RowDefinition Height="189*"/>
                     </Grid.RowDefinitions>
                     <Label Content="Ta bort användare" HorizontalAlignment="Left" Margin="24,35,0,0" VerticalAlignment="Top"/>
-                    <ComboBox HorizontalAlignment="Left" Margin="192,35,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Button Content="Ta bort" HorizontalAlignment="Left" Margin="338,35,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.522,0.619"/>
+                    <ComboBox x:Name="cbUser" HorizontalAlignment="Left" Margin="192,35,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Button Content="Ta bort" HorizontalAlignment="Left" Margin="338,35,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.522,0.619" Click="Button_Click_3"/>
                     <Label Content="Lägg till ny användare" HorizontalAlignment="Left" Margin="22,12,0,0" VerticalAlignment="Top" FontSize="16" Grid.Row="1"/>
                     <Label Content="Förnamn:&#xD;&#xA;" HorizontalAlignment="Left" Margin="114,75,0,0" VerticalAlignment="Top" Grid.Row="1"/>
                     <Label Content="Telefon:" HorizontalAlignment="Left" Margin="122,137,0,0" VerticalAlignment="Top" Grid.Row="1"/>
