@@ -11,7 +11,7 @@ namespace vITs.Logic
 {
     class AddItems
     {
-        public static void AddTrip(TripModel trip)
+        public void AddTrip(TripModel trip)
         {
             //överför modellen TripModell till ett objekt av databastypen Trip
             var newTrip = new Trip();
@@ -22,18 +22,9 @@ namespace vITs.Logic
             newTrip.prepayment = trip.Prepayment;
             newTrip.note = trip.Note;
             newTrip.user = trip.User;
-            newTrip.boss = trip.Boss;
-            newTrip.approved = trip.Status;
 
             //för in datan i databasen
             TripRepository.AddTrip(newTrip);
-
-        }
-
-        public static void ApproveDenyReport(int id, bool status)
-        {
-            
-            TripRepository.ApproveDenyTrip(id, status);
 
         }
 

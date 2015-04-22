@@ -20,7 +20,6 @@
         <AssociationConnector Association="DatabaseModel.FK_Trips_ToUser" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseModel.FK_Vacations_ToTrip" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseModel.FK_Verifications_Trips" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK_Trips_ToBoss" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
