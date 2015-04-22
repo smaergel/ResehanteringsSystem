@@ -56,29 +56,30 @@ namespace vITs.Logic
             }
         }
 
-        public static void ChangePassword(int user, TextBox newPasswordOne, TextBox newPasswordTwo, TextBox OldPassword)
+        public static void ChangePassword(int user, PasswordBox newPasswordOne, PasswordBox newPasswordTwo,
+        PasswordBox OldPassword)
         {
-            if (Validering.CheckIf3Empty(newPasswordOne, newPasswordTwo, OldPassword))
+            if (Validering.CheckIf3Password(newPasswordOne, newPasswordTwo, OldPassword))
             {
                 var userNow = UserHandling.GetUser(user);
-                if (userNow.password != OldPassword.Text)
+                if (userNow.password != OldPassword.Password)
                 {
                     MessageBox.Show("Du har angivit fel lösenord");
                 }
 
-                else if (newPasswordOne.Text != newPasswordTwo.Text)
+                else if (newPasswordOne.Password != newPasswordTwo.Password)
                 {
                     MessageBox.Show("Lösenorden stämmer inte överens");
                 }
 
                 else
                 {
-                    userNow.password = newPasswordOne.Text;
+                    userNow.password = newPasswordOne.Password;
                     UserHandling.UpdateUser(userNow);
                     MessageBox.Show("Lösenordet har ändrats");
-                    newPasswordOne.Text = "";
-                    newPasswordTwo.Text = "";
-                    OldPassword.Text = "";
+                    newPasswordOne.Password = "";
+                    newPasswordTwo.Password = "";
+                    OldPassword.Password = "";
                 }
             }
         }
@@ -105,13 +106,13 @@ namespace vITs.Logic
 
         }
 
-        public static void ClearText(TextBox Firstname, TextBox Lastname, TextBox Password, TextBox
+        public static void ClearText(TextBox Firstname, TextBox Lastname, PasswordBox Password, PasswordBox
         ConfirmPassword, TextBox Email, TextBox Tele, CheckBox cbx)
         {
             Firstname.Text = "";
             Lastname.Text = "";
-            Password.Text = "";
-            ConfirmPassword.Text = "";
+            Password.Password = "";
+            ConfirmPassword.Password = "";
             Email.Text = "";
             Tele.Text = "";
             cbx.IsChecked = false;

@@ -61,7 +61,7 @@ namespace vITs
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             UserModel userModel = new UserModel(tbxFirstName.Text, tbxLastName.Text,
-                       tbxPasswordFirst.Text, tbxEmail.Text, tbxTele.Text);
+                       tbxPasswordFirst.Password, tbxEmail.Text, tbxTele.Text);
 
             if (cbxBoss.IsChecked == true)
             {
@@ -110,5 +110,6 @@ namespace vITs
             AddUser.DeleteUser(Convert.ToInt16(userID), cbUser);
             FillUserList();
         }
+
     }
 }
