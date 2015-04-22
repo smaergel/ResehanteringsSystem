@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace vITs.Models
 {
-    public class TripModel
+    public class VacationModel
     {
-        public int origin { get; set; }
-        public int destination { get; set; }
+        public int vacationID { get; set; }
         public DateTime start { get; set; }
         public DateTime end { get; set; }
-        public int prepayment { get; set; }
-        public string note { get; set; }
-        public int user { get; set; }
+        public int tripID { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace DAL.Repositories.TripRepository
     /// 
     /// Author: Yvell/Waerner
     /// </summary>
-    public class TripRepository
+    public static class TripRepository
     {
         /// <summary>
         /// Add a new trip
