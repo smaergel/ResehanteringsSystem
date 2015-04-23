@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfFullTrip xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FullTrip>
+    <myTrip>
+      <origin>1</origin>
+      <destination>1</destination>
+      <start>2015-04-23T00:00:00</start>
+      <end>2015-04-30T00:00:00</end>
+      <prepayment>22</prepayment>
+      <note>22</note>
+      <user>1</user>
+    </myTrip>
+    <myVerifications />
+    <myVacation />
+  </FullTrip>
+  <FullTrip>
+    <myTrip>
+      <origin>1</origin>
+      <destination>1</destination>
+      <start>2015-04-19T00:00:00</start>
+      <end>2015-04-02T00:00:00</end>
+      <prepayment>22</prepayment>
+      <note>22</note>
+      <user>1</user>
+    </myTrip>
+    <myVerifications />
+    <myVacation />
+  </FullTrip>
+  <FullTrip>
+    <myTrip>
+      <origin>1</origin>
+      <destination>1</destination>
+      <start>2015-04-06T00:00:00</start>
+      <end>2015-05-06T00:00:00</end>
+      <prepayment>123</prepayment>
+      <note>123</note>
+      <user>1</user>
+    </myTrip>
+    <myVerifications />
+    <myVacation />
+  </FullTrip>
+  <FullTrip>
+    <myTrip>
+      <origin>1</origin>
+      <destination>1</destination>
+      <start>2015-04-01T00:00:00</start>
+      <end>2015-04-23T00:00:00</end>
+      <prepayment>123</prepayment>
+      <note>båt</note>
+      <user>1</user>
+    </myTrip>
+    <myVerifications />
+    <myVacation />
+  </FullTrip>
+  <FullTrip>
+    <myTrip>
+      <origin>1</origin>
+      <destination>1</destination>
+      <start>2015-04-01T00:00:00</start>
+      <end>2015-04-30T00:00:00</end>
+      <prepayment>123</prepayment>
+      <note>hej</note>
+      <user>1</user>
+    </myTrip>
+    <myVerifications />
+    <myVacation />
+  </FullTrip>
+  <FullTrip>
+    <myTrip>
+      <origin>1</origin>
+      <destination>1</destination>
+      <start>2015-04-01T00:00:00</start>
+      <end>2015-04-30T00:00:00</end>
+      <prepayment>123</prepayment>
+      <note>hej</note>
+      <user>1</user>
+    </myTrip>
+  </FullTrip>
+</ArrayOfFullTrip>
