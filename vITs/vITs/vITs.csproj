@@ -78,9 +78,14 @@
     <Compile Include="Logic\AddItems.cs" />
     <Compile Include="Logic\AddUser.cs" />
     <Compile Include="Logic\HandleItems.cs" />
+    <Compile Include="Logic\ModelTransformer.cs" />
+    <Compile Include="Logic\Serializer.cs" />
     <Compile Include="Logic\Validering.cs" />
+    <Compile Include="Models\FullTrip.cs" />
     <Compile Include="Models\TripModel.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\VacationModel.cs" />
+    <Compile Include="Models\VerificationModel.cs" />
     <Compile Include="RapportHantering.xaml.cs">
       <DependentUpon>RapportHantering.xaml</DependentUpon>
     </Compile>
@@ -100,8 +105,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RapportHantering.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Settings.xaml">
       <Generator>MSBuild:Compile</Generator>
