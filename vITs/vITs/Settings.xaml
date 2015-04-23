@@ -11,10 +11,10 @@
             <TabItem Header="Ändra lösenord" Margin="0,0,-4,-2" Background="{x:Null}">
                 <Grid Margin="0,0,-5,-4" Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="147*"/>
-                        <ColumnDefinition Width="15*"/>
-                        <ColumnDefinition Width="487*"/>
+                        <ColumnDefinition Width="140*"/>
+                        <ColumnDefinition Width="421*"/>
                     </Grid.ColumnDefinitions>
+
                     <Label Content="Nytt lösenord:" HorizontalAlignment="Left" Margin="102,65,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
                     <Label Content="Verifiera nytt lösenord:" HorizontalAlignment="Left" Margin="54,106,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
                     <Label Content="Gammalt lösenord:" HorizontalAlignment="Left" Margin="77,151,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
@@ -23,6 +23,7 @@
                     <PasswordBox x:Name="tbxNewPassword1" Grid.Column="2" HorizontalAlignment="Left" Margin="50,73,0,0" VerticalAlignment="Top" Width="124"/>
                     <PasswordBox x:Name="tbxNewPassword2" Grid.Column="2" HorizontalAlignment="Left" Margin="50,114,0,0" VerticalAlignment="Top" Width="124"/>
                     <PasswordBox x:Name="tbxOldPassword" Grid.Column="2" HorizontalAlignment="Left" Margin="50,159,0,0" VerticalAlignment="Top" Width="124"/>
+
                 </Grid>
             </TabItem>
             <TabItem Header="Personuppgifter" Margin="-2,0,-2,-2">
@@ -34,16 +35,17 @@
                 </TabItem.Background>
                 <Grid Background="#FFE5E5E5" Margin="0,-3,0,3">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="89*"/>
-                        <ColumnDefinition Width="68*"/>
-                        <ColumnDefinition Width="487*"/>
+                        <ColumnDefinition Width="77*"/>
+                        <ColumnDefinition Width="479*"/>
                     </Grid.ColumnDefinitions>
+
                     <Label Content="Tfn:" HorizontalAlignment="Left" Margin="30,108,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="1.414,0.615"/>
                     <Label Content="E-post:" HorizontalAlignment="Left" Margin="11.944,148,0,0" VerticalAlignment="Top" Grid.Column="2"/>
                     <TextBox x:Name="tbxUpdatePhone" HorizontalAlignment="Left" Height="23" Margin="80,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2" RenderTransformOrigin="0.517,2.87"/>
                     <TextBox x:Name="tbxUpdateEmail" HorizontalAlignment="Left" Height="23" Margin="79.944,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
                     <Button Content="Avbryt" HorizontalAlignment="Left" Margin="150.944,193,0,0" VerticalAlignment="Top" Width="74" Grid.Column="2"/>
                     <Button Content="Spara" HorizontalAlignment="Left" Margin="55.944,193,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2" Click="Button_Click_2"/>
+
                 </Grid>
             </TabItem>
             <TabItem Header="Administratör" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="94" Margin="2,0,-2,0">

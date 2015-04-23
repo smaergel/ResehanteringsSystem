@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
 using DAL;
 using DAL.Repositories.UserRepository;
 using vITs.Models;
+using System.Windows.Controls;
+using System.Windows;
 
 namespace vITs.Logic
 {

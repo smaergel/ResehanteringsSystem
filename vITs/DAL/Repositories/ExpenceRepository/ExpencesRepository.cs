@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class ExpencesRepository
+    public static class ExpencesRepository
     {
         public static void addExpence(Expence expence)
         {

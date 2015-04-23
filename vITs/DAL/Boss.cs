@@ -14,14 +14,8 @@ namespace DAL
     
     public partial class Boss
     {
-        public Boss()
-        {
-            this.Trips = new HashSet<Trip>();
-        }
-    
         public int userID { get; set; }
     
         public virtual User User { get; set; }
-        public virtual ICollection<Trip> Trips { get; set; }
     }
 }

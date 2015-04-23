@@ -22,9 +22,10 @@ namespace vITs.Logic
             return true;
         }
 
+
         public static bool CheckIf3Empty(TextBox box1, TextBox box2, TextBox box3)
         {
-            var text1 = box1.Text;
+            var text1 = box1.Text; 
             var text2 = box2.Text;
             var text3 = box3.Text;
 
@@ -70,6 +71,7 @@ namespace vITs.Logic
                 return true;
             }
         }
+
         
     }
 }

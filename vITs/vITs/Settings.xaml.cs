@@ -24,6 +24,7 @@ namespace vITs
         public Settings()
         {
             InitializeComponent();
+
             HandleItems.FillBossList(cbChef);
             FillUserInformation();
             FillUserList();
@@ -39,7 +40,15 @@ namespace vITs
             }
         }
 
-       
+        private void FillBossList()
+        {
+            var handle = new HandleItems();
+            var bossList = handle.SendBossList();
+            foreach (var boss in bossList)
+            {
+                cbChef.Items.Add(boss.userID);
+            }
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -53,10 +62,12 @@ namespace vITs
             //}
         }
 
+
         public void FillUserInformation()
         {
             AddUser.FillUserInformation(HandleItems.GetCurrentUserId(), tbxUpdatePhone, tbxUpdateEmail);
         }
+
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
@@ -92,6 +103,7 @@ namespace vITs
             cbChef.IsEnabled = true;
         }
 
+
        
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
@@ -110,6 +122,7 @@ namespace vITs
             AddUser.DeleteUser(Convert.ToInt16(userID), cbUser);
             FillUserList();
         }
+
 
     }
 }

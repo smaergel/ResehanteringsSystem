@@ -75,12 +75,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Logic\AddItems.cs" />
+    <Compile Include="Logic\ModelTransformer.cs" />
     <Compile Include="Logic\AddUser.cs" />
     <Compile Include="Logic\HandleItems.cs" />
+    <Compile Include="Logic\Serializer.cs" />
     <Compile Include="Logic\Validering.cs" />
     <Compile Include="Models\TripModel.cs" />
+    <Compile Include="Models\FullTrip.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\VacationModel.cs" />
+    <Compile Include="Models\VerificationModel.cs" />
     <Compile Include="RapportHantering.xaml.cs">
       <DependentUpon>RapportHantering.xaml</DependentUpon>
     </Compile>
@@ -160,18 +164,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Database.mdf" />
     <Content Include="Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Graphics\bg.png" />
-    <Resource Include="Graphics\btn.png" />
-    <Resource Include="Graphics\logobg.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

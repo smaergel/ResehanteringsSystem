@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
 using DAL;
 using DAL.Repositories.CountryRepository;
 using DAL.Repositories.TripRepository;
 using DAL.Repositories.UserRepository;
+using System.Windows.Controls;
+using System.Windows;
 
 namespace vITs.Logic
 {
     class HandleItems
     {
-        public static List<Country> SendCountryList()
+        public List<Country> SendCountryList()
         {
             return CountryRepository.GetAllCountries();
             
@@ -44,7 +44,8 @@ namespace vITs.Logic
         //Fyller cbs i skapa rapport fliken med länderna som finns i databasen (landnamn + id)
         public static void FillCbsWithCountries(ComboBox cb, ComboBox cb2)
         {
-            var countryCollection = SendCountryList();
+            var countryCollection = new List<Country>();
+            countryCollection = CountryRepository.GetAllCountries();
             foreach (var countryObject in countryCollection)
             {
                 cb.Items.Add(countryObject.countryID + ". " + countryObject.country1);
@@ -91,5 +92,7 @@ namespace vITs.Logic
 
 
         }  
+
     }
+
 
