@@ -152,14 +152,25 @@ namespace vITs
             resetVacations();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
 
         private void cbPickTripExpensesTab_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void btnApprove_Click(object sender, RoutedEventArgs e)
+        {
+
+            //kod behöver förändras när objekt i listan finns så allt blir rätt.
+            var report = (int)lbReportsDenied.SelectedItem;
+            AddItems.ApproveDenyReport(report, 1);
+        }
+
+        private void btnDeny_Click(object sender, RoutedEventArgs e)
+        {
+            //kod behöver förändras när objekt i listan finns så allt blir rätt.
+            var report = (int)lbReportsDenied.SelectedItem;
+            AddItems.ApproveDenyReport(report, 0);
         }
 
 
