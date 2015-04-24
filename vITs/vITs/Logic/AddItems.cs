@@ -30,7 +30,7 @@ namespace vITs.Logic
 
         }
 
-        public static void ApproveDenyReport(int id, bool status)
+        public static void ApproveDenyReport(int id, int status)
         {
             
             TripRepository.ApproveDenyTrip(id, status);

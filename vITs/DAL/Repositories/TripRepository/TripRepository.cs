@@ -95,7 +95,7 @@ namespace DAL.Repositories.TripRepository
             }
         }
 
-        public static void ApproveDenyTrip(int id, bool status)
+        public static void ApproveDenyTrip(int id, int status)
         {
 
             using (var context = new DatabaseEntities())
