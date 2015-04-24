@@ -55,7 +55,7 @@ namespace vITs
                     {
                         Application.Current.Properties["currentUser"] = user;
                         Application.Current.Properties["currentUser"] = UserHandling.GetUser(value);
-                        var rapport = new Settings();
+                        var rapport = new RapportHantering();
                         rapport.Show();
                         Close();
 
@@ -82,6 +82,5 @@ namespace vITs
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
         }
-
     }
 }

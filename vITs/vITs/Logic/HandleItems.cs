@@ -75,8 +75,11 @@ namespace vITs.Logic
         ////returnerar den inloggade användarens id.
         public static int GetCurrentUserId()
         {
-            
-            var currentUser = (User) Application.Current.Properties["currentUser"];
+            var currentUser = new User{userID = 0};
+            if (Application.Current.Properties.Count > 0)
+            {
+                currentUser = (User) Application.Current.Properties["currentUser"];
+            }
 
 
             return currentUser.userID;

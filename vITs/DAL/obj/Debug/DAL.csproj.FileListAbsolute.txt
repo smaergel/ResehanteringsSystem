@@ -82,3 +82,16 @@ D:\VSProjekt\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.csprojResolveAssemblyRe
 D:\VSProjekt\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.exe
 D:\VSProjekt\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.pdb
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Gästs\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\DAL.exe.config
+C:\Users\Gästs\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\DAL.exe
+C:\Users\Gästs\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\DAL.pdb
+C:\Users\Gästs\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Gästs\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gästs\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\Gästs\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Gästs\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Gästs\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gästs\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\Users\Gästs\Documents\GitHub\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Gästs\Documents\GitHub\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.exe
+C:\Users\Gästs\Documents\GitHub\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.pdb

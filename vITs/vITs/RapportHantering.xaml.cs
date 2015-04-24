@@ -29,10 +29,15 @@ namespace vITs
         {
             InitializeComponent();
             fillCbsWithCountries();
-          
-   
-            
-            
+
+            if (HandleItems.GetCurrentUserId() == 0)
+            {
+                tbSearchAnstIdDenied.IsEnabled = false;
+                btnGetReportsDenied.IsEnabled = false;
+                tbSearchAnstIdApproved.IsEnabled = false;
+                btnGetReportsApproved.IsEnabled = false;
+                anvInstallningar.IsEnabled = false;
+            }
         }
 
         private void ClearFieldsAndReloadBoxes()
@@ -162,8 +167,10 @@ namespace vITs
 
         }
 
-
-
-
+        private void anvInstalnningar_Click(object sender, RoutedEventArgs e)
+        {
+            var installning = new Settings();
+            installning.Show();
+        }
     }
 }
