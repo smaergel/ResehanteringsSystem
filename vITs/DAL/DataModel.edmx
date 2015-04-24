@@ -48,7 +48,7 @@
           <Property Name="note" Type="varchar(max)" />
           <Property Name="user" Type="int" Nullable="false" />
           <Property Name="boss" Type="int" Nullable="false" />
-          <Property Name="approved" Type="bit" Nullable="false" />
+          <Property Name="approved" Type="int" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -278,8 +278,8 @@
           <NavigationProperty Name="Vacations" Relationship="Self.FK_Vacations_ToTrip" FromRole="Trips" ToRole="Vacations" />
           <NavigationProperty Name="Verifications" Relationship="Self.FK_Verifications_Trips" FromRole="Trips" ToRole="Verifications" />
           <Property Name="boss" Type="Int32" Nullable="false" />
-          <Property Name="approved" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Boss1" Relationship="DatabaseModel.FK_Trips_ToBoss" FromRole="Trip" ToRole="Boss" />
+          <Property Name="approved" Type="Int32" />
         </EntityType>
         <EntityType Name="User">
           <Key>
