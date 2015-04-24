@@ -25,7 +25,7 @@ namespace vITs.Logic
             return TripRepository.GetAllTrips();
         }
 
-        public List<User> SendBossList()
+        public static List<User> SendBossList()
         {
             return UserHandling.getBosses();
         }
@@ -33,8 +33,7 @@ namespace vITs.Logic
         //fyller en kombobox med listan av chefer, tar emot cbn som ska fyllas
         public static void FillBossList(ComboBox cb)
         {
-            var handle = new HandleItems();
-            var bossList = handle.SendBossList();
+            var bossList = SendBossList();
             foreach (var boss in bossList)
             {
                 cb.Items.Add(boss.userID);
