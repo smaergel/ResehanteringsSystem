@@ -162,7 +162,11 @@
                         </Button.Background>
                     </Button>
                     <ListBox x:Name="lbReportsApproved" HorizontalAlignment="Left" Height="147" Margin="21,0,0,0" VerticalAlignment="Top" Width="658" Grid.ColumnSpan="4" Grid.Row="1"/>
-                    <Button x:Name="btnShowReportsApproved" Content="Visa rapport" Grid.Column="3" HorizontalAlignment="Left" Margin="246,167,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+                    <Button x:Name="btnShowReportsApproved" Content="Visa rapport" Grid.Column="3" HorizontalAlignment="Left" Margin="246,167,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75">
+                        <Button.Background>
+                            <ImageBrush ImageSource="Graphics/btn.png"/>
+                        </Button.Background>
+                    </Button>
                 </Grid>
             </TabItem>
 
