@@ -173,3 +173,5 @@ D:\VSProjekt\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.csproj.GenerateResour
 D:\VSProjekt\ResehanteringsSystem - Copy (2)\vITs\vITs\bin\Debug\vITs.exe.config
 D:\VSProjekt\ResehanteringsSystem - Copy (2)\vITs\vITs\obj\Debug\vITs.exe
 D:\VSProjekt\ResehanteringsSystem - Copy (2)\vITs\vITs\obj\Debug\vITs.pdb
+C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\Database.mdf
+C:\Users\Kevin\Desktop\ResehanteringsSystem\vITs\vITs\bin\Debug\Database_log.ldf
