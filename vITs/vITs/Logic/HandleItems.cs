@@ -9,6 +9,7 @@ using DAL;
 using DAL.Repositories.CountryRepository;
 using DAL.Repositories.TripRepository;
 using DAL.Repositories.UserRepository;
+using vITs.Models;
 
 namespace vITs.Logic
 {
@@ -83,6 +84,34 @@ namespace vITs.Logic
 
         }
 
+        //fyller en listbox med resor som väntar på godkännande
+        public static void FillListBoxWithAwaitingApproval(ListBox lb)
+        {
+
+            foreach (var trip in SendTripList())
+            {
+                if (trip.approved == 0)
+                {
+                    var tripToBeAdded = new TripModel()
+                    {
+                        TripId = trip.tripID,
+                        BossId = trip.boss,
+                        Start = trip.start,
+                        End = trip.end,
+                        Origin = trip.origin,
+                        Destination = trip.destination,
+                        Prepayment = trip.prepayment,
+                        Note = trip.note,
+                        Status = trip.approved,
+                        User = trip.user
+                    };
+                    lb.DisplayMemberPath = "TripId";
+                    lb.Items.Add(tripToBeAdded);
+                }
+                
+            }
+
+        }
 
         }  
     }

@@ -28,11 +28,9 @@ namespace vITs
         public RapportHantering()
         {
             InitializeComponent();
-            fillCbsWithCountries();
-          
-   
-            
-            
+            HandleItems.FillCbsWithCountries(cbCountryArrival, cbCountryDeparture);
+            HandleItems.FillListBoxWithAwaitingApproval(lbReportsDenied);
+
         }
 
         private void ClearFieldsAndReloadBoxes()
@@ -42,24 +40,10 @@ namespace vITs
             tbMotivation.Clear();
             cbCountryDeparture.Items.Clear();
             cbCountryArrival.Items.Clear();
-            fillCbsWithCountries();
-            
+            lbReportsDenied.Items.Clear();
+            HandleItems.FillListBoxWithAwaitingApproval(lbReportsDenied);
+            HandleItems.FillCbsWithCountries(cbCountryArrival,cbCountryDeparture);
 
-
-        }
-
-        //Fyller cbs i skapa rapport fliken med länderna som finns i databasen (landnamn + id)
-        private void fillCbsWithCountries()
-        {
-         
-            var countryCollection = CountryRepository.GetAllCountries();
-            foreach (var countryObject in countryCollection)
-            {
-                cbCountryArrival.Items.Add(countryObject.countryID + ". " + countryObject.country1);
-                cbCountryDeparture.Items.Add(countryObject.countryID + ". " + countryObject.country1);
-    
-            }
-            
         }
 
 
@@ -162,15 +146,18 @@ namespace vITs
         {
 
             //kod behöver förändras när objekt i listan finns så allt blir rätt.
-            var report = (int)lbReportsDenied.SelectedItem;
-            AddItems.ApproveDenyReport(report, 1);
+            var report = (TripModel)lbReportsDenied.SelectedItem;
+
+            AddItems.ApproveDenyReport(report.TripId, 1);
+            ClearFieldsAndReloadBoxes();
         }
 
         private void btnDeny_Click(object sender, RoutedEventArgs e)
         {
             //kod behöver förändras när objekt i listan finns så allt blir rätt.
-            var report = (int)lbReportsDenied.SelectedItem;
-            AddItems.ApproveDenyReport(report, 0);
+            var report = (TripModel)lbReportsDenied.SelectedItem;
+            AddItems.ApproveDenyReport(report.TripId, 0);
+            ClearFieldsAndReloadBoxes();
         }
 
 
