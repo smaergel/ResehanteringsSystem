@@ -15,15 +15,15 @@ namespace vITs.Logic
         {
             //överför modellen TripModell till ett objekt av databastypen Trip
             var newTrip = new Trip();
-            newTrip.origin = trip.origin;
-            newTrip.destination = trip.destination;
-            newTrip.start = trip.start;
-            newTrip.end = trip.end;
-            newTrip.prepayment = trip.prepayment;
-            newTrip.note = trip.note;
-            newTrip.user = trip.user;
-            newTrip.boss = trip.boss;
-            newTrip.approved = trip.status;
+            newTrip.origin = trip.Origin;
+            newTrip.destination = trip.Destination;
+            newTrip.start = trip.Start;
+            newTrip.end = trip.End;
+            newTrip.prepayment = trip.Prepayment;
+            newTrip.note = trip.Note;
+            newTrip.user = trip.User;
+            newTrip.boss = trip.BossId;
+            newTrip.approved = trip.Status;
 
             //för in datan i databasen
             TripRepository.AddTrip(newTrip);
