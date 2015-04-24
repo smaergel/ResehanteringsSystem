@@ -7,8 +7,8 @@
             <ColumnDefinition Width="65*"/>
             <ColumnDefinition Width="98*"/>
         </Grid.ColumnDefinitions>
-        <TabControl HorizontalAlignment="Left" Height="481" VerticalAlignment="Bottom" Width="650" Margin="0,-2,0,0" Grid.ColumnSpan="2" >
-            <TabItem Header="Ändra lösenord" Margin="-10,2,6,-4" Background="{x:Null}">
+        <TabControl HorizontalAlignment="Left" Height="481" VerticalAlignment="Bottom" Width="650" Margin="0,0,0,-8" Grid.ColumnSpan="2" >
+            <TabItem Header="Ändra lösenord" Margin="-2,0,-2,0" Background="{x:Null}">
                 <Grid Margin="0,0,-5,-4" Background="#FF8D8D8D">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="115*"/>
@@ -52,14 +52,14 @@
                     <Label Content="Ändra Lösenord" Grid.Column="5" HorizontalAlignment="Left" Margin="53,117,0,0" VerticalAlignment="Top" FontFamily="TechnicBold" FontWeight="Bold" FontSize="22" Foreground="#FF383838" Grid.ColumnSpan="2"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Personuppgifter" Margin="-2,0,-2,-2">
+            <TabItem Header="Personuppgifter" Margin="1,0,-2,-2">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF0F0F0" Offset="0"/>
                         <GradientStop Color="#FFE5E5E5" Offset="1"/>
                     </LinearGradientBrush>
                 </TabItem.Background>
-                <Grid Background="#FF8D8D8D" Margin="0,-3,-14,-9">
+                <Grid Margin="0,0,-5,-4" Background="#FF8D8D8D">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="32*"/>
                         <ColumnDefinition Width="57*"/>
@@ -97,7 +97,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Administratör" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="94" Margin="2,0,-2,0">
-                <Grid Background="#FF8D8D8D" Margin="0,10,-6,-4">
+                <Grid Margin="0,0,-5,-4" Background="#FF8D8D8D">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40*"/>
                         <RowDefinition Height="189*"/>

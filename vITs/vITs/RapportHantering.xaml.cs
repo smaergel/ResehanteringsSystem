@@ -144,7 +144,6 @@ namespace vITs
 
         private void btnApprove_Click(object sender, RoutedEventArgs e)
         {
-
             //kod behöver förändras när objekt i listan finns så allt blir rätt.
             var report = (TripModel)lbReportsDenied.SelectedItem;
 
@@ -156,11 +155,10 @@ namespace vITs
         {
             //kod behöver förändras när objekt i listan finns så allt blir rätt.
             var report = (TripModel)lbReportsDenied.SelectedItem;
+
             AddItems.ApproveDenyReport(report.TripId, 0);
             ClearFieldsAndReloadBoxes();
         }
-
-
 
 
     }
