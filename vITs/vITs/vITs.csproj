@@ -78,8 +78,13 @@
     <Compile Include="Logic\ModelTransformer.cs" />
     <Compile Include="Logic\AddUser.cs" />
     <Compile Include="Logic\HandleItems.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Logic\ModelTransformer.cs" />
+>>>>>>> origin/testmerge
     <Compile Include="Logic\Serializer.cs" />
     <Compile Include="Logic\Validering.cs" />
+    <Compile Include="Models\FullTrip.cs" />
     <Compile Include="Models\TripModel.cs" />
     <Compile Include="Models\FullTrip.cs" />
     <Compile Include="Models\UserModel.cs" />
@@ -104,8 +109,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RapportHantering.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Settings.xaml">
       <Generator>MSBuild:Compile</Generator>

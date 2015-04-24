@@ -15,5 +15,10 @@ namespace vITs.Models
         public int prepayment { get; set; }
         public string note { get; set; }
         public int user { get; set; }
+<<<<<<< HEAD
+=======
+        public int boss { get; set; }
+        public bool status { get; set; }
+>>>>>>> origin/testmerge
     }
 }

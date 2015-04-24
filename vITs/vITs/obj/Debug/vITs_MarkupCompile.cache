@@ -12,7 +12,11 @@ DEBUG;TRACE
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\App.xaml
 31810450579
 2-980765204
+<<<<<<< HEAD
 171257286239
+=======
+18327829771
+>>>>>>> origin/testmerge
 161845923502
 MainWindow.xaml;RapportHantering.xaml;Settings.xaml;
 
