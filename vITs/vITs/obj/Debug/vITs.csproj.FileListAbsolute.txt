@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-D:\VSProjekt\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.exe.config
-=======
 C:\Users\Peter\Documents\GitHub\scrumprojekt\vITs\vITs\bin\Debug\vITs.exe.config
 C:\Users\Peter\Documents\GitHub\scrumprojekt\vITs\vITs\bin\Debug\vITs.exe
 C:\Users\Peter\Documents\GitHub\scrumprojekt\vITs\vITs\bin\Debug\vITs.pdb
@@ -152,7 +149,6 @@ D:\VSProjekt\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.exe
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.pdb
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\bin\Debug\Database.mdf
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\bin\Debug\Database_log.ldf
->>>>>>> origin/testmerge
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.exe
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\bin\Debug\vITs.pdb
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\bin\Debug\DAL.exe
@@ -174,8 +170,6 @@ D:\VSProjekt\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs_MarkupCompile.cache
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.g.resources
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.Properties.Resources.resources
 D:\VSProjekt\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.csproj.GenerateResource.Cache
-<<<<<<< HEAD
-D:\VSProjekt\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.exe
-D:\VSProjekt\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.pdb
-=======
->>>>>>> origin/testmerge
+D:\VSProjekt\ResehanteringsSystem - Copy (2)\vITs\vITs\bin\Debug\vITs.exe.config
+D:\VSProjekt\ResehanteringsSystem - Copy (2)\vITs\vITs\obj\Debug\vITs.exe
+D:\VSProjekt\ResehanteringsSystem - Copy (2)\vITs\vITs\obj\Debug\vITs.pdb

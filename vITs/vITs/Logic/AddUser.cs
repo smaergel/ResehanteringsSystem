@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using DAL;
 using DAL.Repositories.UserRepository;
 using vITs.Models;
-using System.Windows.Controls;
-using System.Windows;
 
 namespace vITs.Logic
 {
@@ -40,82 +40,55 @@ namespace vITs.Logic
             UserHandling.AddUserAsBoss(user);
         }
 
-        public static void UpdateUser(int UserID, TextBox Tele, TextBox Email)
+        public static void UpdateUser(int UserID, TextBox Tele, TextBox Address, TextBox Email)
         {
-            if (Validering.CheckIf2Empty(Tele, Email))
+            if (Validering.CheckIf3Empty(Tele, Address, Email))
             {
                 var user = UserHandling.GetUser(UserID);
                 user.phone = Tele.Text;
-      //          user.firstname = Address.Text;
+                user.firstname = Address.Text;
                 user.email = Email.Text;
                 UserHandling.UpdateUser(user);
                 MessageBox.Show("Uppgifter sparade");
                 Tele.Text = "";
-    //            Address.Text = "";
+                Address.Text = "";
                 Email.Text = "";
             }
         }
 
-        public static void ChangePassword(int user, PasswordBox newPasswordOne, PasswordBox newPasswordTwo,
-        PasswordBox OldPassword)
+        public static void ChangePassword(int user, TextBox newPasswordOne, TextBox newPasswordTwo, TextBox OldPassword)
         {
-            if (Validering.CheckIf3Password(newPasswordOne, newPasswordTwo, OldPassword))
+            if (Validering.CheckIf3Empty(newPasswordOne, newPasswordTwo, OldPassword))
             {
                 var userNow = UserHandling.GetUser(user);
-                if (userNow.password != OldPassword.Password)
+                if (userNow.password != OldPassword.Text)
                 {
                     MessageBox.Show("Du har angivit fel lösenord");
                 }
 
-                else if (newPasswordOne.Password != newPasswordTwo.Password)
+                else if (newPasswordOne.Text != newPasswordTwo.Text)
                 {
                     MessageBox.Show("Lösenorden stämmer inte överens");
                 }
 
                 else
                 {
-                    userNow.password = newPasswordOne.Password;
+                    userNow.password = newPasswordOne.Text;
                     UserHandling.UpdateUser(userNow);
                     MessageBox.Show("Lösenordet har ändrats");
-                    newPasswordOne.Password = "";
-                    newPasswordTwo.Password = "";
-                    OldPassword.Password = "";
+                    newPasswordOne.Text = "";
+                    newPasswordTwo.Text = "";
+                    OldPassword.Text = "";
                 }
             }
         }
 
-        public static void FillUserInformation(int UserID, TextBox Tele, TextBox Email)
+        public static void FillUserInformation(int UserID, TextBox Tele, TextBox Address, TextBox Email)
         {
                 var user = UserHandling.GetUser(UserID);
                 Tele.Text = user.phone;
+                Address.Text = user.firstname;
                 Email.Text = user.email;
-        }
-
-        public static void DeleteUser(int userId, ComboBox cb)
-        {
-            var checkIfBoss = UserHandling.CheckIfBoss(userId);
-            if (checkIfBoss != null)
-            {
-                UserHandling.DeleteBosses(userId);
-                //UserHandling.DeleteUsers(userID);
-                cb.Items.Clear();
-
-            }
-            UserHandling.DeleteUsers(userId);
-            cb.Items.Clear();
-
-        }
-
-        public static void ClearText(TextBox Firstname, TextBox Lastname, PasswordBox Password, PasswordBox
-        ConfirmPassword, TextBox Email, TextBox Tele, CheckBox cbx)
-        {
-            Firstname.Text = "";
-            Lastname.Text = "";
-            Password.Password = "";
-            ConfirmPassword.Password = "";
-            Email.Text = "";
-            Tele.Text = "";
-            cbx.IsChecked = false;
         }
 
     }

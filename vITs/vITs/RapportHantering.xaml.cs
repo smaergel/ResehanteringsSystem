@@ -15,10 +15,7 @@ using DAL;
 using vITs.Logic;
 using vITs.Models;
 using DAL.Repositories.TripRepository;
-<<<<<<< HEAD
-=======
 using DAL.Repositories.CountryRepository;
->>>>>>> origin/testmerge
 
 namespace vITs
 {
@@ -54,13 +51,8 @@ namespace vITs
         //Fyller cbs i skapa rapport fliken med länderna som finns i databasen (landnamn + id)
         private void fillCbsWithCountries()
         {
-<<<<<<< HEAD
-            var handle = new HandleItems();
-            var countryCollection = handle.SendCountryList();
-=======
          
             var countryCollection = CountryRepository.GetAllCountries();
->>>>>>> origin/testmerge
             foreach (var countryObject in countryCollection)
             {
                 cbCountryArrival.Items.Add(countryObject.countryID + ". " + countryObject.country1);
