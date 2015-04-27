@@ -173,3 +173,7 @@ D:\VSProjekt\ResehanteringsSystem\vITs\vITs\obj\Debug\vITs.csproj.GenerateResour
 D:\VSProjekt\ResehanteringsSystem - Copy (2)\vITs\vITs\bin\Debug\vITs.exe.config
 D:\VSProjekt\ResehanteringsSystem - Copy (2)\vITs\vITs\obj\Debug\vITs.exe
 D:\VSProjekt\ResehanteringsSystem - Copy (2)\vITs\vITs\obj\Debug\vITs.pdb
+C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\MigraDoc.DocumentObjectModel-WPF.resources.dll
+C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\MigraDoc.Rendering-WPF.resources.dll
+C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\MigraDoc.RtfRendering-WPF.resources.dll
+C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\PdfSharp-WPF.resources.dll
