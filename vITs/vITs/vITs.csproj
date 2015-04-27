@@ -55,33 +55,6 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="MigraDoc.DocumentObjectModel-WPF">
-      <HintPath>..\..\..\WPF\MigraDoc.DocumentObjectModel-WPF.dll</HintPath>
-    </Reference>
-    <Reference Include="MigraDoc.DocumentObjectModel-WPF.resources">
-      <HintPath>..\..\..\WPF\de\MigraDoc.DocumentObjectModel-WPF.resources.dll</HintPath>
-    </Reference>
-    <Reference Include="MigraDoc.Rendering-WPF">
-      <HintPath>..\..\..\WPF\MigraDoc.Rendering-WPF.dll</HintPath>
-    </Reference>
-    <Reference Include="MigraDoc.Rendering-WPF.resources">
-      <HintPath>..\..\..\WPF\de\MigraDoc.Rendering-WPF.resources.dll</HintPath>
-    </Reference>
-    <Reference Include="MigraDoc.RtfRendering-WPF">
-      <HintPath>..\..\..\WPF\MigraDoc.RtfRendering-WPF.dll</HintPath>
-    </Reference>
-    <Reference Include="MigraDoc.RtfRendering-WPF.resources">
-      <HintPath>..\..\..\WPF\de\MigraDoc.RtfRendering-WPF.resources.dll</HintPath>
-    </Reference>
-    <Reference Include="PdfSharp-WPF">
-      <HintPath>..\..\..\WPF\PdfSharp-WPF.dll</HintPath>
-    </Reference>
-    <Reference Include="PdfSharp-WPF.resources">
-      <HintPath>..\..\..\WPF\de\PdfSharp-WPF.resources.dll</HintPath>
-    </Reference>
-    <Reference Include="PdfSharp.Charting-WPF">
-      <HintPath>..\..\..\WPF\PdfSharp.Charting-WPF.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -109,7 +82,6 @@
     <Compile Include="Logic\Serializer.cs" />
     <Compile Include="Logic\Validering.cs" />
     <Compile Include="Models\FullTrip.cs" />
-    <Compile Include="Models\TripForReports.cs" />
     <Compile Include="Models\TripModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\VacationModel.cs" />

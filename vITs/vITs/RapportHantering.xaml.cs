@@ -14,22 +14,9 @@ using System.Windows.Shapes;
 using DAL;
 using vITs.Logic;
 using vITs.Models;
-<<<<<<< HEAD
 using DAL.Repositories.TripRepository;
 using DAL.Repositories.CountryRepository;
 
-=======
-using DAL.Repositories.UserRepository;
-using PdfSharp;
-using PdfSharp.Pdf;
-using PdfSharp.Drawing;
-using PdfSharp.Charting;
-using PdfSharp.Internal;
-using System.Drawing;
-using System.Diagnostics;
-using System.Reflection;
-using System.Text.RegularExpressions;
->>>>>>> origin/Enskild_rapport
 namespace vITs
 {
     /// <summary>
@@ -157,131 +144,11 @@ namespace vITs
 
         private void btnApprove_Click(object sender, RoutedEventArgs e)
         {
-<<<<<<< HEAD
             //kod behöver förändras när objekt i listan finns så allt blir rätt.
             var report = (TripModel)lbReportsDenied.SelectedItem;
 
             AddItems.ApproveDenyReport(report.TripId, 1);
             ClearFieldsAndReloadBoxes();
-=======
-            var row = lvReports.SelectedItem.ToString();
-            string[] col = row.Split(',');
-
-            string id = Regex.Match(col[0], @"\d+").Value;
-            string[] nameSplit = col[1].Split('=');
-            string name = nameSplit[1].Trim();
-            string[] destinationSplit = col[2].Split('=');
-            string destination = destinationSplit[1].Trim();
-            string[] dateSplit = col[3].Split('=');
-            string date = dateSplit[1].Trim();
-            string[] stateSplit = col[4].Split('=');
-            string state = stateSplit[1].Trim().Substring(0,stateSplit[1].Length-2);
-
-            
-            PdfDocument pdf = new PdfDocument();
-            pdf.Info.Title = name;
-            PdfPage pdfPage = pdf.AddPage();
-            XGraphics graph = XGraphics.FromPdfPage(pdfPage);
-            XFont font = new XFont("Verdana", 20, XFontStyle.Bold);
-            XFont minifont = new XFont("Verdana", 15);
-
-            XImage img = XImage.FromFile("C:\\Users\\Slayer\\Desktop\\ResehanteringsSystem\\vITs\\vITs\\Graphics\\img.gif");
-            graph.DrawImage(img, 10, 10, 80, 80);
-            graph.DrawString("Anställd: " + name, font, XBrushes.Black,new XRect(0, -330, pdfPage.Width.Point,
-            pdfPage.Height.Point), XStringFormat.Center);
-            graph.DrawString("Id: " + id, minifont, XBrushes.Black, new XRect(0, -285, pdfPage.Width.Point,
-            pdfPage.Height.Point), XStringFormat.Center);
-            graph.DrawString("Destination: " + destination, minifont, XBrushes.Black, new XRect(0, -265, pdfPage.Width.Point,
-            pdfPage.Height.Point), XStringFormat.Center);
-            graph.DrawString("Datum: " + date, minifont, XBrushes.Black, new XRect(0, -245, pdfPage.Width.Point,
-            pdfPage.Height.Point), XStringFormat.Center);
-            graph.DrawString("Godkänt :" + state, minifont, XBrushes.Black, new XRect(0, -225, pdfPage.Width.Point,
-            pdfPage.Height.Point), XStringFormat.Center);
-            string pdfFilename = id + ".pdf";
-            if (pdfFilename != "")
-            {
-                pdf.Save(pdfFilename);
-            }
-            Process.Start(pdfFilename);
-        }
-
-        private void btnGetOwnReports_Click(object sender, RoutedEventArgs e)
-        {
-            fillListData(HandleItems.GetTrips());
-        }
-        public void fillListData(IEnumerable<Object> query)
-        {
-            if (lvReports.Items.Count >= 1)
-            {
-                lvReports.Items.Clear();
-            }
-            var queryTrips = query;
-
-                /*for (int i = 0; i < queryTrips.Count(); i++)
-                {
-                Type type = queryTrips.GetType().GetGenericArguments()[1];
-                PropertyInfo propertyID = type.GetProperty("id");
-                PropertyInfo propertyConsultant = type.GetProperty("consultant");
-                PropertyInfo propertyDestination = type.GetProperty("destination");
-                PropertyInfo propertyDate = type.GetProperty("date");
-                PropertyInfo propertyState = type.GetProperty("status");
-                object id = propertyID.GetValue(queryTrips.First(), null);
-                object consultant = propertyConsultant.GetValue(queryTrips.First(), null);
-                object destination = propertyDestination.GetValue(queryTrips.First(), null);
-                object date = propertyDate.GetValue(queryTrips.First(), null);
-                object state = propertyState.GetValue(queryTrips.First(), null);
-                if ((bool)state == false) { state = "EJ OK"; } else { state = "OK"; }
-
-                lvReports.Items.Add(new { id = id.ToString(), consultant = consultant.ToString(), destination = destination.ToString(), date = date.ToString().Substring(0, 10), status = state.ToString() });
-                }*/
-                foreach(var item in queryTrips)
-                {
-                    //Type type = item.GetType();
-                    //var properties = type.GetProperties();
-
-                    var id = item.GetType().GetProperty("id").GetValue(item).ToString();
-                    var consultant = item.GetType().GetProperty("consultant").GetValue(item).ToString();
-                    var destination = item.GetType().GetProperty("destination").GetValue(item).ToString();
-                    var date = item.GetType().GetProperty("date").GetValue(item).ToString();
-                    var state = item.GetType().GetProperty("status").GetValue(item);
-                    if ((bool)state == false) { state = "EJ OK"; } else { state = "OK"; }
-
-                    lvReports.Items.Add(new {id = id, consultant = consultant, destination = destination, date = date, status = state});
-                }
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void rbFilterAll_Checked(object sender, RoutedEventArgs e)
-        {
-            var query = HandleItems.GetTrips();
-            fillListData(query);
-        }
-
-        private void rbFilterMonth_Checked(object sender, RoutedEventArgs e)
-        {
-            var query = HandleItems.GetTripsFiltered(-1);
-            fillListData(query);
-        }
-
-        private void rbFilterQuater_Checked(object sender, RoutedEventArgs e)
-        {
-            var query = HandleItems.GetTripsFiltered(-3);
-            fillListData(query);
-        }
-
-        private void rbFilterYear_Checked(object sender, RoutedEventArgs e)
-        {
-            var query = HandleItems.GetTripsFiltered(-12);
-            fillListData(query);
->>>>>>> origin/Enskild_rapport
         }
 
         private void btnDeny_Click(object sender, RoutedEventArgs e)

@@ -9,11 +9,7 @@ using DAL;
 using DAL.Repositories.CountryRepository;
 using DAL.Repositories.TripRepository;
 using DAL.Repositories.UserRepository;
-<<<<<<< HEAD
 using vITs.Models;
-=======
-using System.Reflection;
->>>>>>> origin/Enskild_rapport
 
 namespace vITs.Logic
 {
@@ -88,7 +84,6 @@ namespace vITs.Logic
 
         }
 
-<<<<<<< HEAD
         //fyller en listbox med resor som väntar på godkännande
         public static void FillListBoxWithAwaitingApproval(ListBox lb)
         {
@@ -116,21 +111,8 @@ namespace vITs.Logic
                 
             }
 
-=======
-        public static IEnumerable<Object> GetTrips()
-        {
-            var trips = TripRepository.getTripsForReports();
-            return trips;
         }
 
-        public static IEnumerable<Object> GetTripsFiltered(int month)
-        {
-            var orderby = TripRepository.filterTrips(month);
-            return orderby;
->>>>>>> origin/Enskild_rapport
-        }
-
-       
         }  
     }
 
