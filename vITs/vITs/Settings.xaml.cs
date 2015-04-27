@@ -34,6 +34,7 @@ namespace vITs
             var userList = handle.SendUserList();
             foreach (var user in userList)
             {
+                if (HandleItems.GetCurrentUserId() != user.userID)
                 cbUser.Items.Add(user.userID + ". " + user.firstname + " " + user.lastname);
             }
         }
