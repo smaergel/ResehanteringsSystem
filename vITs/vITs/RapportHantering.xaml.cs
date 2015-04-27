@@ -28,9 +28,22 @@ namespace vITs
         public RapportHantering()
         {
             InitializeComponent();
+<<<<<<< HEAD
             HandleItems.FillCbsWithCountries(cbCountryArrival, cbCountryDeparture);
             HandleItems.FillListBoxWithAwaitingApproval(lbReportsDenied);
 
+=======
+            fillCbsWithCountries();
+
+            if (HandleItems.GetCurrentUserId() == 0)
+            {
+                tbSearchAnstIdDenied.IsEnabled = false;
+                btnGetReportsDenied.IsEnabled = false;
+                tbSearchAnstIdApproved.IsEnabled = false;
+                btnGetReportsApproved.IsEnabled = false;
+                anvInstallningar.IsEnabled = false;
+            }
+>>>>>>> origin/VIsibleEjVisible
         }
 
         private void ClearFieldsAndReloadBoxes()
@@ -151,6 +164,7 @@ namespace vITs
             ClearFieldsAndReloadBoxes();
         }
 
+<<<<<<< HEAD
         private void btnDeny_Click(object sender, RoutedEventArgs e)
         {
             //kod behöver förändras när objekt i listan finns så allt blir rätt.
@@ -161,5 +175,12 @@ namespace vITs
         }
 
 
+=======
+        private void anvInstalnningar_Click(object sender, RoutedEventArgs e)
+        {
+            var installning = new Settings();
+            installning.Show();
+        }
+>>>>>>> origin/VIsibleEjVisible
     }
 }
