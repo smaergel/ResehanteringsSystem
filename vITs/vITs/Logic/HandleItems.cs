@@ -72,6 +72,10 @@ namespace vITs.Logic
 
         }
 
+        public List<User> SendUserList()
+        {
+            return UserHandling.GetUsers();
+        }
 
         ////returnerar den inloggade användarens id.
         public static int GetCurrentUserId()

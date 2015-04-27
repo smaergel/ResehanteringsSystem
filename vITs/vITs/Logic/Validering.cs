@@ -38,6 +38,39 @@ namespace vITs.Logic
                 return true;
             }
         }
+
+        public static bool CheckIf3Password(PasswordBox box1, PasswordBox box2, PasswordBox box3)
+        {
+            var text1 = box1.Password;
+            var text2 = box2.Password;
+            var text3 = box3.Password;
+
+            if (text1 == "" || text2 == "" || text3 == "")
+            {
+                MessageBox.Show("Ett eller flera textfält är tomma");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public static bool CheckIf2Empty(TextBox box1, TextBox box2)
+        {
+            var text1 = box1.Text;
+            var text2 = box2.Text;
+
+            if (text1 == "" || text2 == "")
+            {
+                MessageBox.Show("Ett eller flera textfält är tomma");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         
     }
 }
