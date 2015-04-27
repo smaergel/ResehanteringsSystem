@@ -9,6 +9,7 @@ using DAL;
 using DAL.Repositories.CountryRepository;
 using DAL.Repositories.TripRepository;
 using DAL.Repositories.UserRepository;
+using System.Reflection;
 
 namespace vITs.Logic
 {
@@ -85,7 +86,19 @@ namespace vITs.Logic
 
         }
 
+        public static IEnumerable<Object> GetTrips()
+        {
+            var trips = TripRepository.getTripsForReports();
+            return trips;
+        }
 
+        public static IEnumerable<Object> GetTripsFiltered(int month)
+        {
+            var orderby = TripRepository.filterTrips(month);
+            return orderby;
+        }
+
+       
         }  
     }
 

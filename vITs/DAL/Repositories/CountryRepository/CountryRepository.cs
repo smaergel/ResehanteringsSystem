@@ -56,7 +56,6 @@ namespace DAL.Repositories.CountryRepository
                 var countries = dbConnect.Countries.ToList();
 
                 return countries;
-
             }
 
         }
