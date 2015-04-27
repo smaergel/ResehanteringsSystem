@@ -9,6 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using DAL;
 using System;
 using System.Diagnostics;
 using System.Windows;

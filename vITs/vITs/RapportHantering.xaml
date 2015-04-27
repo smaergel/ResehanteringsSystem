@@ -91,6 +91,7 @@
 
 
             <TabItem Header="Egna rapporter"  HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="96" Margin="0,0,-18,0">
+<<<<<<< HEAD
                 <TabItem.Background>
                     <ImageBrush ImageSource="Graphics/bg.png"/>
                 </TabItem.Background>
@@ -106,6 +107,28 @@
                     </Button>
                     <Button x:Name="btnShowOwnReports" Content="Visa rapport" HorizontalAlignment="Left" Margin="574,250,0,0" VerticalAlignment="Top" Width="92"/>
                     <Button Content="Skicka rapport" HorizontalAlignment="Left" Margin="450,250,0,0" VerticalAlignment="Top" Width="104"/>
+=======
+                <Grid Background="#FFE5E5E5" Margin="10,0,-10,0">
+                    <Button x:Name="btnShowOwnReports" Content="Visa rapport" HorizontalAlignment="Left" Margin="574,250,0,0" VerticalAlignment="Top" Width="92" Click="btnShowOwnReports_Click"/>
+                    <Button Content="Skicka rapport" HorizontalAlignment="Left" Margin="450,250,0,0" VerticalAlignment="Top" Width="104" Click="Button_Click"/>
+                    <ListView x:Name="lvReports" HorizontalAlignment="Left" Height="180" Margin="10,51,0,0" VerticalAlignment="Top" Width="656">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="ID" Width="30" DisplayMemberBinding="{Binding Path=id}"/>
+                                <GridViewColumn Header="KONSULT" Width="200" DisplayMemberBinding="{Binding Path=consultant}"/>
+                                <GridViewColumn Header="DESTINATION" Width="130" DisplayMemberBinding="{Binding Path=destination}"/>
+                                <GridViewColumn Header="DATUM" Width="200" DisplayMemberBinding="{Binding Path=date}"/>
+                                <GridViewColumn Header="STATUS" Width="92" DisplayMemberBinding="{Binding Path=status}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Grid HorizontalAlignment="Left" Background="#f1f1f1" Height="36" Margin="10,10,0,0" VerticalAlignment="Top" Width="400">
+                        <RadioButton x:Name="rbFilterAll" Content="Alla" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="filterGroup" Checked="rbFilterAll_Checked" IsChecked="True"/>
+                        <RadioButton x:Name="rbFilterMonth" Content="Senaste månaden" HorizontalAlignment="Left" Margin="64,10,0,0" VerticalAlignment="Top" GroupName="filterGroup" Checked="rbFilterMonth_Checked"/>
+                        <RadioButton x:Name="rbFilterQuater" Content="Senaste kvartalet" HorizontalAlignment="Left" Margin="182,10,0,0" VerticalAlignment="Top" GroupName="filterGroup" Checked="rbFilterQuater_Checked"/>
+                        <RadioButton x:Name="rbFilterYear" Content="Senaste året" HorizontalAlignment="Left" Margin="301,10,0,0" VerticalAlignment="Top" GroupName="filterGroup" Checked="rbFilterYear_Checked"/>
+                    </Grid>
+>>>>>>> origin/Enskild_rapport
                 </Grid>
             </TabItem>
             <TabItem Header="Ej godkända rapporter" Margin="0,0,0,0">

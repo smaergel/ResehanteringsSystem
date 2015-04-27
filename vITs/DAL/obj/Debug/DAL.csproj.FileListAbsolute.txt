@@ -34,8 +34,6 @@ C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFr
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.exe
 C:\Users\david\Documents\GitHub\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.pdb
-C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\Database.mdf
-C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\Database_log.ldf
 C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\DAL.exe.config
 C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\DAL.exe
 C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\DAL\bin\Debug\DAL.pdb

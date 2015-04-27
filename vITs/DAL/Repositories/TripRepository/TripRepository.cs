@@ -119,5 +119,56 @@ namespace DAL.Repositories.TripRepository
 
         }
 
+        public static IEnumerable<dynamic> getTripsForReports()
+        {
+            using(var context = new DatabaseEntities())
+            {
+//                SELECT trips.tripID, Countries.country1, trips.start, trips.[end], Users.firstname +
+                //' ' + Users.lastname as [Consultat], Trips.approved FROM trips
+                //JOIN Users ON trips.[user] = Users.userID
+                //JOIN Countries ON Trips.destination = Countries.countryID
+                var trips = from t in context.Trips
+                            join c in context.Countries on t.destination equals c.countryID
+                            join u in context.Users on t.user equals u.userID
+                            select new
+                            {
+                                id = t.tripID,
+                                destination = c.country1,
+                                consultant = u.firstname + " " + u.lastname,
+                                date = t.start,
+                                status = t.approved
+                            };
+                IEnumerable<dynamic> tripsList = trips.ToList();
+                return tripsList;
+
+                //var list = asd.SelectMany(item => item.id);
+            }
+        }
+
+        public static IEnumerable<dynamic> filterTrips(int month)
+        {
+                            
+            using (var context = new DatabaseEntities())
+            {
+                var date = DateTime.Now.AddMonths(month);
+              // AllTrips.Where(x => DateTime.Compare(x.date = DateTime.Today.AddMonths(-1)));)
+                var trips = from t in context.Trips
+                            join c in context.Countries on t.destination equals c.countryID
+                            join u in context.Users on t.user equals u.userID
+                            where t.start > date
+                            orderby t.start descending
+                            select new
+                            {
+                                id = t.tripID,
+                                destination = c.country1,
+                                consultant = u.firstname + " " + u.lastname,
+                                date = t.start,
+                                status = t.approved
+                            };
+                IEnumerable<dynamic> tripsList = trips.ToList();
+                return tripsList;
+            }
+        }
+ 
     }
 }

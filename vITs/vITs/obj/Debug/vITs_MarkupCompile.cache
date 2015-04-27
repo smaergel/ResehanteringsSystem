@@ -4,16 +4,21 @@
 winexe
 C#
 .cs
-C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\obj\Debug\
+C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\vITs\obj\Debug\
 vITs
 none
 false
 DEBUG;TRACE
-C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\App.xaml
+C:\Users\Slayer\Desktop\ResehanteringsSystem\vITs\vITs\App.xaml
 31810450579
 2-980765204
+<<<<<<< HEAD
 18327829771
 16-1651363052
+=======
+14-1410198176
+25-1334338122
+>>>>>>> origin/Enskild_rapport
 MainWindow.xaml;RapportHantering.xaml;Settings.xaml;
 
 False
