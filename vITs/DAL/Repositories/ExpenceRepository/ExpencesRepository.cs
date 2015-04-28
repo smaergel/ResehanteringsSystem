@@ -37,5 +37,14 @@ namespace DAL
                 context.SaveChanges();
             }
         }
+
+        public static List<Expence> GetAll()
+        {
+            using (var context = new DatabaseEntities())
+            {
+                return context.Expences.Select(x=> x).ToList();
+            }
+        }
+
     }
 }

@@ -51,6 +51,15 @@ namespace vITs.Logic
            
         }
 
+        public static Vacation VacationModel2Vacation(VacationModel vacationmodel)
+        {
+            var vacation = new Vacation();
+            vacation.start = vacationmodel.start;
+            vacation.end = vacationmodel.end;
+            vacation.tripID = vacationmodel.tripID;
+            return vacation;
+
+        }
 
 
     }
