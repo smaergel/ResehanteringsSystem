@@ -204,6 +204,7 @@
       <DependentUpon>Database.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Graphics\pdfImage.gif" />
     <Resource Include="Graphics\bg_border.png" />
     <Resource Include="Graphics\bg.png" />
     <Resource Include="Graphics\btn.png" />

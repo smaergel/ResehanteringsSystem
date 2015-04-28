@@ -36,6 +36,7 @@ namespace vITs
     {
         public List<FullTrip> fulltrips;
         public Dictionary<string, Vacation> dic;
+        public bool bossFound;
         public RapportHantering()
         {
             InitializeComponent();
@@ -44,8 +45,27 @@ namespace vITs
             HandleItems.FillCbsWithCountries(cbCountryArrival, cbCountryDeparture);
             HandleItems.FillListBoxWithAwaitingApproval(lbReportsDenied);
 
+            var bosses = UserHandling.getBosses();
+            
+            for (int i = 0; i < bosses.Count; i++)
+            {
+                if (bosses[i].userID == HandleItems.GetCurrentUserId())
+                {
+                    bossFound = true;
+                }
+            }
+            if (bossFound == false)
+            {
+                tab3.Visibility = Visibility.Hidden;
+                tab4.Visibility = Visibility.Hidden;
+                tab5.Visibility = Visibility.Hidden;
+            }
+
             if (HandleItems.GetCurrentUserId() == 0)
             {
+                tab3.Visibility = Visibility.Hidden;
+                tab4.Visibility = Visibility.Hidden;
+                tab5.Visibility = Visibility.Hidden;
                 tbSearchAnstIdDenied.IsEnabled = false;
                 btnGetReportsDenied.IsEnabled = false;
                 tbSearchAnstIdApproved.IsEnabled = false;
@@ -64,7 +84,8 @@ namespace vITs
             lbReportsDenied.Items.Clear();
             HandleItems.FillListBoxWithAwaitingApproval(lbReportsDenied);
             HandleItems.FillCbsWithCountries(cbCountryArrival, cbCountryDeparture);
-
+            LoadReseUtlägg();
+            //HandleItems.FillTripCbWithAllTrips(cbPickTripExpensesTab);
         }
 
 
@@ -94,7 +115,8 @@ namespace vITs
             int.TryParse(prepay, out prepaySum);
             realtrip.prepayment = prepaySum;
             realtrip.note = tbMotivation.Text;
-            realtrip.user = (int)cbBosses.SelectedItem;
+            realtrip.boss = (int)cbBosses.SelectedItem;
+            realtrip.user = HandleItems.GetCurrentUserId();
             //validerar informationen som hämtats ut or boxarna
             if (Validering.CheckPrepaySum((int)realtrip.prepayment))
             {
@@ -117,6 +139,7 @@ namespace vITs
                 ClearFieldsAndReloadBoxes();
 
 
+
             }
         }
 
@@ -128,11 +151,12 @@ namespace vITs
             var verification = new VerificationModel();
             verification.cost = price;
             verification.note = tbCostNotes.Text;
+            verification.date = dpExpence.DisplayDate;
             fulltrips[cbPickTripExpensesTab.SelectedIndex].myVerifications.Add(verification);
-
             Serializer.Overwrite(fulltrips);
             //List<FullTrip> test = new List<FullTrip>();
             //test = (List<FullTrip>)cbPickTripExpensesTab.ItemsSource;
+            MessageBox.Show("Kostnad tillagd till resan.");
         }
 
 
@@ -241,45 +265,62 @@ namespace vITs
 
         private void btnShowOwnReports_Click(object sender, RoutedEventArgs e)
         {
-            var row = lvReports.SelectedItem.ToString();
-            string[] col = row.Split(',');
-
-            string id = Regex.Match(col[0], @"\d+").Value;
-            string[] nameSplit = col[1].Split('=');
-            string name = nameSplit[1].Trim();
-            string[] destinationSplit = col[2].Split('=');
-            string destination = destinationSplit[1].Trim();
-            string[] dateSplit = col[3].Split('=');
-            string date = dateSplit[1].Trim();
-            string[] stateSplit = col[4].Split('=');
-            string state = stateSplit[1].Trim().Substring(0, stateSplit[1].Length - 2);
-
-
-            PdfDocument pdf = new PdfDocument();
-            pdf.Info.Title = name;
-            PdfPage pdfPage = pdf.AddPage();
-            XGraphics graph = XGraphics.FromPdfPage(pdfPage);
-            XFont font = new XFont("Verdana", 20, XFontStyle.Bold);
-            XFont minifont = new XFont("Verdana", 15);
-
-            XImage img = XImage.FromFile("C:\\Users\\Peter\\Documents\\GitHub\\ResehanteringsSystem\\vITs\\vITs\\Graphics\\pdfImage.gif");
-            graph.DrawImage(img, 10, 10, 80, 80);
-            graph.DrawString("Anställd: " + name, font, XBrushes.Black, new XRect(0, -330, pdfPage.Width.Point,
-            pdfPage.Height.Point), XStringFormat.Center);
-            graph.DrawString("Id: " + id, minifont, XBrushes.Black, new XRect(0, -285, pdfPage.Width.Point,
-            pdfPage.Height.Point), XStringFormat.Center);
-            graph.DrawString("Destination: " + destination, minifont, XBrushes.Black, new XRect(0, -265, pdfPage.Width.Point,
-            pdfPage.Height.Point), XStringFormat.Center);
-            graph.DrawString("Datum: " + date, minifont, XBrushes.Black, new XRect(0, -245, pdfPage.Width.Point,
-            pdfPage.Height.Point), XStringFormat.Center);
-            graph.DrawString("Status :" + state, minifont, XBrushes.Black, new XRect(0, -225, pdfPage.Width.Point,
-            pdfPage.Height.Point), XStringFormat.Center);
-            string pdfFilename = id + ".pdf";
-            if (pdfFilename != "")
+            if (lvReports.SelectedItem != null)
             {
-                pdf.Save(pdfFilename);
+                var row = lvReports.SelectedItem.ToString();
+                string[] col = row.Split(',');
+
+                string id = Regex.Match(col[0], @"\d+").Value;
+                string[] nameSplit = col[1].Split('=');
+                string name = nameSplit[1].Trim();
+                string[] destinationSplit = col[2].Split('=');
+                string destination = destinationSplit[1].Trim();
+                string[] dateSplit = col[3].Split('=');
+                string date = dateSplit[1].Trim();
+                string[] stateSplit = col[4].Split('=');
+                string state = stateSplit[1].Trim().Substring(0, stateSplit[1].Length - 2);
+
+                var verifications = VerificationRepository.GetVerifications(Convert.ToInt32(id));
+
+                PdfDocument pdf = new PdfDocument();
+                pdf.Info.Title = name;
+                PdfPage pdfPage = pdf.AddPage();
+                XGraphics graph = XGraphics.FromPdfPage(pdfPage);
+                XFont font = new XFont("Verdana", 20, XFontStyle.Bold);
+                XFont minifont = new XFont("Verdana", 15);
+                var y = -160;
+                /*XImage img =
+                    XImage.FromFile(
+                        "C:\\Users\\Peter\\Documents\\GitHub\\ResehanteringsSystem\\vITs\\vITs\\Graphics\\pdfImage.gif");*/
+                //graph.DrawImage(img, 10, 10, 80, 80);
+                graph.DrawString("Anställd: " + name, font, XBrushes.Black, new XRect(0, -330, pdfPage.Width.Point,
+                    pdfPage.Height.Point), XStringFormat.Center);
+                graph.DrawString("Id: " + id, minifont, XBrushes.Black, new XRect(0, -285, pdfPage.Width.Point,
+                    pdfPage.Height.Point), XStringFormat.Center);
+                graph.DrawString("Destination: " + destination, minifont, XBrushes.Black,
+                    new XRect(0, -265, pdfPage.Width.Point,
+                        pdfPage.Height.Point), XStringFormat.Center);
+                graph.DrawString("Datum: " + date, minifont, XBrushes.Black, new XRect(0, -245, pdfPage.Width.Point,
+                    pdfPage.Height.Point), XStringFormat.Center);
+                graph.DrawString("Status :" + state, minifont, XBrushes.Black, new XRect(0, -225, pdfPage.Width.Point,
+                    pdfPage.Height.Point), XStringFormat.Center);
+                graph.DrawString("Utgifter", font, XBrushes.Black, new XRect(0, -180, pdfPage.Width.Point,
+                    pdfPage.Height.Point), XStringFormat.Center);
+                foreach (var v in verifications)
+                {
+                    
+                    graph.DrawString(ExpencesRepository.GetExpence(v.expenceID) + ", Kostnad: "+v.cost+", Note: " + v.note, minifont, XBrushes.Black, new XRect(0, y, pdfPage.Width.Point,
+                    pdfPage.Height.Point), XStringFormat.Center);
+                    y -= 20;
+                }
+
+                string pdfFilename = id + ".pdf";
+                if (pdfFilename != "")
+                {
+                    pdf.Save(pdfFilename);
+                }
+                Process.Start(pdfFilename);
             }
-            Process.Start(pdfFilename);
         }
 
         private void btnGetOwnReports_Click(object sender, RoutedEventArgs e)
@@ -304,7 +345,11 @@ namespace vITs
                 var destination = item.GetType().GetProperty("destination").GetValue(item).ToString();
                 var date = item.GetType().GetProperty("date").GetValue(item).ToString();
                 var state = item.GetType().GetProperty("status").GetValue(item);
-                if ((int) state == 2)
+                if (state == null)
+                {
+                    state = "Offline";
+                }
+                if ((int)state == 2)
                 {
                     state = "EJ OK";
                 }
@@ -318,6 +363,18 @@ namespace vITs
                 }
 
                 lvReports.Items.Add(new { id, consultant, destination, date, status = state });
+            }
+            var serializedTrips = Serializer.Load();
+            foreach (var item in serializedTrips)
+            {
+                lvReports.Items.Add(new
+                {
+                    id = item.myTrip.TripId,
+                    consultant = item.myTrip.User,
+                    destination = item.myTrip.Destination,
+                    date = item.myTrip.Start,
+                    status = item.myTrip.Status
+                });
             }
         }
 
@@ -348,7 +405,27 @@ namespace vITs
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (lvReports.SelectedItem != null)
+            {
+                var row = lvReports.SelectedItem.ToString();
+                string[] col = row.Split(',');
 
+                string id = Regex.Match(col[0], @"\d+").Value;
+                if (Convert.ToInt32(id) == 0)
+                {
+                    string[] nameSplit = col[1].Split('=');
+                    string name = nameSplit[1].Trim();
+                    string[] destinationSplit = col[2].Split('=');
+                    string destination = destinationSplit[1].Trim();
+                    string[] dateSplit = col[3].Split('=');
+                    string date = dateSplit[1].Trim();
+                    string[] stateSplit = col[4].Split('=');
+                    string state = stateSplit[1].Trim().Substring(0, stateSplit[1].Length - 2);
+
+                    HandleItems.SendRapport(Convert.ToInt32(name), Convert.ToInt32(destination), Convert.ToDateTime(date));
+                    rbFilterAll.IsChecked = true;
+                }
+            }
         }
 
         private void sendMail(bool accepted, int id)

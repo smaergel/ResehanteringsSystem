@@ -61,7 +61,7 @@ namespace vITs.Logic
             var tripCollection = SendTripList();
             foreach (var tripObject in tripCollection)
             {
-                cb.Items.Add(tripObject.note);
+                cb.Items.Add(tripObject.tripID);
             }
         }
 
@@ -143,6 +143,34 @@ namespace vITs.Logic
                 if (HandleItems.GetCurrentUserId() != user.userID)
                     cb.Items.Add(user.userID + ". " + user.firstname + " " + user.lastname);
             }
+        }
+
+        public static void SendRapport(int inCons, int inDest, DateTime inStart)
+        {
+            var xmlList = Serializer.Load();
+            for (int i = 0; i < xmlList.Count; i++)
+            {
+                if (xmlList[i].myTrip.User == inCons && xmlList[i].myTrip.Destination == inDest && xmlList[i].myTrip.Start == inStart)
+                {
+                    FullTrip full = xmlList[i];
+                    Trip trip = ModelTransformer.TripModel2Trip(full.myTrip);
+                    TripRepository.AddTrip(trip);
+
+                    foreach (var vac in full.myVacation)
+                    {
+                        vac.tripID = trip.tripID;
+                        VacationsRepository.AddVacation(ModelTransformer.VacationModel2Vacation(vac));
+                    }
+                    foreach (var item in full.myVerifications)
+                    {
+                        item.tripID = trip.tripID;
+                        VerificationRepository.AddVerification(ModelTransformer.VerificationModel2Verification(item));
+                    }
+
+                    xmlList.RemoveAt(i);
+                }
+            }
+            Serializer.Overwrite(xmlList);
         }
     }
 

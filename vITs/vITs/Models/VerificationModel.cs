@@ -16,6 +16,7 @@ namespace vITs.Models
         public string note { get; set; }
         public int tripID { get; set; }
 
+
         
     }
 }

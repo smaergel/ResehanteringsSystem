@@ -10,7 +10,7 @@
         </Grid.ColumnDefinitions>
         <TabControl HorizontalAlignment="Left" Height="333" VerticalAlignment="Top" Width="695" Margin="0,0,0,-8">
 
-            <TabItem Header="Skapa resa" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="78" Margin="0,0,-29,0">
+            <TabItem x:Name="tab1" Header="Skapa resa" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="78" Margin="0,0,-29,0">
                 <Grid Margin="-3,-2,-3,13">
                     <Grid.Background>
                         <ImageBrush ImageSource="Graphics/bg.png"/>
@@ -55,42 +55,39 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Reseutlägg" HorizontalAlignment="Left" Width="79" Margin="0">
+            <TabItem x:Name="tab2" Header="Reseutlägg" HorizontalAlignment="Left" Width="79" Margin="0">
                 <Grid>
                     <Grid.Background>
                         <ImageBrush ImageSource="Graphics/bg.png"/>
                     </Grid.Background>
-                    <Label Content="Kostnadssumma (kr):" HorizontalAlignment="Left" Margin="24,87,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbCost" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Margin="84,114,0,0"/>
-                    <Label Content="Välj kvitto:" HorizontalAlignment="Left" Margin="173,83,0,0" VerticalAlignment="Top"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="173,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-                    <Button Content="Välj fil" HorizontalAlignment="Left" Margin="229,142,0,0" VerticalAlignment="Top" Width="64" Height="16" FontSize="10" BorderBrush="#FF8D8D8D">
+                    <Label Content="Kostnadssumma (kr):" HorizontalAlignment="Left" Margin="24,71,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbCost" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Margin="84,98,0,0"/>
+                    <Label Content="Välj kvitto:" HorizontalAlignment="Left" Margin="173,67,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="173,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+                    <Button Content="Välj fil" HorizontalAlignment="Left" Margin="229,126,0,0" VerticalAlignment="Top" Width="64" Height="16" FontSize="10" BorderBrush="#FF8D8D8D">
                         <Button.Background>
                             <ImageBrush ImageSource="Graphics/btn.png"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="btnAddVerification" Content="Lägg till utlägg" HorizontalAlignment="Left" Margin="206,242,0,0" VerticalAlignment="Top" Width="87" BorderBrush="#FF8D8D8D" Click="btnAddVerification_Click" >
+                    <Button x:Name="btnAddVerification" Content="Lägg till utlägg" HorizontalAlignment="Left" Margin="206,249,0,0" VerticalAlignment="Top" Width="87" BorderBrush="#FF8D8D8D" Click="btnAddVerification_Click" >
                         <Button.Background>
                             <ImageBrush ImageSource="Graphics/btn.png"/>
                         </Button.Background>
                     </Button>
-                    <ListBox HorizontalAlignment="Left" Height="179" Margin="310,29,0,0" VerticalAlignment="Top" Width="348" Grid.ColumnSpan="4"/>
-                    <ComboBox x:Name="cbKostnTyp" HorizontalAlignment="Left" Margin="104,61,0,0" VerticalAlignment="Top" Width="189" DisplayMemberPath="type" SelectedValuePath="expenceID"/>
-                    <Label x:Name="lblKostnadTyp" Content="Kostnadstyp:" HorizontalAlignment="Left" Margin="24,57,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbCostNotes" HorizontalAlignment="Left" Height="57" Margin="93,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" AcceptsReturn="True"/>
-                    <Label x:Name="lblCostNotes" Content="Notering:" HorizontalAlignment="Left" Margin="24,171,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="cbPickTripExpensesTab" HorizontalAlignment="Left" Margin="104,19,0,0" VerticalAlignment="Top" Width="189" SelectionChanged="cbPickTripExpensesTab_SelectionChanged"/>
+                    <ComboBox x:Name="cbKostnTyp" HorizontalAlignment="Left" Margin="104,45,0,0" VerticalAlignment="Top" Width="189" DisplayMemberPath="type" SelectedValuePath="expenceID"/>
+                    <Label x:Name="lblKostnadTyp" Content="Kostnadstyp:" HorizontalAlignment="Left" Margin="24,41,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbCostNotes" HorizontalAlignment="Left" Height="57" Margin="93,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" AcceptsReturn="True"/>
+                    <Label x:Name="lblCostNotes" Content="Notering:" HorizontalAlignment="Left" Margin="24,187,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="cbPickTripExpensesTab"  DisplayMemberPath="myTrip.Start" SelectedValuePath="myTrip.tripID" HorizontalAlignment="Left" Margin="104,19,0,0" VerticalAlignment="Top" Width="189" SelectionChanged="cbPickTripExpensesTab_SelectionChanged"/>
                     <Label Content="Välj resa:" HorizontalAlignment="Left" Margin="27,15,0,0" VerticalAlignment="Top"/>
-                    <Button Content="Ta bort valt utlägg" HorizontalAlignment="Left" Margin="548,223,0,0" VerticalAlignment="Top" Width="110" BorderBrush="#FF8D8D8D">
-                        <Button.Background>
-                            <ImageBrush ImageSource="Graphics/btn.png"/>
-                        </Button.Background>
-                    </Button>
+                    <DatePicker x:Name="dpExpence" HorizontalAlignment="Left" Margin="173,156,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Date:" HorizontalAlignment="Left" Margin="131,156,0,0" VerticalAlignment="Top"/>
+                    <Image HorizontalAlignment="Left" Height="254" Margin="350,15,0,0" VerticalAlignment="Top" Width="253" Source="Graphics/pdfImage.gif"/>
                 </Grid>
             </TabItem>
 
 
-            <TabItem Header="Egna rapporter"  HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="96" Margin="0,0,-18,0">
+            <TabItem x:Name="tab3" Header="Egna rapporter"  HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="96" Margin="0,0,-18,0">
                 <Grid Background="#FFE5E5E5" Margin="10,0,-10,0">
                     <Button x:Name="btnShowOwnReports" Content="Visa rapport" HorizontalAlignment="Left" Margin="574,250,0,0" VerticalAlignment="Top" Width="92" Click="btnShowOwnReports_Click"/>
                     <Button Content="Skicka rapport" HorizontalAlignment="Left" Margin="450,250,0,0" VerticalAlignment="Top" Width="104" Click="Button_Click"/>
@@ -113,29 +110,31 @@
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Ej godkända rapporter" Margin="0,0,0,0">
+            <TabItem x:Name="tab4" Header="Ej godkända rapporter" Margin="0,0,0,0">
                 <Grid Margin="-12,-1,-10,1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="23*"/>
-                        <ColumnDefinition Width="56*"/>
+                        <ColumnDefinition Width="134*"/>
+                        <ColumnDefinition Width="14*"/>
+                        <ColumnDefinition Width="59*"/>
+                        <ColumnDefinition Width="504*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.Background>
                         <ImageBrush ImageSource="Graphics/bg.png"/>
                     </Grid.Background>
-                    <TextBox x:Name="tbSearchAnstIdDenied" HorizontalAlignment="Left" Height="24" Margin="123,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.498,0.49" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="tbSearchAnstIdDenied" HorizontalAlignment="Left" Height="24" Margin="123,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.498,0.49" Grid.ColumnSpan="4"/>
                     <Label x:Name="lblSearchAnstIdDenied" Content="Sök Anst. Id:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,22,0,0" Width="83"/>
-                    <ListBox x:Name="lbReportsDenied" HorizontalAlignment="Left" Height="147" Margin="21,87,0,0" VerticalAlignment="Top" Width="658" Grid.ColumnSpan="2"/>
-                    <Button x:Name="btnShowReportsDenied" Content="Visa rapport" HorizontalAlignment="Left" Margin="379,251,0,0" VerticalAlignment="Top" Width="76" Grid.Column="1"/>
-                    <Button x:Name="btnGetReportsDenied" Content="Hämta rapporter" HorizontalAlignment="Left" Margin="65,22,0,0" VerticalAlignment="Top" Width="100" Height="23" BorderBrush="#FF8D8D8D" Grid.Column="1">
+                    <ListBox x:Name="lbReportsDenied" HorizontalAlignment="Left" Height="147" Margin="21,87,0,0" VerticalAlignment="Top" Width="658" Grid.ColumnSpan="4"/>
+                    <Button x:Name="btnShowReportsDenied" Content="Visa rapport" HorizontalAlignment="Left" Margin="379,251,0,0" VerticalAlignment="Top" Width="76" Grid.Column="3"/>
+                    <Button x:Name="btnGetReportsDenied" Content="Hämta rapporter" HorizontalAlignment="Left" Margin="65,22,0,0" VerticalAlignment="Top" Width="100" Height="23" BorderBrush="#FF8D8D8D" Grid.Column="3">
                         <Button.Background>
                             <ImageBrush ImageSource="Graphics/btn.png"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="btnApprove" Content="Godkänn" HorizontalAlignment="Left" Margin="286,251,0,0" VerticalAlignment="Top" Width="75" Click="btnApprove_Click" Grid.Column="1"/>
-                    <Button x:Name="btnDeny" Content="Neka" HorizontalAlignment="Left" Margin="191,251,0,0" VerticalAlignment="Top" Width="75" Click="btnDeny_Click" Grid.Column="1"/>
+                    <Button x:Name="btnApprove" Content="Godkänn" HorizontalAlignment="Left" Margin="286,251,0,0" VerticalAlignment="Top" Width="75" Click="btnApprove_Click" Grid.Column="3"/>
+                    <Button x:Name="btnDeny" Content="Neka" HorizontalAlignment="Left" Margin="191,251,0,0" VerticalAlignment="Top" Width="75" Click="btnDeny_Click" Grid.Column="3"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Godkända rapporter" Height="20" VerticalAlignment="Top" Margin="0" HorizontalAlignment="Right" Width="122">
+            <TabItem x:Name="tab5" Header="Godkända rapporter" Height="20" VerticalAlignment="Top" Margin="0" HorizontalAlignment="Right" Width="122">
                 <Grid Margin="-2,-2,-4,2">
                     <Grid.Background>
                         <ImageBrush ImageSource="Graphics/bg.png"/>

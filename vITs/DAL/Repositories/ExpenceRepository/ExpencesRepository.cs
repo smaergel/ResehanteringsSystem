@@ -18,6 +18,13 @@ namespace DAL
             }
         }
 
+        public static string GetExpence(int id)
+        {
+            using (var db = new DatabaseEntities())
+            {
+               return db.Expences.FirstOrDefault(x => x.expenceID == id).type;
+            }
+        }
         public static void deleteExpence(Expence expence)
         {
             using (var context = new DatabaseEntities())

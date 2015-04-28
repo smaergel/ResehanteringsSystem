@@ -22,6 +22,16 @@ namespace DAL
             }
         }
 
+        public static List<Verification> GetVerifications(int id)
+        {
+            using (var db = new DatabaseEntities())
+            {
+                var query = from v in db.Verifications
+                    where v.tripID == id
+                    select v;
+                return query.ToList();
+            }
+        }
 
         /// <summary>
         /// Update verification in Verifications table
