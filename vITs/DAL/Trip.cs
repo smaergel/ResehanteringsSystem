@@ -29,13 +29,13 @@ namespace DAL
         public string note { get; set; }
         public int user { get; set; }
         public int boss { get; set; }
-        public int approved { get; set; }
+        public Nullable<int> approved { get; set; }
     
-        public virtual Boss Boss1 { get; set; }
         public virtual Country Country { get; set; }
         public virtual Country Country1 { get; set; }
         public virtual User User1 { get; set; }
         public virtual ICollection<Vacation> Vacations { get; set; }
         public virtual ICollection<Verification> Verifications { get; set; }
+        public virtual Boss Boss1 { get; set; }
     }
 }

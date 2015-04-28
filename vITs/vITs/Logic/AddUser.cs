@@ -21,7 +21,7 @@ namespace vITs.Logic
             user.password = userModel.password;
             user.email = userModel.email;
             user.phone = userModel.phone;
-
+            user.boss = null;
 
             UserHandling.AddUser(user);
         }
@@ -34,6 +34,7 @@ namespace vITs.Logic
             user.password = userModel.password;
             user.email = userModel.email;
             user.phone = userModel.phone;
+            user.boss = null;
 
             UserHandling.AddUser(user);
             UserHandling.AddUserAsBoss(user);
