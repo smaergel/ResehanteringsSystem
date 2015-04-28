@@ -14,8 +14,16 @@ using System.Windows.Shapes;
 using DAL;
 using vITs.Logic;
 using vITs.Models;
-using DAL.Repositories.TripRepository;
-using DAL.Repositories.CountryRepository;
+using DAL.Repositories.UserRepository;
+using PdfSharp;
+using PdfSharp.Pdf;
+using PdfSharp.Drawing;
+using PdfSharp.Charting;
+using PdfSharp.Internal;
+using System.Drawing;
+using System.Diagnostics;
+using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace vITs
 {
@@ -29,26 +37,46 @@ namespace vITs
         public RapportHantering()
         {
             InitializeComponent();
+<<<<<<< HEAD
             fillCbsWithCountries();
             HandleItems.FillBossList(cbBosses);
             LoadReseUtlägg();
             
             
+=======
+            HandleItems.FillCbsWithCountries(cbCountryArrival, cbCountryDeparture);
+            HandleItems.FillListBoxWithAwaitingApproval(lbReportsDenied);
+
+            if (HandleItems.GetCurrentUserId() == 0)
+            {
+                tbSearchAnstIdDenied.IsEnabled = false;
+                btnGetReportsDenied.IsEnabled = false;
+                tbSearchAnstIdApproved.IsEnabled = false;
+                btnGetReportsApproved.IsEnabled = false;
+                anvInstallningar.IsEnabled = false;
+            }
+>>>>>>> origin/master
         }
 
         private void ClearFieldsAndReloadBoxes()
         {
-            
+
             tbPrepaySum.Clear();
             tbMotivation.Clear();
             cbCountryDeparture.Items.Clear();
             cbCountryArrival.Items.Clear();
+<<<<<<< HEAD
             fillCbsWithCountries();
             
             
 
 
         }
+=======
+            lbReportsDenied.Items.Clear();
+            HandleItems.FillListBoxWithAwaitingApproval(lbReportsDenied);
+            HandleItems.FillCbsWithCountries(cbCountryArrival, cbCountryDeparture);
+>>>>>>> origin/master
 
         private void LoadReseUtlägg()
         {
@@ -59,6 +87,7 @@ namespace vITs
             
         }
 
+<<<<<<< HEAD
         //Fyller cbs i skapa rapport fliken med länderna som finns i databasen (landnamn + id)
         private void fillCbsWithCountries()
         {
@@ -70,10 +99,13 @@ namespace vITs
             }
             
         }
+=======
+>>>>>>> origin/master
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             var realtrip = new Trip();
+<<<<<<< HEAD
             
             var trip = new TripModel();
             //fyller modellen med information
@@ -83,6 +115,16 @@ namespace vITs
 
             realtrip.start = (DateTime) dpStartDate.SelectedDate;
             realtrip.end = (DateTime) dpEndDate.SelectedDate;
+=======
+
+
+            var trip = new TripModel();
+            //fyller modellen med information
+            realtrip.origin = cbCountryDeparture.SelectedIndex + 1;
+            realtrip.destination = cbCountryArrival.SelectedIndex + 1;
+            realtrip.start = (DateTime)dpStartDate.SelectedDate;
+            realtrip.end = (DateTime)dpEndDate.SelectedDate;
+>>>>>>> origin/master
             var prepay = tbPrepaySum.Text;
             int prepaySum;
             int.TryParse(prepay, out prepaySum);
@@ -127,64 +169,207 @@ namespace vITs
                 start = dpVacationStart.SelectedDate.GetValueOrDefault(),
                 end = dpVacationEnd.SelectedDate.GetValueOrDefault(),
             };
-            if(vacDate.start > vacDate.end) 
+            if (vacDate.start > vacDate.end)
             {
                 dpVacationStart.BorderBrush = Brushes.Red;
                 dpVacationEnd.BorderBrush = Brushes.Red;
                 Go = false;
             }
 
-            
-            if(vacDate.start < dpStartDate.SelectedDate.GetValueOrDefault())
+
+            if (vacDate.start < dpStartDate.SelectedDate.GetValueOrDefault())
             {
                 dpVacationStart.BorderBrush = Brushes.Red;
                 Go = false;
             }
 
-                
-            if(vacDate.end > dpEndDate.SelectedDate.GetValueOrDefault())
+
+            if (vacDate.end > dpEndDate.SelectedDate.GetValueOrDefault())
             {
                 dpVacationEnd.BorderBrush = Brushes.Red;
                 Go = false;
             }
+<<<<<<< HEAD
               
             if(Go)
+=======
+
+
+
+
+            if (Go)
+>>>>>>> origin/master
             {
 
                 lbVacations.Items.Add(vacDate);
-                
+
             }
-                
-    
-            
+
+
+
         }
 
         private void dpStartDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            resetVacations();
+            ResetVacations();
         }
 
-        public void resetVacations()
+        public void ResetVacations()
         {
             lbVacations.Items.Clear();
         }
 
         private void dpEndDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            resetVacations();
+            ResetVacations();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
 
         private void cbPickTripExpensesTab_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
+        private void btnApprove_Click(object sender, RoutedEventArgs e)
+        {
+            //kod behöver förändras när objekt i listan finns så allt blir rätt.
+            var report = (TripModel)lbReportsDenied.SelectedItem;
 
+            AddItems.ApproveDenyReport(report.TripId, 1);
+            ClearFieldsAndReloadBoxes();
+        }
+        private void btnDeny_Click(object sender, RoutedEventArgs e)
+        {
+            //kod behöver förändras när objekt i listan finns så allt blir rätt.
+            var report = (TripModel)lbReportsDenied.SelectedItem;
+
+            AddItems.ApproveDenyReport(report.TripId, 0);
+            ClearFieldsAndReloadBoxes();
+        }
+        private void anvInstalnningar_Click(object sender, RoutedEventArgs e)
+        {
+            var installning = new Settings();
+            installning.Show();
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+
+        private void btnShowOwnReports_Click(object sender, RoutedEventArgs e)
+        {
+            var row = lvReports.SelectedItem.ToString();
+            string[] col = row.Split(',');
+
+            string id = Regex.Match(col[0], @"\d+").Value;
+            string[] nameSplit = col[1].Split('=');
+            string name = nameSplit[1].Trim();
+            string[] destinationSplit = col[2].Split('=');
+            string destination = destinationSplit[1].Trim();
+            string[] dateSplit = col[3].Split('=');
+            string date = dateSplit[1].Trim();
+            string[] stateSplit = col[4].Split('=');
+            string state = stateSplit[1].Trim().Substring(0, stateSplit[1].Length - 2);
+
+
+            PdfDocument pdf = new PdfDocument();
+            pdf.Info.Title = name;
+            PdfPage pdfPage = pdf.AddPage();
+            XGraphics graph = XGraphics.FromPdfPage(pdfPage);
+            XFont font = new XFont("Verdana", 20, XFontStyle.Bold);
+            XFont minifont = new XFont("Verdana", 15);
+
+            XImage img = XImage.FromFile("C:\\Users\\Peter\\Documents\\GitHub\\ResehanteringsSystem\\vITs\\vITs\\Graphics\\pdfImage.gif");
+            graph.DrawImage(img, 10, 10, 80, 80);
+            graph.DrawString("Anställd: " + name, font, XBrushes.Black, new XRect(0, -330, pdfPage.Width.Point,
+            pdfPage.Height.Point), XStringFormat.Center);
+            graph.DrawString("Id: " + id, minifont, XBrushes.Black, new XRect(0, -285, pdfPage.Width.Point,
+            pdfPage.Height.Point), XStringFormat.Center);
+            graph.DrawString("Destination: " + destination, minifont, XBrushes.Black, new XRect(0, -265, pdfPage.Width.Point,
+            pdfPage.Height.Point), XStringFormat.Center);
+            graph.DrawString("Datum: " + date, minifont, XBrushes.Black, new XRect(0, -245, pdfPage.Width.Point,
+            pdfPage.Height.Point), XStringFormat.Center);
+            graph.DrawString("Status :" + state, minifont, XBrushes.Black, new XRect(0, -225, pdfPage.Width.Point,
+            pdfPage.Height.Point), XStringFormat.Center);
+            string pdfFilename = id + ".pdf";
+            if (pdfFilename != "")
+            {
+                pdf.Save(pdfFilename);
+            }
+            Process.Start(pdfFilename);
+        }
+
+        private void btnGetOwnReports_Click(object sender, RoutedEventArgs e)
+        {
+            FillListData(HandleItems.GetTrips());
+        }
+        public void FillListData(IEnumerable<Object> query)
+        {
+            if (lvReports.Items.Count >= 1)
+            {
+                lvReports.Items.Clear();
+            }
+            var queryTrips = HandleItems.GetTrips();
+
+            foreach (var item in queryTrips)
+            {
+                //Type type = item.GetType();
+                //var properties = type.GetProperties();
+
+                var id = item.GetType().GetProperty("id").GetValue(item).ToString();
+                var consultant = item.GetType().GetProperty("consultant").GetValue(item).ToString();
+                var destination = item.GetType().GetProperty("destination").GetValue(item).ToString();
+                var date = item.GetType().GetProperty("date").GetValue(item).ToString();
+                var state = item.GetType().GetProperty("status").GetValue(item);
+                if ((int) state == 2)
+                {
+                    state = "EJ OK";
+                }
+                else if ((int)state == 1)
+                {
+                    state = "OK";
+                }
+                else
+                {
+                    state = "Väntar";
+                }
+
+                lvReports.Items.Add(new { id, consultant, destination, date, status = state });
+            }
+        }
+
+
+        private void rbFilterAll_Checked(object sender, RoutedEventArgs e)
+        {
+            var query = HandleItems.GetTrips();
+            FillListData(query);
+        }
+
+        private void rbFilterMonth_Checked(object sender, RoutedEventArgs e)
+        {
+            var query = HandleItems.GetTripsFiltered(-1);
+            FillListData(query);
+        }
+
+        private void rbFilterQuater_Checked(object sender, RoutedEventArgs e)
+        {
+            var query = HandleItems.GetTripsFiltered(-3);
+            FillListData(query);
+        }
+
+        private void rbFilterYear_Checked(object sender, RoutedEventArgs e)
+        {
+            var query = HandleItems.GetTripsFiltered(-12);
+            FillListData(query);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
 
         private void btnAddVerification_Click(object sender, RoutedEventArgs e)
         {

@@ -9,6 +9,7 @@ using DAL;
 using DAL.Repositories.CountryRepository;
 using DAL.Repositories.TripRepository;
 using DAL.Repositories.UserRepository;
+using vITs.Models;
 
 namespace vITs.Logic
 {
@@ -25,7 +26,7 @@ namespace vITs.Logic
             return TripRepository.GetAllTrips();
         }
 
-        public List<User> SendBossList()
+        public static List<User> SendBossList()
         {
             return UserHandling.getBosses();
         }
@@ -33,8 +34,7 @@ namespace vITs.Logic
         //fyller en kombobox med listan av chefer, tar emot cbn som ska fyllas
         public static void FillBossList(ComboBox cb)
         {
-            var handle = new HandleItems();
-            var bossList = handle.SendBossList();
+            var bossList = SendBossList();
             foreach (var boss in bossList)
             {
                 cb.Items.Add(boss.userID);
@@ -76,14 +76,57 @@ namespace vITs.Logic
         ////returnerar den inloggade användarens id.
         public static int GetCurrentUserId()
         {
-            
-            var currentUser = (User) Application.Current.Properties["currentUser"];
+            var currentUser = new User{userID = 0};
+            if (Application.Current.Properties.Count > 0)
+            {
+                currentUser = (User) Application.Current.Properties["currentUser"];
+            }
 
 
             return currentUser.userID;
 
         }
 
+        //fyller en listbox med resor som väntar på godkännande
+        public static void FillListBoxWithAwaitingApproval(ListBox lb)
+        {
+
+            foreach (var trip in SendTripList())
+            {
+                if (trip.approved == 0)
+                {
+                    var tripToBeAdded = new TripModel()
+                    {
+                        TripId = trip.tripID,
+                        BossId = trip.boss,
+                        Start = trip.start,
+                        End = trip.end,
+                        Origin = trip.origin,
+                        Destination = trip.destination,
+                        Prepayment = trip.prepayment,
+                        Note = trip.note,
+                        Status = trip.approved,
+                        User = trip.user
+                    };
+                    lb.DisplayMemberPath = "TripId";
+                    lb.Items.Add(tripToBeAdded);
+                }
+                
+            }
+
+        }
+
+        public static IEnumerable<Object> GetTrips()
+        {
+            var trips = TripRepository.getTripsForReports();
+            return trips;
+        }
+
+        public static IEnumerable<Object> GetTripsFiltered(int month)
+        {
+            var orderby = TripRepository.filterTrips(month);
+            return orderby;
+        }
 
         }  
     }

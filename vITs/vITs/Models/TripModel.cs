@@ -8,14 +8,15 @@ namespace vITs.Models
 {
     public class TripModel
     {
-        public int origin { get; set; }
-        public int destination { get; set; }
-        public DateTime start { get; set; }
-        public DateTime end { get; set; }
-        public int prepayment { get; set; }
-        public string note { get; set; }
-        public int user { get; set; }
-        public int boss { get; set; }
-        public bool status { get; set; }
+        public int TripId { get; set; }
+        public int Origin { get; set; }
+        public int Destination { get; set; }
+        public DateTime Start { get; set; }
+        public DateTime End { get; set; }
+        public int? Prepayment { get; set; }
+        public string Note { get; set; }
+        public int User { get; set; }
+        public int BossId { get; set; }
+        public int? Status { get; set; }
     }
 }

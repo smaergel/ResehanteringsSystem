@@ -7,75 +7,158 @@
             <ColumnDefinition Width="65*"/>
             <ColumnDefinition Width="98*"/>
         </Grid.ColumnDefinitions>
-        <TabControl HorizontalAlignment="Left" Height="481" VerticalAlignment="Bottom" Width="650" Margin="0,-2,0,0" Grid.ColumnSpan="2" >
-            <TabItem Header="Ändra lösenord" Margin="0,0,-4,-2" Background="{x:Null}">
-                <Grid Margin="0,0,-5,-4" Background="#FFE5E5E5">
+        <TabControl HorizontalAlignment="Left" Height="481" VerticalAlignment="Bottom" Width="650" Margin="0,0,0,-8" Grid.ColumnSpan="2" >
+            <TabItem Header="Ändra lösenord" Margin="-2,0,-2,0" Background="{x:Null}">
+                <Grid Margin="0,0,-5,-4" Background="#FF8D8D8D">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="147*"/>
+                        <ColumnDefinition Width="115*"/>
+                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="19*"/>
                         <ColumnDefinition Width="15*"/>
-                        <ColumnDefinition Width="487*"/>
+                        <ColumnDefinition Width="23*"/>
+                        <ColumnDefinition Width="71*"/>
+                        <ColumnDefinition Width="394*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Content="Nytt lösenord:" HorizontalAlignment="Left" Margin="102,65,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
-                    <Label Content="Verifiera nytt lösenord:" HorizontalAlignment="Left" Margin="54,106,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
-                    <Label Content="Gammalt lösenord:" HorizontalAlignment="Left" Margin="77,151,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
-                    <TextBox x:Name="tbxNewPassword1" HorizontalAlignment="Left" Height="23" Margin="79,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
-                    <TextBox x:Name="tbxNewPassword2" HorizontalAlignment="Left" Height="23" Margin="79,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
-                    <TextBox x:Name="tbxOldPassword" HorizontalAlignment="Left" Height="23" Margin="79,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
-                    <Button Content="Avbryt" HorizontalAlignment="Left" Margin="152,196,0,0" VerticalAlignment="Top" Width="76" Grid.Column="2"/>
-                    <Button Content="OK" HorizontalAlignment="Left" Margin="50,196,0,0" VerticalAlignment="Top" Width="76" Grid.Column="2" Click="Button_Click_1"/>
+
+                    <Image x:Name="loginbg" HorizontalAlignment="Left" Height="282" Margin="93,88,0,0" VerticalAlignment="Top" Width="464" Source="Graphics/bg_border.png" Stretch="Fill" RenderTransformOrigin="0.865,0.568" Grid.ColumnSpan="7">
+                        <Image.OpacityMask>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Image.OpacityMask>
+                        <Image.Effect>
+                            <DropShadowEffect Direction="250" Color="#000000" ShadowDepth="3" BlurRadius="20" />
+                        </Image.Effect>
+                    </Image>
+
+
+                    <Label Content="Nytt lösenord:" HorizontalAlignment="Left" Margin="31,187,0,0" VerticalAlignment="Top" Grid.Column="5" FontFamily="TechnicBold" Grid.ColumnSpan="2"/>
+                    <Label Content="Verifiera nytt lösenord:" HorizontalAlignment="Left" Margin="6,231,0,0" VerticalAlignment="Top" Grid.Column="4" FontFamily="TechnicBold" Grid.ColumnSpan="3"/>
+                    <Label Content="Gammalt lösenord:" HorizontalAlignment="Left" Margin="7,276,0,0" VerticalAlignment="Top" Grid.Column="5" FontFamily="TechnicBold" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="tbxNewPassword1" HorizontalAlignment="Right" Height="24" Margin="0,186,210,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="6"/>
+                    <TextBox x:Name="tbxNewPassword2" HorizontalAlignment="Left" Height="24" Margin="64,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="6"/>
+                    <TextBox x:Name="tbxOldPassword" HorizontalAlignment="Left" Height="22" Margin="64,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="6"/>
+                    <Button Content="Avbryt" HorizontalAlignment="Left" Margin="64,313,0,0" VerticalAlignment="Top" Width="58" Grid.Column="6" FontFamily="TechnicBold" Height="21" BorderBrush="#FF919191">
+                        <Button.Background>
+                            <ImageBrush ImageSource="Graphics/btn.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="OK" HorizontalAlignment="Left" Margin="126,313,0,0" VerticalAlignment="Top" Width="58" Grid.Column="6" Click="Button_Click_1" FontFamily="TechnicBold" Height="21" BorderBrush="#FF919191">
+                        <Button.Background>
+                            <ImageBrush ImageSource="Graphics/btn.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Label Content="Ändra Lösenord" Grid.Column="5" HorizontalAlignment="Left" Margin="53,117,0,0" VerticalAlignment="Top" FontFamily="TechnicBold" FontWeight="Bold" FontSize="22" Foreground="#FF383838" Grid.ColumnSpan="2"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Personuppgifter" Margin="-2,0,-2,-2">
+            <TabItem Header="Personuppgifter" Margin="1,0,-2,-2">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF0F0F0" Offset="0"/>
                         <GradientStop Color="#FFE5E5E5" Offset="1"/>
                     </LinearGradientBrush>
                 </TabItem.Background>
-                <Grid Background="#FFE5E5E5" Margin="0,-3,0,3">
+                <Grid Margin="0,0,-5,-4" Background="#FF8D8D8D">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="89*"/>
+                        <ColumnDefinition Width="32*"/>
+                        <ColumnDefinition Width="57*"/>
                         <ColumnDefinition Width="68*"/>
                         <ColumnDefinition Width="487*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Content="Tfn:" HorizontalAlignment="Left" Margin="26.944,58,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="1.414,0.615"/>
-                    <Label Content="Adress:" HorizontalAlignment="Left" Margin="11.944,106,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content="E-post:" HorizontalAlignment="Left" Margin="11.944,148,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <TextBox x:Name="tbxUpdatePhone" HorizontalAlignment="Left" Height="23" Margin="79.944,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
-                    <TextBox x:Name="tbxUpdateEmail" HorizontalAlignment="Left" Height="23" Margin="79.944,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
-                    <TextBox x:Name="tbxUpdateAddress" HorizontalAlignment="Left" Height="23" Margin="79.944,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
-                    <Button Content="Avbryt" HorizontalAlignment="Left" Margin="150.944,193,0,0" VerticalAlignment="Top" Width="74" Grid.Column="2"/>
-                    <Button Content="Spara" HorizontalAlignment="Left" Margin="55.944,193,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2" Click="Button_Click_2"/>
+                    <Image x:Name="loginbg_Copy" HorizontalAlignment="Left" Height="258" Margin="34,86,0,0" VerticalAlignment="Top" Width="405" Source="Graphics/bg_border.png" Stretch="Fill" RenderTransformOrigin="0.865,0.568" Grid.ColumnSpan="2" Grid.Column="2">
+                        <Image.OpacityMask>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Image.OpacityMask>
+                        <Image.Effect>
+                            <DropShadowEffect Direction="250" Color="#000000" ShadowDepth="3" BlurRadius="20" />
+                        </Image.Effect>
+                    </Image>
+                    <Label Content="Tfn:" HorizontalAlignment="Left" Margin="59,177,0,0" VerticalAlignment="Top" Grid.Column="3" RenderTransformOrigin="1.414,0.615" FontFamily="TechnicBold"/>
+                    <Label Content="Adress:" HorizontalAlignment="Left" Margin="44,220,0,0" VerticalAlignment="Top" Grid.Column="3" FontFamily="TechnicBold"/>
+                    <Label Content="E-post:" HorizontalAlignment="Left" Margin="44,263,0,0" VerticalAlignment="Top" Grid.Column="3" FontFamily="TechnicBold"/>
+                    <TextBox x:Name="tbxUpdatePhone" HorizontalAlignment="Left" Height="23" Margin="107,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
+                    <TextBox x:Name="tbxUpdateEmail" HorizontalAlignment="Left" Height="23" Margin="107,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
+                    <TextBox x:Name="tbxUpdateAddress" HorizontalAlignment="Left" Height="23" Margin="107,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
+                    <Button Content="Avbryt" HorizontalAlignment="Left" Margin="107,302,0,0" VerticalAlignment="Top" Width="58" Grid.Column="3" FontFamily="TechnicBold" Height="22" BorderBrush="#FF8F8E8E">
+                        <Button.Background>
+                            <ImageBrush ImageSource="Graphics/btn.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="Spara" HorizontalAlignment="Left" Margin="170,302,0,0" VerticalAlignment="Top" Width="57" Grid.Column="3" Click="Button_Click_2" FontFamily="TechnicBold" Height="22" BorderBrush="#FF8F8E8E">
+                        <Button.Background>
+                            <ImageBrush ImageSource="Graphics/btn.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Label Content="Ändra Personuppgifter&#xD;&#xA;" Grid.Column="3" HorizontalAlignment="Left" Margin="27,111,0,0" VerticalAlignment="Top" FontFamily="TechnicBold" Foreground="#FF383838" FontSize="22" FontWeight="Bold"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Administratör" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="94" Margin="2,0,-2,0">
-                <Grid Background="#FFE5E5E5" Margin="0,10,-6,-4">
+                <Grid Margin="0,0,-5,-4" Background="#FF8D8D8D">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40*"/>
                         <RowDefinition Height="189*"/>
                     </Grid.RowDefinitions>
-                    <Label Content="Ta bort användare" HorizontalAlignment="Left" Margin="24,35,0,0" VerticalAlignment="Top"/>
-                    <ComboBox HorizontalAlignment="Left" Margin="192,35,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Button Content="Ta bort" HorizontalAlignment="Left" Margin="338,35,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.522,0.619"/>
-                    <Label Content="Lägg till ny användare" HorizontalAlignment="Left" Margin="22,12,0,0" VerticalAlignment="Top" FontSize="16" Grid.Row="1"/>
-                    <Label Content="Förnamn:&#xD;&#xA;" HorizontalAlignment="Left" Margin="114,75,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <Label Content="Telefon:" HorizontalAlignment="Left" Margin="122,137,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <Label Content="Roll:" HorizontalAlignment="Left" Margin="396,75,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <Label Content="E-post:" HorizontalAlignment="Left" Margin="122,168,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <TextBox x:Name="tbxFirstName" HorizontalAlignment="Left" Height="23" Margin="192,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-                    <TextBox x:Name="tbxTele" HorizontalAlignment="Left" Height="23" Margin="192,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-                    <TextBox x:Name="tbxEmail" HorizontalAlignment="Left" Height="23" Margin="192,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-                    <CheckBox x:Name="cbxBoss" Content="Chef" HorizontalAlignment="Left" Margin="434,81,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.661,0.863" Checked="cbxBoss_Checked" Unchecked="cbxBoss_Unchecked"/>
-                    <Button x:Name="btnCancel" Content="Avbryt" HorizontalAlignment="Left" Margin="563,337,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1" RenderTransformOrigin="0.453,1.7"/>
-                    <Button x:Name="btnSave" Content="Spara" HorizontalAlignment="Left" Margin="468,337,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1" Click="btnSave_Click"/>
-                    <Label Content="Lösenord:" HorizontalAlignment="Left" Margin="112,199,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.848,0.654"/>
-                    <Label Content="Bekräfta lösenord:" HorizontalAlignment="Left" Margin="68,231,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.839,2.308"/>
-                    <TextBox x:Name="tbxPasswordFirst" HorizontalAlignment="Left" Height="23" Margin="192,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-                    <TextBox x:Name="tbxPasswordSecond" HorizontalAlignment="Left" Height="23" Margin="192,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-                    <Label Content="Chef:" HorizontalAlignment="Left" Margin="392,106,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.848,0.654"/>
-                    <ComboBox x:Name="cbChef" HorizontalAlignment="Left" Margin="434,110,0,0" Grid.Row="1" VerticalAlignment="Top" Width="139"/>
-                    <TextBox x:Name="tbxLastName" HorizontalAlignment="Left" Height="23" Margin="192,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-                    <Label Content="Efternamn&#xD;&#xA;" HorizontalAlignment="Left" Margin="110,106,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.245" Height="26"/>
+                    <Image HorizontalAlignment="Left" Height="388" Margin="38,32,0,0" VerticalAlignment="Top" Width="577" Source="Graphics/bg_border.png" Stretch="Fill" Grid.RowSpan="2">
+                        <Image.OpacityMask>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Image.OpacityMask>
+                        <Image.Effect>
+                            <DropShadowEffect Direction="250" Color="#000000" ShadowDepth="3" BlurRadius="20" />
+                        </Image.Effect>
+                    </Image>
+
+                    <Label Content="Ta bort användare" HorizontalAlignment="Left" Margin="85,48,0,0" VerticalAlignment="Top" FontFamily="TechnicBold" Grid.Row="1"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="216,48,0,0" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+                    <Button Content="Ta bort" HorizontalAlignment="Left" Margin="362,48,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.522,0.619" FontFamily="TechnicBold" Height="22" Grid.Row="1">
+                        <Button.Background>
+                            <ImageBrush ImageSource="Graphics/btn.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Label Content="Lägg till ny användare" HorizontalAlignment="Left" Margin="80,92,0,0" VerticalAlignment="Top" FontSize="16" Grid.Row="1" FontFamily="TechnicBold"/>
+                    <Label Content="Förnamn:&#xA;" HorizontalAlignment="Left" Margin="110,131,0,0" VerticalAlignment="Top" Grid.Row="1" FontFamily="TechnicBold"/>
+                    <Label Content="Telefon:" HorizontalAlignment="Left" Margin="118,193,0,0" VerticalAlignment="Top" Grid.Row="1" FontFamily="TechnicBold"/>
+                    <Label Content="Roll:" HorizontalAlignment="Left" Margin="360,169,0,0" VerticalAlignment="Top" Grid.Row="1" FontFamily="TechnicBold" RenderTransformOrigin="0.5,0.5">
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="1.469"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="-0.308"/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                    </Label>
+                    <Label Content="E-post:" HorizontalAlignment="Left" Margin="118,224,0,0" VerticalAlignment="Top" Grid.Row="1" FontFamily="TechnicBold"/>
+                    <TextBox x:Name="tbxFirstName" HorizontalAlignment="Left" Height="23" Margin="188,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+                    <TextBox x:Name="tbxTele" HorizontalAlignment="Left" Height="23" Margin="188,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+                    <TextBox x:Name="tbxEmail" HorizontalAlignment="Left" Height="23" Margin="188,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+                    <CheckBox x:Name="cbxBoss" Content="Chef" HorizontalAlignment="Left" Margin="400,140,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.661,0.863" Checked="cbxBoss_Checked" Unchecked="cbxBoss_Unchecked" FontFamily="TechnicBold"/>
+                    <Button x:Name="btnCancel" Content="Avbryt" HorizontalAlignment="Left" Margin="465,285,0,0" VerticalAlignment="Top" Width="74" Grid.Row="1" RenderTransformOrigin="0.453,1.7" Height="26" BorderBrush="#FF919191">
+                        <Button.Background>
+                            <ImageBrush ImageSource="Graphics/btn.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btnSave" Content="Spara" HorizontalAlignment="Left" Margin="385,285,0,0" VerticalAlignment="Top" Width="74" Grid.Row="1" Click="btnSave_Click" Height="26" BorderBrush="#FF919191">
+                        <Button.Background>
+                            <ImageBrush ImageSource="Graphics/btn.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Label Content="Lösenord:" HorizontalAlignment="Left" Margin="108,255,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.848,0.654" FontFamily="TechnicBold"/>
+                    <Label Content="Bekräfta lösenord:" HorizontalAlignment="Left" Margin="64,287,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.839,2.308" FontFamily="TechnicBold"/>
+                    <TextBox x:Name="tbxPasswordFirst" HorizontalAlignment="Left" Height="23" Margin="188,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+                    <TextBox x:Name="tbxPasswordSecond" HorizontalAlignment="Left" Height="23" Margin="188,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+                    <Label Content="Chef:" HorizontalAlignment="Left" Margin="358,134,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.848,0.654" FontFamily="TechnicBold"/>
+                    <ComboBox x:Name="cbChef" HorizontalAlignment="Left" Margin="400,169,0,0" Grid.Row="1" VerticalAlignment="Top" Width="138"/>
+                    <TextBox x:Name="tbxLastName" HorizontalAlignment="Left" Height="23" Margin="188,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+                    <Label Content="Efternamn&#xA;" HorizontalAlignment="Left" Margin="106,162,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.245" Height="26" FontFamily="TechnicBold"/>
+                    <Label Content="Lägg till  - ta bort användare" HorizontalAlignment="Left" Margin="148,56,0,0" VerticalAlignment="Top" Width="317" FontFamily="TechnicBold" FontWeight="Bold" FontSize="22" Height="41" Grid.RowSpan="2" Foreground="#FF383838"/>
+
                 </Grid>
             </TabItem>
         </TabControl>
