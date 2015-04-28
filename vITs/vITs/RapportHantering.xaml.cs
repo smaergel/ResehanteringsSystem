@@ -82,10 +82,11 @@ namespace vITs
 
             var trip = new TripModel();
             //fyller modellen med information
-            realtrip.origin = cbCountryDeparture.SelectedIndex + 1;
-            realtrip.destination = cbCountryArrival.SelectedIndex + 1;
-            realtrip.start = (DateTime)dpStartDate.SelectedDate;
-            realtrip.end = (DateTime)dpEndDate.SelectedDate;
+          
+            realtrip.origin = (int) cbCountryDeparture.SelectedValue;
+            realtrip.destination = (int) cbCountryArrival.SelectedValue;
+            realtrip.start = (DateTime) dpStartDate.SelectedDate;
+            realtrip.end = (DateTime) dpEndDate.SelectedDate;
             var prepay = tbPrepaySum.Text;
             int prepaySum;
             int.TryParse(prepay, out prepaySum);
