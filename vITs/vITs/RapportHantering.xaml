@@ -22,8 +22,8 @@
                     </Grid.ColumnDefinitions>
                     <DatePicker x:Name="dpStartDate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22.03,74,0,0" Width="111" FirstDayOfWeek="Monday" SelectedDateChanged="dpStartDate_SelectedDateChanged" Grid.ColumnSpan="2" Grid.Column="1"/>
                     <DatePicker x:Name="dpEndDate" HorizontalAlignment="Left" Margin="129,75,0,0" VerticalAlignment="Top" Width="113" FirstDayOfWeek="Monday" SelectedDateChanged="dpEndDate_SelectedDateChanged" Grid.Column="2"/>
-                    <ComboBox x:Name="cbCountryDeparture" HorizontalAlignment="Left" Margin="1.03,32,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <ComboBox x:Name="cbCountryArrival" HorizontalAlignment="Left" Margin="216,32,0,0" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <ComboBox x:Name="cbCountryDeparture" HorizontalAlignment="Left" Margin="2,47,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Grid.Column="1" ItemsSource="{Binding Path=country}" DisplayMemberPath="country1" SelectedValuePath="countryID"/>
+                    <ComboBox x:Name="cbCountryArrival" HorizontalAlignment="Left" Margin="129,48,0,0" VerticalAlignment="Top" Width="120" Grid.Column="2" ItemsSource="{Binding Path=country}" DisplayMemberPath="country1" SelectedValuePath="countryID" RenderTransformOrigin="-0.324,0.527"/>
                     <Label x:Name="lblDeparture" Content="Avreseland:" HorizontalAlignment="Left" Margin="24,28,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="lblArrival" Content="Ankomstland:" HorizontalAlignment="Left" Margin="129,28,0,0" VerticalAlignment="Top" Grid.Column="2"/>
                     <Label x:Name="lblDateTrip" Content="Datum:" HorizontalAlignment="Left" Margin="24,74,0,0" VerticalAlignment="Top"/>

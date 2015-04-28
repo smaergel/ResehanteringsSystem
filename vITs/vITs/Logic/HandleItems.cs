@@ -47,8 +47,8 @@ namespace vITs.Logic
             var countryCollection = SendCountryList();
             foreach (var countryObject in countryCollection)
             {
-                cb.Items.Add(countryObject.countryID + ". " + countryObject.country1);
-                cb2.Items.Add(countryObject.countryID + ". " + countryObject.country1);
+                cb.Items.Add(countryObject);
+                cb2.Items.Add(countryObject);
 
             }
 
