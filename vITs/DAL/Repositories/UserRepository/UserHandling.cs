@@ -104,7 +104,6 @@ namespace DAL.Repositories.UserRepository
                 storedUser.lastname = user.lastname;
                 storedUser.phone = user.phone;
                 storedUser.email = user.email;
-                storedUser.boss = user.boss;
                 storedUser.password = user.password;
 
                 dbConnect.SaveChanges();

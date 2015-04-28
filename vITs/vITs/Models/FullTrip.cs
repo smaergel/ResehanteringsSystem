@@ -13,5 +13,10 @@ namespace vITs.Models
         public List<VerificationModel> myVerifications { get; set; }
         public List<VacationModel> myVacation { get; set; }
 
+        public FullTrip()
+        {
+            myVacation = new List<VacationModel>();
+        }
+
     }
 }

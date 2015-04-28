@@ -12,7 +12,7 @@ namespace vITs.Logic
     public static class Serializer
     {
 
-        public const string Filename = "bajshog.xml";
+        public const string Filename = "trips.xml";
         
         public static void Save(FullTrip fullTrip)
         {            
@@ -25,14 +25,23 @@ namespace vITs.Logic
             file.Close();
         }
 
+        public static void Overwrite(List<FullTrip> fulltrips)
+        {
+            var writer = new System.Xml.Serialization.XmlSerializer(typeof(List<FullTrip>));
+            var file = new System.IO.StreamWriter(Filename);
+            writer.Serialize(file, fulltrips);
+            file.Close();
+        }
+
         public static List<FullTrip> Load()
         {
+
             var serializer = new XmlSerializer(typeof(List<FullTrip>));
             var reader = new StreamReader(Filename);
             var trips = (List<FullTrip>)serializer.Deserialize(reader);
             reader.Close();
-
             return trips;
+
         }
 
         

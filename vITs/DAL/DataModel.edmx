@@ -60,7 +60,6 @@
           <Property Name="password" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="phone" Type="varchar" MaxLength="50" />
-          <Property Name="boss" Type="int" />
         </EntityType>
         <EntityType Name="Vacations">
           <Key>
@@ -291,7 +290,6 @@
           <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="boss" Type="Int32" />
           <NavigationProperty Name="Boss1" Relationship="Self.FK_Bosses_ToUsers" FromRole="Users" ToRole="Bosses" />
           <NavigationProperty Name="Trips" Relationship="Self.FK_Trips_ToUser" FromRole="Users" ToRole="Trips" />
         </EntityType>
@@ -522,7 +520,6 @@
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="boss" ColumnName="boss" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

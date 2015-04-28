@@ -19,10 +19,10 @@
                     </Grid.ColumnDefinitions>
                     <DatePicker x:Name="dpStartDate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22.03,74,0,0" Width="111" FirstDayOfWeek="Monday" SelectedDateChanged="dpStartDate_SelectedDateChanged" Grid.ColumnSpan="2" Grid.Column="1"/>
                     <DatePicker x:Name="dpEndDate" HorizontalAlignment="Left" Margin="129,75,0,0" VerticalAlignment="Top" Width="113" FirstDayOfWeek="Monday" SelectedDateChanged="dpEndDate_SelectedDateChanged" Grid.Column="2"/>
-                    <ComboBox x:Name="cbCountryDeparture" HorizontalAlignment="Left" Margin="1.03,32,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <ComboBox x:Name="cbCountryArrival" HorizontalAlignment="Left" Margin="216,32,0,0" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
-                    <Label x:Name="lblDeparture" Content="Avreseland:" HorizontalAlignment="Left" Margin="24,28,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="lblArrival" Content="Ankomstland:" HorizontalAlignment="Left" Margin="129,28,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <ComboBox x:Name="cbCountryDeparture" HorizontalAlignment="Left" Margin="2,47,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Grid.Column="1" ItemsSource="{Binding Path=country}" DisplayMemberPath="country1" SelectedValuePath="countryID"/>
+                    <ComboBox x:Name="cbCountryArrival" HorizontalAlignment="Left" Margin="217,47,0,0" VerticalAlignment="Top" Width="120" Grid.Column="2" ItemsSource="{Binding Path=country}" DisplayMemberPath="country1" SelectedValuePath="countryID"/>
+                    <Label x:Name="lblDeparture" Content="Avreseland:" HorizontalAlignment="Left" Margin="25,43,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lblArrival" Content="Ankomstland:" HorizontalAlignment="Left" Margin="130,43,0,0" VerticalAlignment="Top" Grid.Column="2"/>
                     <Label x:Name="lblDateTrip" Content="Datum:" HorizontalAlignment="Left" Margin="24,74,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="lblVacation" Content="Reseavbrott:" HorizontalAlignment="Left" Margin="24,113,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
                     <DatePicker x:Name="dpVacationEnd" HorizontalAlignment="Left" Margin="129,115,0,0" VerticalAlignment="Top" Width="113" FirstDayOfWeek="Monday" Grid.Column="2"/>
@@ -33,7 +33,7 @@
                     <TextBox x:Name="tbMotivation" HorizontalAlignment="Left" Height="82" Margin="1.03,185,0,0" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Top" Width="198" Grid.ColumnSpan="2" Grid.Column="1"/>
                     <Button x:Name="btnSend" Content="Spara resa" HorizontalAlignment="Left" Margin="417,244,0,0" VerticalAlignment="Top" Width="76" Click="btnSend_Click" Grid.Column="2"/>
                     <Button x:Name="btnAddBreak" Content="Lägg till avbrott" HorizontalAlignment="Left" Margin="247,115,0,0" VerticalAlignment="Top" Width="101" Click="btnAddBreak_Click" Height="24" Grid.Column="2"/>
-                    <ListView x:Name="lbVacations" HorizontalAlignment="Left" Height="179" Margin="353,32,0,0" VerticalAlignment="Top" Width="203" Grid.Column="2">
+                    <ListView x:Name="lbVacations" HorizontalAlignment="Left" Height="179" Margin="353,32,0,0" VerticalAlignment="Top" Width="203" Grid.Column="2" ItemsSource="{Binding Path=vacation}">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Start" DisplayMemberBinding="{Binding Path=start, StringFormat='{}{0:yyyy-MM-dd}'}"/>
@@ -41,23 +41,25 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
+                    <ComboBox x:Name="cbBosses" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Margin="2,20,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="lblDeparture_Copy" Content="Chef:" HorizontalAlignment="Left" Margin="58,21,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
 
             <TabItem Header="Reseutlägg" HorizontalAlignment="Left" Width="79" Margin="0">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Kostnadssumma (kr):" HorizontalAlignment="Left" Margin="24,87,0,0" VerticalAlignment="Top"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Margin="84,114,0,0"/>
+                    <TextBox x:Name="tbCost" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Margin="84,114,0,0"/>
                     <Label Content="Välj kvitto:" HorizontalAlignment="Left" Margin="173,83,0,0" VerticalAlignment="Top"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="173,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
                     <Button Content="Välj fil" HorizontalAlignment="Left" Margin="229,142,0,0" VerticalAlignment="Top" Width="64" Height="16" FontSize="10"/>
-                    <Button Content="Lägg till utlägg" HorizontalAlignment="Left" Margin="206,242,0,0" VerticalAlignment="Top" Width="87"/>
+                    <Button x:Name="btnAddVerification" Content="Lägg till utlägg" HorizontalAlignment="Left" Margin="206,242,0,0" VerticalAlignment="Top" Width="87" Click="btnAddVerification_Click"/>
                     <ListBox HorizontalAlignment="Left" Height="179" Margin="310,29,0,0" VerticalAlignment="Top" Width="348" Grid.ColumnSpan="4"/>
-                    <ComboBox x:Name="cbKostnTyp" HorizontalAlignment="Left" Margin="104,61,0,0" VerticalAlignment="Top" Width="189"/>
+                    <ComboBox x:Name="cbKostnTyp" ItemsSource="{Binding Path=expence}" DisplayMemberPath="type" HorizontalAlignment="Left" Margin="104,61,0,0" VerticalAlignment="Top" Width="189"/>
                     <Label x:Name="lblKostnadTyp" Content="Kostnadstyp:" HorizontalAlignment="Left" Margin="24,57,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="tbCostNotes" HorizontalAlignment="Left" Height="57" Margin="93,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" AcceptsReturn="True"/>
                     <Label x:Name="lblCostNotes" Content="Notering:" HorizontalAlignment="Left" Margin="24,171,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="cbPickTripExpensesTab" HorizontalAlignment="Left" Margin="104,19,0,0" VerticalAlignment="Top" Width="189" SelectionChanged="cbPickTripExpensesTab_SelectionChanged"/>
+                    <ComboBox x:Name="cbPickTripExpensesTab" ItemsSource="{Binding Path=FullTrip}" DisplayMemberPath="myTrip.start" HorizontalAlignment="Left" Margin="104,19,0,0" VerticalAlignment="Top" Width="189" SelectionChanged="cbPickTripExpensesTab_SelectionChanged"/>
                     <Label Content="Välj resa:" HorizontalAlignment="Left" Margin="27,15,0,0" VerticalAlignment="Top"/>
                     <Button Content="Ta bort valt utlägg" HorizontalAlignment="Left" Margin="548,223,0,0" VerticalAlignment="Top" Width="110"/>
                 </Grid>
