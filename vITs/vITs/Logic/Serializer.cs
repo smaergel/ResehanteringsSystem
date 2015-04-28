@@ -27,12 +27,16 @@ namespace vITs.Logic
 
         public static List<FullTrip> Load()
         {
-            var serializer = new XmlSerializer(typeof(List<FullTrip>));
-            var reader = new StreamReader(Filename);
-            var trips = (List<FullTrip>)serializer.Deserialize(reader);
-            reader.Close();
+            if (File.Exists(Filename))
+            {
+                var serializer = new XmlSerializer(typeof (List<FullTrip>));
+                var reader = new StreamReader(Filename);
+                var trips = (List<FullTrip>) serializer.Deserialize(reader);
+                reader.Close();
 
-            return trips;
+                return trips;
+            }
+            return null;
         }
 
         public static void Overwrite(List<FullTrip> fulltrips)
