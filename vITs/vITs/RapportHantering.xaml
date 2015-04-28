@@ -77,7 +77,7 @@
                         </Button.Background>
                     </Button>
                     <ListBox HorizontalAlignment="Left" Height="179" Margin="310,29,0,0" VerticalAlignment="Top" Width="348" Grid.ColumnSpan="4"/>
-                    <ComboBox x:Name="cbKostnTyp" HorizontalAlignment="Left" Margin="104,61,0,0" VerticalAlignment="Top" Width="189"/>
+                    <ComboBox x:Name="cbKostnTyp" HorizontalAlignment="Left" Margin="104,61,0,0" VerticalAlignment="Top" Width="189" ItemsSource="{Binding Path=expence}" DisplayMemberPath="type" SelectedValuePath="expenceID"/>
                     <Label x:Name="lblKostnadTyp" Content="Kostnadstyp:" HorizontalAlignment="Left" Margin="24,57,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="tbCostNotes" HorizontalAlignment="Left" Height="57" Margin="93,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" AcceptsReturn="True"/>
                     <Label x:Name="lblCostNotes" Content="Notering:" HorizontalAlignment="Left" Margin="24,171,0,0" VerticalAlignment="Top"/>
