@@ -32,10 +32,13 @@ namespace vITs
     /// </summary>
     public partial class RapportHantering : Window
     {
+        public List<FullTrip> fulltrips;
         public Dictionary<string, Vacation> dic;
         public RapportHantering()
         {
             InitializeComponent();
+            HandleItems.FillBossList(cbBosses);
+            LoadReseUtlägg();
             HandleItems.FillCbsWithCountries(cbCountryArrival, cbCountryDeparture);
             HandleItems.FillListBoxWithAwaitingApproval(lbReportsDenied);
 
@@ -63,6 +66,15 @@ namespace vITs
         }
 
 
+        private void LoadReseUtlägg()
+        {
+            fulltrips = Serializer.Load();
+            cbPickTripExpensesTab.ItemsSource = fulltrips;
+            cbKostnTyp.ItemsSource = ExpencesRepository.GetAll();
+
+
+        }
+
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             var realtrip = new Trip();
@@ -79,16 +91,47 @@ namespace vITs
             int.TryParse(prepay, out prepaySum);
             realtrip.prepayment = prepaySum;
             realtrip.note = tbMotivation.Text;
-            realtrip.user = 1;
+            realtrip.user = (int)cbBosses.SelectedItem;
             //validerar informationen som hämtats ut or boxarna
             if (Validering.CheckPrepaySum((int)realtrip.prepayment))
             {
                 var FullTrip = new FullTrip();
                 FullTrip.myTrip = ModelTransformer.Trip2TripModel(realtrip);
+                foreach (Vacation item in lbVacations.Items)
+                {
+                    FullTrip.myVacation.Add(ModelTransformer.Vacation2VacationModel(item));
+                }
+
+                //              DB!!!
+                //TripRepository.AddTrip(realtrip);
+                //foreach(var item in FullTrip.myVacation)
+                //{
+                //    var vacation = ModelTransformer.VacationModel2Vacation(item);
+                //    vacation.tripID = realtrip.tripID;
+                //    VacationsRepository.AddVacation(vacation);
+                //}
                 Serializer.Save(FullTrip);
                 ClearFieldsAndReloadBoxes();
+
+
             }
         }
+
+        private void btnAddVerification_Click(object sender, RoutedEventArgs e)
+        {
+            double price;
+            Double.TryParse(tbCost.Text, out price);
+            FullTrip selectedItem = (FullTrip)cbPickTripExpensesTab.SelectedItem;
+            var verification = new VerificationModel();
+            verification.cost = price;
+            verification.note = tbCostNotes.Text;
+            fulltrips[cbPickTripExpensesTab.SelectedIndex].myVerifications.Add(verification);
+
+            Serializer.Overwrite(fulltrips);
+            //List<FullTrip> test = new List<FullTrip>();
+            //test = (List<FullTrip>)cbPickTripExpensesTab.ItemsSource;
+        }
+
 
         private void btnAddBreak_Click(object sender, RoutedEventArgs e)
         {
