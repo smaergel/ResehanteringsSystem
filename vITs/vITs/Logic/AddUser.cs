@@ -39,56 +39,101 @@ namespace vITs.Logic
             UserHandling.AddUserAsBoss(user);
         }
 
-        public static void UpdateUser(int UserID, TextBox Tele, TextBox Address, TextBox Email)
+        public static void UpdateUser(int UserID, TextBox Tele, TextBox Email)
         {
-            if (Validering.CheckIf3Empty(Tele, Address, Email))
+            if (Validering.CheckIf2Empty(Tele, Email))
             {
                 var user = UserHandling.GetUser(UserID);
                 user.phone = Tele.Text;
-                user.firstname = Address.Text;
                 user.email = Email.Text;
                 UserHandling.UpdateUser(user);
                 MessageBox.Show("Uppgifter sparade");
                 Tele.Text = "";
-                Address.Text = "";
                 Email.Text = "";
             }
         }
 
-        public static void ChangePassword(int user, TextBox newPasswordOne, TextBox newPasswordTwo, TextBox OldPassword)
+        public static void ChangePassword(int user, PasswordBox newPasswordOne, PasswordBox newPasswordTwo,
+           PasswordBox OldPassword)
         {
-            if (Validering.CheckIf3Empty(newPasswordOne, newPasswordTwo, OldPassword))
+            if (Validering.CheckIf3Password(newPasswordOne, newPasswordTwo, OldPassword))
             {
                 var userNow = UserHandling.GetUser(user);
-                if (userNow.password != OldPassword.Text)
+                if (userNow.password != OldPassword.Password)
                 {
                     MessageBox.Show("Du har angivit fel lösenord");
                 }
 
-                else if (newPasswordOne.Text != newPasswordTwo.Text)
+                else if (newPasswordOne.Password != newPasswordTwo.Password)
                 {
                     MessageBox.Show("Lösenorden stämmer inte överens");
                 }
 
                 else
                 {
-                    userNow.password = newPasswordOne.Text;
+                    userNow.password = newPasswordOne.Password;
                     UserHandling.UpdateUser(userNow);
                     MessageBox.Show("Lösenordet har ändrats");
-                    newPasswordOne.Text = "";
-                    newPasswordTwo.Text = "";
-                    OldPassword.Text = "";
+                    newPasswordOne.Password = "";
+                    newPasswordTwo.Password = "";
+                    OldPassword.Password = "";
                 }
             }
         }
 
-        public static void FillUserInformation(int UserID, TextBox Tele, TextBox Address, TextBox Email)
+        public static void FillUserInformation(int UserID, TextBox Tele, TextBox Email)
         {
-                var user = UserHandling.GetUser(UserID);
-                Tele.Text = user.phone;
-                Address.Text = user.firstname;
-                Email.Text = user.email;
+            var user = UserHandling.GetUser(UserID);
+            Tele.Text = user.phone;
+            Email.Text = user.email;
         }
+
+        public static bool ValidateAddUser(TextBox Firstname, TextBox Lastname, PasswordBox Password, PasswordBox
+        ConfirmPassword, TextBox Email, TextBox Tele)
+        {
+            if (Firstname.Text == "" || Lastname.Text == "" || Password.Password == "" ||
+                ConfirmPassword.Password == "" || Email.Text == "" || Tele.Text == "")
+            {
+                MessageBox.Show("Fyll i alla fält");
+                return false;
+            }
+            if (!Password.Password.Equals(ConfirmPassword.Password))
+            {
+                MessageBox.Show("Lösenord matchar inte");
+                return false;
+            }
+            return true;
+        }
+
+        public static void ClearText(TextBox Firstname, TextBox Lastname, PasswordBox Password, PasswordBox
+        ConfirmPassword, TextBox Email, TextBox Tele, CheckBox cbx)
+        {
+            Firstname.Text = "";
+            Lastname.Text = "";
+            Password.Password = "";
+            ConfirmPassword.Password = "";
+            Email.Text = "";
+            Tele.Text = "";
+            cbx.IsChecked = false;
+        }
+
+
+        public static void DeleteUser(int userId, ComboBox cb)
+        {
+            var checkIfBoss = UserHandling.CheckIfBoss(userId);
+            if (checkIfBoss != null)
+            {
+                UserHandling.DeleteBosses(userId);
+                //UserHandling.DeleteUsers(userID);
+                cb.Items.Clear();
+
+            }
+            UserHandling.DeleteUsers(userId);
+            cb.Items.Clear();
+
+        }
+
+
 
     }
 }

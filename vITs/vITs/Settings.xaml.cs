@@ -24,52 +24,75 @@ namespace vITs
         public Settings()
         {
             InitializeComponent();
-            HandleItems.FillBossList(cbChef);
-            FillUserInformation();
+            FillUserInformation(); 
+            HandleItems.FillUserList(cbUser);
         }
 
+        
+       
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //var oPass = oldPassword;
+           // var nPass = newPassword;
+           // var vNewPass = verifyNewPass;
+
+           // if (newPassword.Equals(verifyNewPass) && oldPassword != newPassword) ;
+            //{
+                
+            //}
+        }
         public void FillUserInformation()
         {
-            AddUser.FillUserInformation(HandleItems.GetCurrentUserId(), tbxUpdatePhone, tbxUpdateAddress, tbxUpdateEmail);
+            AddUser.FillUserInformation(HandleItems.GetCurrentUserId(), tbxUpdatePhone, tbxUpdateEmail);
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             UserModel userModel = new UserModel(tbxFirstName.Text, tbxLastName.Text,
-            tbxPasswordFirst.Text, tbxEmail.Text, tbxTele.Text);
-
-            if (cbxBoss.IsChecked == true)
+                       tbxPasswordFirst.Password, tbxEmail.Text, tbxTele.Text);
+            if (AddUser.ValidateAddUser(tbxFirstName, tbxLastName,
+            tbxPasswordFirst, tbxPasswordSecond, tbxEmail, tbxTele))
             {
-                AddUser.AddBoss(userModel);
+                if (cbxBoss.IsChecked == true)
+                {
+                    AddUser.AddBoss(userModel);
+                    AddUser.ClearText(tbxFirstName, tbxLastName,
+                        tbxPasswordFirst, tbxPasswordSecond, tbxEmail, tbxTele, cbxBoss);
+                    cbUser.Items.Clear();
+                    HandleItems.FillUserList(cbUser);
+
+                }
+                else
+                {
+
+                    AddUser.AddNewUser(userModel);
+                    AddUser.ClearText(tbxFirstName, tbxLastName,
+                        tbxPasswordFirst, tbxPasswordSecond, tbxEmail, tbxTele, cbxBoss);
+                    cbUser.Items.Clear();
+                    HandleItems.FillUserList(cbUser);
+                }
             }
-            else
-            {
-                AddUser.AddNewUser(userModel);
-            }
-           
         }
 
-        private void cbxBoss_Checked(object sender, RoutedEventArgs e)
-        {
-            cbChef.IsEnabled = false;
-        }
-
-        private void cbxBoss_Unchecked(object sender, RoutedEventArgs e)
-        {
-            cbChef.IsEnabled = true;
-        }
-
+  
        
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            AddUser.UpdateUser(HandleItems.GetCurrentUserId(), tbxUpdatePhone, tbxUpdateAddress, tbxUpdateEmail);
+            AddUser.UpdateUser(HandleItems.GetCurrentUserId(), tbxUpdatePhone, tbxUpdateEmail);
             FillUserInformation();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             AddUser.ChangePassword(HandleItems.GetCurrentUserId(),tbxNewPassword1, tbxNewPassword2, tbxOldPassword);
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            var userID = cbUser.SelectedItem.ToString().Split('.')[0];
+            AddUser.DeleteUser(Convert.ToInt16(userID), cbUser);
+            HandleItems.FillUserList(cbUser);
         }
     }
 }

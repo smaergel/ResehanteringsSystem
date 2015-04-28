@@ -18,7 +18,7 @@ namespace vITs.Logic
         public static List<Country> SendCountryList()
         {
             return CountryRepository.GetAllCountries();
-            
+
         }
 
         public static List<Trip> SendTripList()
@@ -72,14 +72,18 @@ namespace vITs.Logic
 
         }
 
+        public static List<User> SendUserList()
+        {
+            return UserHandling.GetUsers();
+        }
 
         ////returnerar den inloggade användarens id.
         public static int GetCurrentUserId()
         {
-            var currentUser = new User{userID = 0};
+            var currentUser = new User { userID = 0 };
             if (Application.Current.Properties.Count > 0)
             {
-                currentUser = (User) Application.Current.Properties["currentUser"];
+                currentUser = (User)Application.Current.Properties["currentUser"];
             }
 
 
@@ -111,7 +115,7 @@ namespace vITs.Logic
                     lb.DisplayMemberPath = "TripId";
                     lb.Items.Add(tripToBeAdded);
                 }
-                
+
             }
 
         }
@@ -128,6 +132,19 @@ namespace vITs.Logic
             return orderby;
         }
 
-        }  
+
+
+        public static void FillUserList(ComboBox cb)
+        {
+
+            var userList = SendUserList();
+            foreach (var user in userList)
+            {
+                if (HandleItems.GetCurrentUserId() != user.userID)
+                    cb.Items.Add(user.userID + ". " + user.firstname + " " + user.lastname);
+            }
+        }
     }
+
+}
 

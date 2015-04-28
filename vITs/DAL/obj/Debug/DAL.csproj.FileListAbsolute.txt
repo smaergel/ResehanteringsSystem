@@ -80,3 +80,4 @@ D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServer.x
 D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServerCompact.xml
 D:\VSProjekt\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.exe
 D:\VSProjekt\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.pdb
+C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
