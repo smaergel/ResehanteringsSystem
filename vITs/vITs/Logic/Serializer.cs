@@ -17,17 +17,17 @@ namespace vITs.Logic
         public static void Save(FullTrip fullTrip)
         {            
             var trips = new List<FullTrip>();
-            trips = Load();
+            //trips = Load();
             trips.Add(fullTrip);       
-            var writer = new System.Xml.Serialization.XmlSerializer(typeof(List<FullTrip>));
-            var file = new System.IO.StreamWriter(Filename);
+            var writer = new XmlSerializer(typeof(List<FullTrip>));
+            var file = new StreamWriter(Filename);
             writer.Serialize(file, trips);
             file.Close();
         }
 
         public static void Overwrite(List<FullTrip> fulltrips)
         {
-            var writer = new System.Xml.Serialization.XmlSerializer(typeof(List<FullTrip>));
+            var writer = new XmlSerializer(typeof(List<FullTrip>));
             var file = new System.IO.StreamWriter(Filename);
             writer.Serialize(file, fulltrips);
             file.Close();

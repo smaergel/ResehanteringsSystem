@@ -70,9 +70,9 @@ namespace vITs
 
         private void LoadReseUtlägg()
         {
-            fulltrips = Serializer.Load();
-            cbPickTripExpensesTab.ItemsSource = fulltrips;
-            cbKostnTyp.ItemsSource = ExpencesRepository.getAll();
+            ////fulltrips = Serializer.Load();
+            //cbPickTripExpensesTab.ItemsSource = fulltrips;
+            //cbKostnTyp.ItemsSource = ExpencesRepository.getAll();
   
             
         }
@@ -352,7 +352,6 @@ namespace vITs
             //List<FullTrip> test = new List<FullTrip>();
             //test = (List<FullTrip>)cbPickTripExpensesTab.ItemsSource;
         }
-
 
     }
 }

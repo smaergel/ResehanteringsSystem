@@ -45,6 +45,7 @@
                     </ListView>
                     <ComboBox x:Name="cbBosses" Grid.Column="1" HorizontalAlignment="Left" Margin="2,10,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
                     <Button x:Name="anvInstallningar" Content="Inställningar" Grid.Column="2" HorizontalAlignment="Left" Margin="250,257,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+                    <Button x:Name="btnSend" Content="Skicka" Grid.Column="2" HorizontalAlignment="Left" Margin="470,257,0,0" VerticalAlignment="Top" Width="75" Click="btnSend_Click"/>
                 </Grid>
             </TabItem>
 
