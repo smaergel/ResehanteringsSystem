@@ -24,22 +24,11 @@ namespace vITs
         public Settings()
         {
             InitializeComponent();
-            FillUserInformation();
-            FillUserList();
+            FillUserInformation(); 
+            HandleItems.FillUserList(cbUser);
         }
 
-<<<<<<< HEAD
-=======
-        public void FillUserList()
-        {
-            var handle = new HandleItems();
-            var userList = handle.SendUserList();
-            foreach (var user in userList)
-            {
-                if (HandleItems.GetCurrentUserId() != user.userID)
-                cbUser.Items.Add(user.userID + ". " + user.firstname + " " + user.lastname);
-            }
-        }
+        
        
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -53,8 +42,6 @@ namespace vITs
                 
             //}
         }
->>>>>>> origin/FixadSettingFörSakerHarRaderas
-
         public void FillUserInformation()
         {
             AddUser.FillUserInformation(HandleItems.GetCurrentUserId(), tbxUpdatePhone, tbxUpdateEmail);
@@ -73,7 +60,7 @@ namespace vITs
                     AddUser.ClearText(tbxFirstName, tbxLastName,
                         tbxPasswordFirst, tbxPasswordSecond, tbxEmail, tbxTele, cbxBoss);
                     cbUser.Items.Clear();
-                    FillUserList();
+                    HandleItems.FillUserList(cbUser);
 
                 }
                 else
@@ -83,7 +70,7 @@ namespace vITs
                     AddUser.ClearText(tbxFirstName, tbxLastName,
                         tbxPasswordFirst, tbxPasswordSecond, tbxEmail, tbxTele, cbxBoss);
                     cbUser.Items.Clear();
-                    FillUserList();
+                    HandleItems.FillUserList(cbUser);
                 }
             }
         }
@@ -105,7 +92,7 @@ namespace vITs
         {
             var userID = cbUser.SelectedItem.ToString().Split('.')[0];
             AddUser.DeleteUser(Convert.ToInt16(userID), cbUser);
-            FillUserList();
+            HandleItems.FillUserList(cbUser);
         }
     }
 }
