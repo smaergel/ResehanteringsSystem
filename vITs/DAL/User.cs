@@ -25,6 +25,7 @@ namespace DAL
         public string password { get; set; }
         public string email { get; set; }
         public string phone { get; set; }
+        public Nullable<int> boss { get; set; }
     
         public virtual Boss Boss1 { get; set; }
         public virtual ICollection<Trip> Trips { get; set; }

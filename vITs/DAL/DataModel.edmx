@@ -4,232 +4,275 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Bosses">
-          <Key>
-            <PropertyRef Name="userID" />
-          </Key>
-          <Property Name="userID" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Countries">
-          <Key>
-            <PropertyRef Name="countryID" />
-          </Key>
-          <Property Name="countryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="country1" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="allowance" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Expences">
-          <Key>
-            <PropertyRef Name="expenceID" />
-          </Key>
-          <Property Name="expenceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="type" Type="varchar" MaxLength="30" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Settings">
-          <Key>
-            <PropertyRef Name="settingID" />
-          </Key>
-          <Property Name="settingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="value" Type="float" Nullable="false" />
-          <Property Name="note" Type="varchar(max)" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Trips">
-          <Key>
-            <PropertyRef Name="tripID" />
-          </Key>
-          <Property Name="tripID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="origin" Type="int" Nullable="false" />
-          <Property Name="destination" Type="int" Nullable="false" />
-          <Property Name="start" Type="datetime" Nullable="false" />
-          <Property Name="end" Type="datetime" Nullable="false" />
-          <Property Name="prepayment" Type="int" />
-          <Property Name="note" Type="varchar(max)" />
-          <Property Name="user" Type="int" Nullable="false" />
-          <Property Name="boss" Type="int" Nullable="false" />
-          <Property Name="approved" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Users">
-          <Key>
-            <PropertyRef Name="userID" />
-          </Key>
-          <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="firstname" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="lastname" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="password" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="phone" Type="varchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="Vacations">
-          <Key>
-            <PropertyRef Name="VacationID" />
-          </Key>
-          <Property Name="VacationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="start" Type="datetime" Nullable="false" />
-          <Property Name="end" Type="datetime" Nullable="false" />
-          <Property Name="tripID" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Verifications">
-          <Key>
-            <PropertyRef Name="verificationID" />
-          </Key>
-          <Property Name="verificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="expenceID" Type="int" Nullable="false" />
-          <Property Name="cost" Type="float" Nullable="false" />
-          <Property Name="path" Type="varchar(max)" />
-          <Property Name="date" Type="datetime" Nullable="false" />
-          <Property Name="note" Type="varchar(max)" />
-          <Property Name="tripID" Type="int" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_Bosses_ToUsers">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
-          <End Role="Bosses" Type="Self.Bosses" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="userID" />
-            </Principal>
-            <Dependent Role="Bosses">
-              <PropertyRef Name="userID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Trips_ToBoss">
-          <End Role="Bosses" Type="Self.Bosses" Multiplicity="1" />
-          <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Bosses">
-              <PropertyRef Name="userID" />
-            </Principal>
-            <Dependent Role="Trips">
-              <PropertyRef Name="boss" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Trips_ToCountry">
-          <End Role="Countries" Type="Self.Countries" Multiplicity="1" />
-          <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Countries">
-              <PropertyRef Name="countryID" />
-            </Principal>
-            <Dependent Role="Trips">
-              <PropertyRef Name="origin" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Trips_ToCountry2">
-          <End Role="Countries" Type="Self.Countries" Multiplicity="1" />
-          <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Countries">
-              <PropertyRef Name="countryID" />
-            </Principal>
-            <Dependent Role="Trips">
-              <PropertyRef Name="destination" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Trips_ToUser">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
-          <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="userID" />
-            </Principal>
-            <Dependent Role="Trips">
-              <PropertyRef Name="user" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Vacations_ToTrip">
-          <End Role="Trips" Type="Self.Trips" Multiplicity="1" />
-          <End Role="Vacations" Type="Self.Vacations" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Trips">
-              <PropertyRef Name="tripID" />
-            </Principal>
-            <Dependent Role="Vacations">
-              <PropertyRef Name="tripID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Verifications_Expences">
-          <End Role="Expences" Type="Self.Expences" Multiplicity="1" />
-          <End Role="Verifications" Type="Self.Verifications" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Expences">
-              <PropertyRef Name="expenceID" />
-            </Principal>
-            <Dependent Role="Verifications">
-              <PropertyRef Name="expenceID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Verifications_Trips">
-          <End Role="Trips" Type="Self.Trips" Multiplicity="1" />
-          <End Role="Verifications" Type="Self.Verifications" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Trips">
-              <PropertyRef Name="tripID" />
-            </Principal>
-            <Dependent Role="Verifications">
-              <PropertyRef Name="tripID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="DatabaseModelStoreContainer">
-          <EntitySet Name="Bosses" EntityType="Self.Bosses" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Expences" EntityType="Self.Expences" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Settings" EntityType="Self.Settings" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Trips" EntityType="Self.Trips" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Vacations" EntityType="Self.Vacations" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Verifications" EntityType="Self.Verifications" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Bosses_ToUsers" Association="Self.FK_Bosses_ToUsers">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Bosses" EntitySet="Bosses" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Trips_ToBoss" Association="Self.FK_Trips_ToBoss">
-            <End Role="Bosses" EntitySet="Bosses" />
-            <End Role="Trips" EntitySet="Trips" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Trips_ToCountry" Association="Self.FK_Trips_ToCountry">
-            <End Role="Countries" EntitySet="Countries" />
-            <End Role="Trips" EntitySet="Trips" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Trips_ToCountry2" Association="Self.FK_Trips_ToCountry2">
-            <End Role="Countries" EntitySet="Countries" />
-            <End Role="Trips" EntitySet="Trips" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Trips_ToUser" Association="Self.FK_Trips_ToUser">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Trips" EntitySet="Trips" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Vacations_ToTrip" Association="Self.FK_Vacations_ToTrip">
-            <End Role="Trips" EntitySet="Trips" />
-            <End Role="Vacations" EntitySet="Vacations" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Verifications_Expences" Association="Self.FK_Verifications_Expences">
-            <End Role="Expences" EntitySet="Expences" />
-            <End Role="Verifications" EntitySet="Verifications" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Verifications_Trips" Association="Self.FK_Verifications_Trips">
-            <End Role="Trips" EntitySet="Trips" />
-            <End Role="Verifications" EntitySet="Verifications" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema></edmx:StorageModels>
+    <Schema Namespace="DatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DatabaseModelStoreContainer">
+    <EntitySet Name="Bosses" EntityType="DatabaseModel.Store.Bosses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Countries" EntityType="DatabaseModel.Store.Countries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Expences" EntityType="DatabaseModel.Store.Expences" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Settings" EntityType="DatabaseModel.Store.Settings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Trips" EntityType="DatabaseModel.Store.Trips" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="DatabaseModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vacations" EntityType="DatabaseModel.Store.Vacations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Verifications" EntityType="DatabaseModel.Store.Verifications" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Bosses_ToUsers" Association="DatabaseModel.Store.FK_Bosses_ToUsers">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Boss" EntitySet="Bosses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trips_ToBoss" Association="DatabaseModel.Store.FK_Trips_ToBoss">
+      <End Role="Boss" EntitySet="Bosses" />
+      <End Role="Trip" EntitySet="Trips" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trips_ToCountry" Association="DatabaseModel.Store.FK_Trips_ToCountry">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Trip" EntitySet="Trips" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trips_ToCountry2" Association="DatabaseModel.Store.FK_Trips_ToCountry2">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Trip" EntitySet="Trips" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Verifications_Expences" Association="DatabaseModel.Store.FK_Verifications_Expences">
+      <End Role="Expence" EntitySet="Expences" />
+      <End Role="Verification" EntitySet="Verifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trips_ToUser" Association="DatabaseModel.Store.FK_Trips_ToUser">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Trip" EntitySet="Trips" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacations_ToTrip" Association="DatabaseModel.Store.FK_Vacations_ToTrip">
+      <End Role="Trip" EntitySet="Trips" />
+      <End Role="Vacation" EntitySet="Vacations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Verifications_Trips" Association="DatabaseModel.Store.FK_Verifications_Trips">
+      <End Role="Trip" EntitySet="Trips" />
+      <End Role="Verification" EntitySet="Verifications" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Bosses">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="countryID" />
+    </Key>
+    <Property Name="countryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="country1" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="allowance" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Expences">
+    <Key>
+      <PropertyRef Name="expenceID" />
+    </Key>
+    <Property Name="expenceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Settings">
+    <Key>
+      <PropertyRef Name="settingID" />
+    </Key>
+    <Property Name="settingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="value" Type="float" Nullable="false" />
+    <Property Name="note" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Trips">
+    <Key>
+      <PropertyRef Name="tripID" />
+    </Key>
+    <Property Name="tripID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="origin" Type="int" Nullable="false" />
+    <Property Name="destination" Type="int" Nullable="false" />
+    <Property Name="start" Type="datetime" Nullable="false" />
+    <Property Name="end" Type="datetime" Nullable="false" />
+    <Property Name="prepayment" Type="int" Nullable="true" />
+    <Property Name="note" Type="varchar(max)" Nullable="true" />
+    <Property Name="user" Type="int" Nullable="false" />
+    <Property Name="boss" Type="int" Nullable="false" />
+    <Property Name="approved" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstname" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="lastname" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="password" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="phone" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="boss" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Vacations">
+    <Key>
+      <PropertyRef Name="VacationID" />
+    </Key>
+    <Property Name="VacationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="start" Type="datetime" Nullable="false" />
+    <Property Name="end" Type="datetime" Nullable="false" />
+    <Property Name="tripID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Verifications">
+    <Key>
+      <PropertyRef Name="verificationID" />
+    </Key>
+    <Property Name="verificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="expenceID" Type="int" Nullable="false" />
+    <Property Name="cost" Type="float" Nullable="false" />
+    <Property Name="path" Type="varchar(max)" Nullable="true" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="note" Type="varchar(max)" Nullable="true" />
+    <Property Name="tripID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Bosses_ToUsers">
+    <End Role="User" Type="DatabaseModel.Store.Users" Multiplicity="1" />
+    <End Role="Boss" Type="DatabaseModel.Store.Bosses" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="Boss">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trips_ToBoss">
+    <End Role="Boss" Type="DatabaseModel.Store.Bosses" Multiplicity="1" />
+    <End Role="Trip" Type="DatabaseModel.Store.Trips" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Boss">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="Trip">
+        <PropertyRef Name="boss" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trips_ToCountry">
+    <End Role="Country" Type="DatabaseModel.Store.Countries" Multiplicity="1" />
+    <End Role="Trip" Type="DatabaseModel.Store.Trips" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="countryID" />
+      </Principal>
+      <Dependent Role="Trip">
+        <PropertyRef Name="origin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trips_ToCountry2">
+    <End Role="Country" Type="DatabaseModel.Store.Countries" Multiplicity="1" />
+    <End Role="Trip" Type="DatabaseModel.Store.Trips" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="countryID" />
+      </Principal>
+      <Dependent Role="Trip">
+        <PropertyRef Name="destination" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Verifications_Expences">
+    <End Role="Expence" Type="DatabaseModel.Store.Expences" Multiplicity="1" />
+    <End Role="Verification" Type="DatabaseModel.Store.Verifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Expence">
+        <PropertyRef Name="expenceID" />
+      </Principal>
+      <Dependent Role="Verification">
+        <PropertyRef Name="expenceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trips_ToUser">
+    <End Role="User" Type="DatabaseModel.Store.Users" Multiplicity="1" />
+    <End Role="Trip" Type="DatabaseModel.Store.Trips" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="Trip">
+        <PropertyRef Name="user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacations_ToTrip">
+    <End Role="Trip" Type="DatabaseModel.Store.Trips" Multiplicity="1" />
+    <End Role="Vacation" Type="DatabaseModel.Store.Vacations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trip">
+        <PropertyRef Name="tripID" />
+      </Principal>
+      <Dependent Role="Vacation">
+        <PropertyRef Name="tripID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Verifications_Trips">
+    <End Role="Trip" Type="DatabaseModel.Store.Trips" Multiplicity="1" />
+    <End Role="Verification" Type="DatabaseModel.Store.Verifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trip">
+        <PropertyRef Name="tripID" />
+      </Principal>
+      <Dependent Role="Verification">
+        <PropertyRef Name="tripID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bosses" EntityType="DatabaseModel.Boss" />
+          <EntitySet Name="Countries" EntityType="DatabaseModel.Country" />
+          <EntitySet Name="Expences" EntityType="DatabaseModel.Expence" />
+          <EntitySet Name="Settings" EntityType="DatabaseModel.Setting" />
+          <EntitySet Name="Trips" EntityType="DatabaseModel.Trip" />
+          <EntitySet Name="Users" EntityType="DatabaseModel.User" />
+          <EntitySet Name="Vacations" EntityType="DatabaseModel.Vacation" />
+          <EntitySet Name="Verifications" EntityType="DatabaseModel.Verification" />
+          <AssociationSet Name="FK_Bosses_ToUsers" Association="DatabaseModel.FK_Bosses_ToUsers">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Boss" EntitySet="Bosses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trips_ToBoss" Association="DatabaseModel.FK_Trips_ToBoss">
+            <End Role="Boss" EntitySet="Bosses" />
+            <End Role="Trip" EntitySet="Trips" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trips_ToCountry" Association="DatabaseModel.FK_Trips_ToCountry">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Trip" EntitySet="Trips" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trips_ToCountry2" Association="DatabaseModel.FK_Trips_ToCountry2">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Trip" EntitySet="Trips" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Verifications_Expences" Association="DatabaseModel.FK_Verifications_Expences">
+            <End Role="Expence" EntitySet="Expences" />
+            <End Role="Verification" EntitySet="Verifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trips_ToUser" Association="DatabaseModel.FK_Trips_ToUser">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Trip" EntitySet="Trips" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vacations_ToTrip" Association="DatabaseModel.FK_Vacations_ToTrip">
+            <End Role="Trip" EntitySet="Trips" />
+            <End Role="Vacation" EntitySet="Vacations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Verifications_Trips" Association="DatabaseModel.FK_Verifications_Trips">
+            <End Role="Trip" EntitySet="Trips" />
+            <End Role="Verification" EntitySet="Verifications" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Boss">
           <Key>
             <PropertyRef Name="userID" />
           </Key>
           <Property Name="userID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Bosses_ToUsers" FromRole="Bosses" ToRole="Users" />
+          <NavigationProperty Name="User" Relationship="DatabaseModel.FK_Bosses_ToUsers" FromRole="Boss" ToRole="User" />
           <NavigationProperty Name="Trips" Relationship="DatabaseModel.FK_Trips_ToBoss" FromRole="Boss" ToRole="Trip" />
         </EntityType>
         <EntityType Name="Country">
@@ -237,27 +280,27 @@
             <PropertyRef Name="countryID" />
           </Key>
           <Property Name="countryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="country1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="country1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="allowance" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Trips" Relationship="Self.FK_Trips_ToCountry" FromRole="Countries" ToRole="Trips" />
-          <NavigationProperty Name="Trips1" Relationship="Self.FK_Trips_ToCountry2" FromRole="Countries" ToRole="Trips" />
+          <NavigationProperty Name="Trips" Relationship="DatabaseModel.FK_Trips_ToCountry" FromRole="Country" ToRole="Trip" />
+          <NavigationProperty Name="Trips1" Relationship="DatabaseModel.FK_Trips_ToCountry2" FromRole="Country" ToRole="Trip" />
         </EntityType>
         <EntityType Name="Expence">
           <Key>
             <PropertyRef Name="expenceID" />
           </Key>
           <Property Name="expenceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="type" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Verifications" Relationship="Self.FK_Verifications_Expences" FromRole="Expences" ToRole="Verifications" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Verifications" Relationship="DatabaseModel.FK_Verifications_Expences" FromRole="Expence" ToRole="Verification" />
         </EntityType>
         <EntityType Name="Setting">
           <Key>
             <PropertyRef Name="settingID" />
           </Key>
           <Property Name="settingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="value" Type="Double" Nullable="false" />
-          <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="note" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Trip">
           <Key>
@@ -271,27 +314,28 @@
           <Property Name="prepayment" Type="Int32" />
           <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="user" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Country" Relationship="Self.FK_Trips_ToCountry" FromRole="Trips" ToRole="Countries" />
-          <NavigationProperty Name="Country1" Relationship="Self.FK_Trips_ToCountry2" FromRole="Trips" ToRole="Countries" />
-          <NavigationProperty Name="User1" Relationship="Self.FK_Trips_ToUser" FromRole="Trips" ToRole="Users" />
-          <NavigationProperty Name="Vacations" Relationship="Self.FK_Vacations_ToTrip" FromRole="Trips" ToRole="Vacations" />
-          <NavigationProperty Name="Verifications" Relationship="Self.FK_Verifications_Trips" FromRole="Trips" ToRole="Verifications" />
           <Property Name="boss" Type="Int32" Nullable="false" />
           <Property Name="approved" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Boss1" Relationship="DatabaseModel.FK_Trips_ToBoss" FromRole="Trip" ToRole="Boss" />
+          <NavigationProperty Name="Country" Relationship="DatabaseModel.FK_Trips_ToCountry" FromRole="Trip" ToRole="Country" />
+          <NavigationProperty Name="Country1" Relationship="DatabaseModel.FK_Trips_ToCountry2" FromRole="Trip" ToRole="Country" />
+          <NavigationProperty Name="User1" Relationship="DatabaseModel.FK_Trips_ToUser" FromRole="Trip" ToRole="User" />
+          <NavigationProperty Name="Vacations" Relationship="DatabaseModel.FK_Vacations_ToTrip" FromRole="Trip" ToRole="Vacation" />
+          <NavigationProperty Name="Verifications" Relationship="DatabaseModel.FK_Verifications_Trips" FromRole="Trip" ToRole="Verification" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="userID" />
           </Key>
           <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="firstname" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="lastname" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="firstname" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="lastname" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Boss1" Relationship="Self.FK_Bosses_ToUsers" FromRole="Users" ToRole="Bosses" />
-          <NavigationProperty Name="Trips" Relationship="Self.FK_Trips_ToUser" FromRole="Users" ToRole="Trips" />
+          <Property Name="boss" Type="Int32" />
+          <NavigationProperty Name="Boss1" Relationship="DatabaseModel.FK_Bosses_ToUsers" FromRole="User" ToRole="Boss" />
+          <NavigationProperty Name="Trips" Relationship="DatabaseModel.FK_Trips_ToUser" FromRole="User" ToRole="Trip" />
         </EntityType>
         <EntityType Name="Vacation">
           <Key>
@@ -301,7 +345,7 @@
           <Property Name="start" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="end" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="tripID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Trip" Relationship="Self.FK_Vacations_ToTrip" FromRole="Vacations" ToRole="Trips" />
+          <NavigationProperty Name="Trip" Relationship="DatabaseModel.FK_Vacations_ToTrip" FromRole="Vacation" ToRole="Trip" />
         </EntityType>
         <EntityType Name="Verification">
           <Key>
@@ -314,135 +358,21 @@
           <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="tripID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Expence" Relationship="Self.FK_Verifications_Expences" FromRole="Verifications" ToRole="Expences" />
-          <NavigationProperty Name="Trip" Relationship="Self.FK_Verifications_Trips" FromRole="Verifications" ToRole="Trips" />
+          <NavigationProperty Name="Expence" Relationship="DatabaseModel.FK_Verifications_Expences" FromRole="Verification" ToRole="Expence" />
+          <NavigationProperty Name="Trip" Relationship="DatabaseModel.FK_Verifications_Trips" FromRole="Verification" ToRole="Trip" />
         </EntityType>
         <Association Name="FK_Bosses_ToUsers">
-          <End Role="Users" Type="Self.User" Multiplicity="1" />
-          <End Role="Bosses" Type="Self.Boss" Multiplicity="0..1" />
+          <End Type="DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="DatabaseModel.Boss" Role="Boss" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="Users">
+            <Principal Role="User">
               <PropertyRef Name="userID" />
             </Principal>
-            <Dependent Role="Bosses">
+            <Dependent Role="Boss">
               <PropertyRef Name="userID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Trips_ToCountry">
-          <End Role="Countries" Type="Self.Country" Multiplicity="1" />
-          <End Role="Trips" Type="Self.Trip" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Countries">
-              <PropertyRef Name="countryID" />
-            </Principal>
-            <Dependent Role="Trips">
-              <PropertyRef Name="origin" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Trips_ToCountry2">
-          <End Role="Countries" Type="Self.Country" Multiplicity="1" />
-          <End Role="Trips" Type="Self.Trip" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Countries">
-              <PropertyRef Name="countryID" />
-            </Principal>
-            <Dependent Role="Trips">
-              <PropertyRef Name="destination" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Verifications_Expences">
-          <End Role="Expences" Type="Self.Expence" Multiplicity="1" />
-          <End Role="Verifications" Type="Self.Verification" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Expences">
-              <PropertyRef Name="expenceID" />
-            </Principal>
-            <Dependent Role="Verifications">
-              <PropertyRef Name="expenceID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Trips_ToUser">
-          <End Role="Users" Type="Self.User" Multiplicity="1" />
-          <End Role="Trips" Type="Self.Trip" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="userID" />
-            </Principal>
-            <Dependent Role="Trips">
-              <PropertyRef Name="user" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Vacations_ToTrip">
-          <End Role="Trips" Type="Self.Trip" Multiplicity="1" />
-          <End Role="Vacations" Type="Self.Vacation" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Trips">
-              <PropertyRef Name="tripID" />
-            </Principal>
-            <Dependent Role="Vacations">
-              <PropertyRef Name="tripID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Verifications_Trips">
-          <End Role="Trips" Type="Self.Trip" Multiplicity="1" />
-          <End Role="Verifications" Type="Self.Verification" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Trips">
-              <PropertyRef Name="tripID" />
-            </Principal>
-            <Dependent Role="Verifications">
-              <PropertyRef Name="tripID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Bosses" EntityType="Self.Boss" />
-          <EntitySet Name="Countries" EntityType="Self.Country" />
-          <EntitySet Name="Expences" EntityType="Self.Expence" />
-          <EntitySet Name="Settings" EntityType="Self.Setting" />
-          <EntitySet Name="Trips" EntityType="Self.Trip" />
-          <EntitySet Name="Users" EntityType="Self.User" />
-          <EntitySet Name="Vacations" EntityType="Self.Vacation" />
-          <EntitySet Name="Verifications" EntityType="Self.Verification" />
-          <AssociationSet Name="FK_Bosses_ToUsers" Association="Self.FK_Bosses_ToUsers">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Bosses" EntitySet="Bosses" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Trips_ToCountry" Association="Self.FK_Trips_ToCountry">
-            <End Role="Countries" EntitySet="Countries" />
-            <End Role="Trips" EntitySet="Trips" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Trips_ToCountry2" Association="Self.FK_Trips_ToCountry2">
-            <End Role="Countries" EntitySet="Countries" />
-            <End Role="Trips" EntitySet="Trips" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Verifications_Expences" Association="Self.FK_Verifications_Expences">
-            <End Role="Expences" EntitySet="Expences" />
-            <End Role="Verifications" EntitySet="Verifications" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Trips_ToUser" Association="Self.FK_Trips_ToUser">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Trips" EntitySet="Trips" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Vacations_ToTrip" Association="Self.FK_Vacations_ToTrip">
-            <End Role="Trips" EntitySet="Trips" />
-            <End Role="Vacations" EntitySet="Vacations" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Verifications_Trips" Association="Self.FK_Verifications_Trips">
-            <End Role="Trips" EntitySet="Trips" />
-            <End Role="Verifications" EntitySet="Verifications" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Trips_ToBoss" Association="DatabaseModel.FK_Trips_ToBoss">
-            <End Role="Boss" EntitySet="Bosses" />
-            <End Role="Trip" EntitySet="Trips" />
-          </AssociationSet>
-        </EntityContainer>
         <Association Name="FK_Trips_ToBoss">
           <End Type="DatabaseModel.Boss" Role="Boss" Multiplicity="1" />
           <End Type="DatabaseModel.Trip" Role="Trip" Multiplicity="*" />
@@ -455,100 +385,172 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Trips_ToCountry">
+          <End Type="DatabaseModel.Country" Role="Country" Multiplicity="1" />
+          <End Type="DatabaseModel.Trip" Role="Trip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="countryID" />
+            </Principal>
+            <Dependent Role="Trip">
+              <PropertyRef Name="origin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trips_ToCountry2">
+          <End Type="DatabaseModel.Country" Role="Country" Multiplicity="1" />
+          <End Type="DatabaseModel.Trip" Role="Trip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="countryID" />
+            </Principal>
+            <Dependent Role="Trip">
+              <PropertyRef Name="destination" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Verifications_Expences">
+          <End Type="DatabaseModel.Expence" Role="Expence" Multiplicity="1" />
+          <End Type="DatabaseModel.Verification" Role="Verification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expence">
+              <PropertyRef Name="expenceID" />
+            </Principal>
+            <Dependent Role="Verification">
+              <PropertyRef Name="expenceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trips_ToUser">
+          <End Type="DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="DatabaseModel.Trip" Role="Trip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="userID" />
+            </Principal>
+            <Dependent Role="Trip">
+              <PropertyRef Name="user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vacations_ToTrip">
+          <End Type="DatabaseModel.Trip" Role="Trip" Multiplicity="1" />
+          <End Type="DatabaseModel.Vacation" Role="Vacation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trip">
+              <PropertyRef Name="tripID" />
+            </Principal>
+            <Dependent Role="Vacation">
+              <PropertyRef Name="tripID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Verifications_Trips">
+          <End Type="DatabaseModel.Trip" Role="Trip" Multiplicity="1" />
+          <End Type="DatabaseModel.Verification" Role="Verification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trip">
+              <PropertyRef Name="tripID" />
+            </Principal>
+            <Dependent Role="Verification">
+              <PropertyRef Name="tripID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
-          <EntitySetMapping Name="Bosses">
-            <EntityTypeMapping TypeName="DatabaseModel.Boss">
-              <MappingFragment StoreEntitySet="Bosses">
-                <ScalarProperty Name="userID" ColumnName="userID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Countries">
-            <EntityTypeMapping TypeName="DatabaseModel.Country">
-              <MappingFragment StoreEntitySet="Countries">
-                <ScalarProperty Name="countryID" ColumnName="countryID" />
-                <ScalarProperty Name="country1" ColumnName="country1" />
-                <ScalarProperty Name="allowance" ColumnName="allowance" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Expences">
-            <EntityTypeMapping TypeName="DatabaseModel.Expence">
-              <MappingFragment StoreEntitySet="Expences">
-                <ScalarProperty Name="expenceID" ColumnName="expenceID" />
-                <ScalarProperty Name="type" ColumnName="type" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Settings">
-            <EntityTypeMapping TypeName="DatabaseModel.Setting">
-              <MappingFragment StoreEntitySet="Settings">
-                <ScalarProperty Name="settingID" ColumnName="settingID" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="value" ColumnName="value" />
-                <ScalarProperty Name="note" ColumnName="note" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Trips">
-            <EntityTypeMapping TypeName="DatabaseModel.Trip">
-              <MappingFragment StoreEntitySet="Trips">
-                <ScalarProperty Name="approved" ColumnName="approved" />
-                <ScalarProperty Name="boss" ColumnName="boss" />
-                <ScalarProperty Name="tripID" ColumnName="tripID" />
-                <ScalarProperty Name="origin" ColumnName="origin" />
-                <ScalarProperty Name="destination" ColumnName="destination" />
-                <ScalarProperty Name="start" ColumnName="start" />
-                <ScalarProperty Name="end" ColumnName="end" />
-                <ScalarProperty Name="prepayment" ColumnName="prepayment" />
-                <ScalarProperty Name="note" ColumnName="note" />
-                <ScalarProperty Name="user" ColumnName="user" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="DatabaseModel.User">
-              <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="userID" ColumnName="userID" />
-                <ScalarProperty Name="firstname" ColumnName="firstname" />
-                <ScalarProperty Name="lastname" ColumnName="lastname" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Vacations">
-            <EntityTypeMapping TypeName="DatabaseModel.Vacation">
-              <MappingFragment StoreEntitySet="Vacations">
-                <ScalarProperty Name="VacationID" ColumnName="VacationID" />
-                <ScalarProperty Name="start" ColumnName="start" />
-                <ScalarProperty Name="end" ColumnName="end" />
-                <ScalarProperty Name="tripID" ColumnName="tripID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Verifications">
-            <EntityTypeMapping TypeName="DatabaseModel.Verification">
-              <MappingFragment StoreEntitySet="Verifications">
-                <ScalarProperty Name="verificationID" ColumnName="verificationID" />
-                <ScalarProperty Name="expenceID" ColumnName="expenceID" />
-                <ScalarProperty Name="cost" ColumnName="cost" />
-                <ScalarProperty Name="path" ColumnName="path" />
-                <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="note" ColumnName="note" />
-                <ScalarProperty Name="tripID" ColumnName="tripID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
+    <EntitySetMapping Name="Bosses">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Boss)">
+        <MappingFragment StoreEntitySet="Bosses">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Country)">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="countryID" ColumnName="countryID" />
+          <ScalarProperty Name="country1" ColumnName="country1" />
+          <ScalarProperty Name="allowance" ColumnName="allowance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expences">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Expence)">
+        <MappingFragment StoreEntitySet="Expences">
+          <ScalarProperty Name="expenceID" ColumnName="expenceID" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settings">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Setting)">
+        <MappingFragment StoreEntitySet="Settings">
+          <ScalarProperty Name="settingID" ColumnName="settingID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="note" ColumnName="note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trips">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Trip)">
+        <MappingFragment StoreEntitySet="Trips">
+          <ScalarProperty Name="tripID" ColumnName="tripID" />
+          <ScalarProperty Name="origin" ColumnName="origin" />
+          <ScalarProperty Name="destination" ColumnName="destination" />
+          <ScalarProperty Name="start" ColumnName="start" />
+          <ScalarProperty Name="end" ColumnName="end" />
+          <ScalarProperty Name="prepayment" ColumnName="prepayment" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="user" ColumnName="user" />
+          <ScalarProperty Name="boss" ColumnName="boss" />
+          <ScalarProperty Name="approved" ColumnName="approved" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="boss" ColumnName="boss" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vacations">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Vacation)">
+        <MappingFragment StoreEntitySet="Vacations">
+          <ScalarProperty Name="VacationID" ColumnName="VacationID" />
+          <ScalarProperty Name="start" ColumnName="start" />
+          <ScalarProperty Name="end" ColumnName="end" />
+          <ScalarProperty Name="tripID" ColumnName="tripID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Verifications">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Verification)">
+        <MappingFragment StoreEntitySet="Verifications">
+          <ScalarProperty Name="verificationID" ColumnName="verificationID" />
+          <ScalarProperty Name="expenceID" ColumnName="expenceID" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="tripID" ColumnName="tripID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -562,7 +564,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

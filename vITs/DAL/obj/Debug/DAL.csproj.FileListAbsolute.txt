@@ -78,6 +78,5 @@ D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\System.Data.SqlServerCe.dll
 D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.xml
 D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServer.xml
 D:\VSProjekt\ResehanteringsSystem\vITs\DAL\bin\Debug\EntityFramework.SqlServerCompact.xml
-D:\VSProjekt\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 D:\VSProjekt\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.exe
 D:\VSProjekt\ResehanteringsSystem\vITs\DAL\obj\Debug\DAL.pdb

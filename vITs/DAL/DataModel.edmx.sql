@@ -1,19 +1,5 @@
 
 -- --------------------------------------------------
--- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
--- --------------------------------------------------
--- Date Created: 04/24/2015 13:22:47
--- Generated from EDMX file: C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\DAL\DataModel.edmx
--- --------------------------------------------------
-
-SET QUOTED_IDENTIFIER OFF;
-GO
-USE [Database];
-GO
-IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
-GO
-
--- --------------------------------------------------
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
@@ -116,7 +102,7 @@ CREATE TABLE [dbo].[Trips] (
     [note] varchar(max)  NULL,
     [user] int  NOT NULL,
     [boss] int  NOT NULL,
-    [approved] int  NULL
+    [approved] int  NOT NULL
 );
 GO
 

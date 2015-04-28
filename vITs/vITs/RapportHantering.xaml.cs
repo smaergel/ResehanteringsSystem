@@ -37,13 +37,8 @@ namespace vITs
         public RapportHantering()
         {
             InitializeComponent();
-<<<<<<< HEAD
-            fillCbsWithCountries();
             HandleItems.FillBossList(cbBosses);
             LoadReseUtlägg();
-            
-            
-=======
             HandleItems.FillCbsWithCountries(cbCountryArrival, cbCountryDeparture);
             HandleItems.FillListBoxWithAwaitingApproval(lbReportsDenied);
 
@@ -55,7 +50,6 @@ namespace vITs
                 btnGetReportsApproved.IsEnabled = false;
                 anvInstallningar.IsEnabled = false;
             }
->>>>>>> origin/master
         }
 
         private void ClearFieldsAndReloadBoxes()
@@ -65,18 +59,14 @@ namespace vITs
             tbMotivation.Clear();
             cbCountryDeparture.Items.Clear();
             cbCountryArrival.Items.Clear();
-<<<<<<< HEAD
-            fillCbsWithCountries();
-            
+            lbReportsDenied.Items.Clear();
+            HandleItems.FillListBoxWithAwaitingApproval(lbReportsDenied);
+            HandleItems.FillCbsWithCountries(cbCountryArrival, cbCountryDeparture);
             
 
 
         }
-=======
-            lbReportsDenied.Items.Clear();
-            HandleItems.FillListBoxWithAwaitingApproval(lbReportsDenied);
-            HandleItems.FillCbsWithCountries(cbCountryArrival, cbCountryDeparture);
->>>>>>> origin/master
+
 
         private void LoadReseUtlägg()
         {
@@ -87,26 +77,10 @@ namespace vITs
             
         }
 
-<<<<<<< HEAD
-        //Fyller cbs i skapa rapport fliken med länderna som finns i databasen (landnamn + id)
-        private void fillCbsWithCountries()
-        {
-            var countryCollection = CountryRepository.GetAllCountries();
-            foreach (var countryObject in countryCollection)
-            {
-                cbCountryArrival.Items.Add(countryObject);
-                cbCountryDeparture.Items.Add(countryObject);
-            }
-            
-        }
-=======
->>>>>>> origin/master
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             var realtrip = new Trip();
-<<<<<<< HEAD
-            
             var trip = new TripModel();
             //fyller modellen med information
             realtrip.origin = (int)cbCountryArrival.SelectedValue;
@@ -115,16 +89,13 @@ namespace vITs
 
             realtrip.start = (DateTime) dpStartDate.SelectedDate;
             realtrip.end = (DateTime) dpEndDate.SelectedDate;
-=======
 
 
-            var trip = new TripModel();
             //fyller modellen med information
             realtrip.origin = cbCountryDeparture.SelectedIndex + 1;
             realtrip.destination = cbCountryArrival.SelectedIndex + 1;
             realtrip.start = (DateTime)dpStartDate.SelectedDate;
             realtrip.end = (DateTime)dpEndDate.SelectedDate;
->>>>>>> origin/master
             var prepay = tbPrepaySum.Text;
             int prepaySum;
             int.TryParse(prepay, out prepaySum);
@@ -189,16 +160,12 @@ namespace vITs
                 dpVacationEnd.BorderBrush = Brushes.Red;
                 Go = false;
             }
-<<<<<<< HEAD
-              
             if(Go)
-=======
 
 
 
 
             if (Go)
->>>>>>> origin/master
             {
 
                 lbVacations.Items.Add(vacDate);
@@ -385,8 +352,6 @@ namespace vITs
             //List<FullTrip> test = new List<FullTrip>();
             //test = (List<FullTrip>)cbPickTripExpensesTab.ItemsSource;
         }
-
-
 
 
     }

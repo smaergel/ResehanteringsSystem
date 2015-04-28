@@ -177,3 +177,7 @@ C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\MigraDo
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\MigraDoc.Rendering-WPF.resources.dll
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\MigraDoc.RtfRendering-WPF.resources.dll
 C:\Users\Peter\Documents\GitHub\ResehanteringsSystem\vITs\vITs\bin\Debug\PdfSharp-WPF.resources.dll
+D:\VSProjekt\ResehanteringsSystem\vITs\vITs\bin\Debug\MigraDoc.DocumentObjectModel-WPF.resources.dll
+D:\VSProjekt\ResehanteringsSystem\vITs\vITs\bin\Debug\MigraDoc.Rendering-WPF.resources.dll
+D:\VSProjekt\ResehanteringsSystem\vITs\vITs\bin\Debug\MigraDoc.RtfRendering-WPF.resources.dll
+D:\VSProjekt\ResehanteringsSystem\vITs\vITs\bin\Debug\PdfSharp-WPF.resources.dll
