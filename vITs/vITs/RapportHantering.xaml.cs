@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -209,7 +211,11 @@ namespace vITs
 
             AddItems.ApproveDenyReport(report.TripId, 1);
             ClearFieldsAndReloadBoxes();
+
+            sendMail(true, report.User);
         }
+
+
         private void btnDeny_Click(object sender, RoutedEventArgs e)
         {
             //kod behöver förändras när objekt i listan finns så allt blir rätt.
@@ -217,6 +223,8 @@ namespace vITs
 
             AddItems.ApproveDenyReport(report.TripId, 0);
             ClearFieldsAndReloadBoxes();
+
+            sendMail(false, report.User);
         }
         private void anvInstalnningar_Click(object sender, RoutedEventArgs e)
         {
@@ -341,6 +349,50 @@ namespace vITs
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void sendMail(bool accepted, int id)
+        {
+
+            String mail = HandleItems.GetUser(id).email;
+            String name = HandleItems.GetUser(id).firstname.ToString() + " " + HandleItems.GetUser(id).lastname.ToString();
+
+            var fromAddress = new MailAddress("vitzbot@gmail.com", "vITS");
+            string fromPassword = "bmf123123";
+
+            var toAddress = new MailAddress(mail, name);
+
+            String acceptedText = "";
+            if (accepted == true)
+            {
+                acceptedText = "accepterad.";
+            }
+            else
+            {
+                acceptedText = "nekad.";
+            }
+
+            string subject = "Angående rapport";
+            string body = "Din rapport är nu " + acceptedText + "\n" + DateTime.Now.ToString("M/d/yyyy");
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword),
+                Timeout = 15000
+            };
+
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = subject,
+                Body = body
+            })
+            {
+                smtp.Send(message);
+            }
         }
 
 
