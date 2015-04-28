@@ -84,6 +84,22 @@ namespace DAL.Repositories.UserRepository
             }
         }
 
+        public static List<User> GetUsers()
+        {
+            using (var dbConnect = new DatabaseEntities())
+            {
+                List<User> userList = new List<User>();
+                var query = from u in dbConnect.Users
+                            select u;
+                foreach (User u in query)
+                {
+                    userList.Add(u);
+                }
+                return userList;
+
+            }
+        }
+
         /// <summary>
         /// Edit details of a specific user
         /// 
@@ -125,6 +141,36 @@ namespace DAL.Repositories.UserRepository
                 }
                 return bossList;
 
+            }
+        }
+
+        public static Boss CheckIfBoss(int id)
+        {
+            using (var dbConnect = new DatabaseEntities())
+            {
+                return dbConnect.Bosses.FirstOrDefault(x =>
+                x.userID.Equals(id));
+            }
+
+        }
+
+        public static void DeleteBosses(int bID)
+        {
+            using (var context = new DatabaseEntities())
+            {
+                Boss b = context.Bosses.FirstOrDefault(x => x.userID == bID);
+                context.Bosses.Remove(b);
+                context.SaveChanges();
+            }
+        }
+
+        public static void DeleteUsers(int uID)
+        {
+            using (var context = new DatabaseEntities())
+            {
+                User u = context.Users.FirstOrDefault(x => x.userID == uID);
+                context.Users.Remove(u);
+                context.SaveChanges();
             }
         }
 

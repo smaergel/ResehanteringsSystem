@@ -36,9 +36,6 @@
                     <Label Content="Nytt lösenord:" HorizontalAlignment="Left" Margin="31,187,0,0" VerticalAlignment="Top" Grid.Column="5" FontFamily="TechnicBold" Grid.ColumnSpan="2"/>
                     <Label Content="Verifiera nytt lösenord:" HorizontalAlignment="Left" Margin="6,231,0,0" VerticalAlignment="Top" Grid.Column="4" FontFamily="TechnicBold" Grid.ColumnSpan="3"/>
                     <Label Content="Gammalt lösenord:" HorizontalAlignment="Left" Margin="7,276,0,0" VerticalAlignment="Top" Grid.Column="5" FontFamily="TechnicBold" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="tbxNewPassword1" HorizontalAlignment="Right" Height="24" Margin="0,186,210,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="6"/>
-                    <TextBox x:Name="tbxNewPassword2" HorizontalAlignment="Left" Height="24" Margin="64,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="6"/>
-                    <TextBox x:Name="tbxOldPassword" HorizontalAlignment="Left" Height="22" Margin="64,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="6"/>
                     <Button Content="Avbryt" HorizontalAlignment="Left" Margin="64,313,0,0" VerticalAlignment="Top" Width="58" Grid.Column="6" FontFamily="TechnicBold" Height="21" BorderBrush="#FF919191">
                         <Button.Background>
                             <ImageBrush ImageSource="Graphics/btn.png"/>
@@ -50,6 +47,9 @@
                         </Button.Background>
                     </Button>
                     <Label Content="Ändra Lösenord" Grid.Column="5" HorizontalAlignment="Left" Margin="53,117,0,0" VerticalAlignment="Top" FontFamily="TechnicBold" FontWeight="Bold" FontSize="22" Foreground="#FF383838" Grid.ColumnSpan="2"/>
+                    <PasswordBox x:Name="tbxNewPassword1" Grid.Column="6" HorizontalAlignment="Left" Margin="64,193,0,0" VerticalAlignment="Top" Width="120"/>
+                    <PasswordBox x:Name="tbxNewPassword2" Grid.Column="6" HorizontalAlignment="Left" Margin="64,237,0,0" VerticalAlignment="Top" Width="120"/>
+                    <PasswordBox x:Name="tbxOldPassword" Grid.Column="6" HorizontalAlignment="Left" Margin="64,282,0,0" VerticalAlignment="Top" Width="120"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Personuppgifter" Margin="1,0,-2,-2">
@@ -77,12 +77,10 @@
                             <DropShadowEffect Direction="250" Color="#000000" ShadowDepth="3" BlurRadius="20" />
                         </Image.Effect>
                     </Image>
-                    <Label Content="Tfn:" HorizontalAlignment="Left" Margin="59,177,0,0" VerticalAlignment="Top" Grid.Column="3" RenderTransformOrigin="1.414,0.615" FontFamily="TechnicBold"/>
-                    <Label Content="Adress:" HorizontalAlignment="Left" Margin="44,220,0,0" VerticalAlignment="Top" Grid.Column="3" FontFamily="TechnicBold"/>
-                    <Label Content="E-post:" HorizontalAlignment="Left" Margin="44,263,0,0" VerticalAlignment="Top" Grid.Column="3" FontFamily="TechnicBold"/>
-                    <TextBox x:Name="tbxUpdatePhone" HorizontalAlignment="Left" Height="23" Margin="107,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
-                    <TextBox x:Name="tbxUpdateEmail" HorizontalAlignment="Left" Height="23" Margin="107,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
-                    <TextBox x:Name="tbxUpdateAddress" HorizontalAlignment="Left" Height="23" Margin="107,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
+                    <Label Content="Tfn:" HorizontalAlignment="Left" Margin="62,194,0,0" VerticalAlignment="Top" Grid.Column="3" RenderTransformOrigin="1.414,0.615" FontFamily="TechnicBold"/>
+                    <Label Content="E-post:" HorizontalAlignment="Left" Margin="44,235,0,0" VerticalAlignment="Top" Grid.Column="3" FontFamily="TechnicBold"/>
+                    <TextBox x:Name="tbxUpdatePhone" HorizontalAlignment="Left" Height="23" Margin="107,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
+                    <TextBox x:Name="tbxUpdateEmail" HorizontalAlignment="Left" Height="23" Margin="107,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
                     <Button Content="Avbryt" HorizontalAlignment="Left" Margin="107,302,0,0" VerticalAlignment="Top" Width="58" Grid.Column="3" FontFamily="TechnicBold" Height="22" BorderBrush="#FF8F8E8E">
                         <Button.Background>
                             <ImageBrush ImageSource="Graphics/btn.png"/>
@@ -115,8 +113,8 @@
                     </Image>
 
                     <Label Content="Ta bort användare" HorizontalAlignment="Left" Margin="85,48,0,0" VerticalAlignment="Top" FontFamily="TechnicBold" Grid.Row="1"/>
-                    <ComboBox HorizontalAlignment="Left" Margin="216,48,0,0" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-                    <Button Content="Ta bort" HorizontalAlignment="Left" Margin="362,48,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.522,0.619" FontFamily="TechnicBold" Height="22" Grid.Row="1">
+                    <ComboBox x:Name="cbUser" HorizontalAlignment="Left" Margin="216,48,0,0" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+                    <Button Content="Ta bort" HorizontalAlignment="Left" Margin="362,48,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.5,0.5" FontFamily="TechnicBold" Height="22" Grid.Row="1" Click="Button_Click_3">
                         <Button.Background>
                             <ImageBrush ImageSource="Graphics/btn.png"/>
                         </Button.Background>
@@ -124,21 +122,11 @@
                     <Label Content="Lägg till ny användare" HorizontalAlignment="Left" Margin="80,92,0,0" VerticalAlignment="Top" FontSize="16" Grid.Row="1" FontFamily="TechnicBold"/>
                     <Label Content="Förnamn:&#xA;" HorizontalAlignment="Left" Margin="110,131,0,0" VerticalAlignment="Top" Grid.Row="1" FontFamily="TechnicBold"/>
                     <Label Content="Telefon:" HorizontalAlignment="Left" Margin="118,193,0,0" VerticalAlignment="Top" Grid.Row="1" FontFamily="TechnicBold"/>
-                    <Label Content="Roll:" HorizontalAlignment="Left" Margin="360,169,0,0" VerticalAlignment="Top" Grid.Row="1" FontFamily="TechnicBold" RenderTransformOrigin="0.5,0.5">
-                        <Label.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform AngleX="1.469"/>
-                                <RotateTransform/>
-                                <TranslateTransform X="-0.308"/>
-                            </TransformGroup>
-                        </Label.RenderTransform>
-                    </Label>
                     <Label Content="E-post:" HorizontalAlignment="Left" Margin="118,224,0,0" VerticalAlignment="Top" Grid.Row="1" FontFamily="TechnicBold"/>
                     <TextBox x:Name="tbxFirstName" HorizontalAlignment="Left" Height="23" Margin="188,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
                     <TextBox x:Name="tbxTele" HorizontalAlignment="Left" Height="23" Margin="188,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
                     <TextBox x:Name="tbxEmail" HorizontalAlignment="Left" Height="23" Margin="188,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-                    <CheckBox x:Name="cbxBoss" Content="Chef" HorizontalAlignment="Left" Margin="400,140,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.661,0.863" Checked="cbxBoss_Checked" Unchecked="cbxBoss_Unchecked" FontFamily="TechnicBold"/>
+                    <CheckBox x:Name="cbxBoss" Content="" HorizontalAlignment="Left" Margin="400,140,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.661,0.863" FontFamily="TechnicBold"/>
                     <Button x:Name="btnCancel" Content="Avbryt" HorizontalAlignment="Left" Margin="465,285,0,0" VerticalAlignment="Top" Width="74" Grid.Row="1" RenderTransformOrigin="0.453,1.7" Height="26" BorderBrush="#FF919191">
                         <Button.Background>
                             <ImageBrush ImageSource="Graphics/btn.png"/>
@@ -151,13 +139,12 @@
                     </Button>
                     <Label Content="Lösenord:" HorizontalAlignment="Left" Margin="108,255,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.848,0.654" FontFamily="TechnicBold"/>
                     <Label Content="Bekräfta lösenord:" HorizontalAlignment="Left" Margin="64,287,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.839,2.308" FontFamily="TechnicBold"/>
-                    <TextBox x:Name="tbxPasswordFirst" HorizontalAlignment="Left" Height="23" Margin="188,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-                    <TextBox x:Name="tbxPasswordSecond" HorizontalAlignment="Left" Height="23" Margin="188,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
                     <Label Content="Chef:" HorizontalAlignment="Left" Margin="358,134,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.848,0.654" FontFamily="TechnicBold"/>
-                    <ComboBox x:Name="cbChef" HorizontalAlignment="Left" Margin="400,169,0,0" Grid.Row="1" VerticalAlignment="Top" Width="138"/>
                     <TextBox x:Name="tbxLastName" HorizontalAlignment="Left" Height="23" Margin="188,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
                     <Label Content="Efternamn&#xA;" HorizontalAlignment="Left" Margin="106,162,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.245" Height="26" FontFamily="TechnicBold"/>
                     <Label Content="Lägg till  - ta bort användare" HorizontalAlignment="Left" Margin="148,56,0,0" VerticalAlignment="Top" Width="317" FontFamily="TechnicBold" FontWeight="Bold" FontSize="22" Height="41" Grid.RowSpan="2" Foreground="#FF383838"/>
+                    <PasswordBox x:Name="tbxPasswordFirst" HorizontalAlignment="Left" Margin="188,261,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
+                    <PasswordBox x:Name="tbxPasswordSecond" HorizontalAlignment="Left" Margin="188,293,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
 
                 </Grid>
             </TabItem>
